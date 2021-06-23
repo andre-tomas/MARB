@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\babel@toc {swedish}{}
+\babel@toc {english}{}
+\contentsline {section}{References}{2}{section*.2}

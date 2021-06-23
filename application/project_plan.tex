@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{MARB: Specification}
+\author{Tomas Andre \\ 
+\\ 
+\\ 
+Supervisor: Erik Sj\"oqvist \\ 
+Subject Reader: Martin Almquist}
+
+
+\date{May 2021}
+
+\begin{document}
+
+\maketitle
+
+\section*{Project: Holonomic optimal control for qudits}
+
+\section*{Background} 
+A circuit-based quantum computer performs efficient computation by means of 
+unitary transformations (gates) acting on quantum bits (two-level systems). These 
+`qubits' differ from their classical counterpart in that they can be superposed and 
+entangled; features that can be used in order to design certain algorithms that are 
+more efficient than what can be achieved by a classical computer \cite{shor94,grover97}. 
+However, quantum computers are highly sensitive to decoherence and noise that 
+may destroy the computational advantage. Therefore, it becomes pertinent to 
+implement quantum gate operations that are resilient to errors. 
+
+Holonomic control is a promising tool for implementing robust quantum gates. 
+They are based on Berry phases \cite{berry84} and their non-Abelian and/or 
+non-adiabatic generalizations \cite{wilczek84,aharonov87,anandan88}. These phases 
+are only sensitive to the global geometry of quantum state spaces and are therefore 
+conjectured to be resilient to local errors along the evolution of the quantum states. 
+In particular, the non-Abelian versions of holonomic control are useful as the non-Abelian 
+feature is essential as non-commuting gates are necessary for universal quantum 
+computation \cite{zanardi99,sjoqvist12}. 
+
+\section*{Description of task}
+In this project, we examine holonomic optimal control \cite{liu19,li20}, which combine standard 
+non-adiabatic holonomic quantum computation \cite{sjoqvist12} with inverse engineering 
+and quantum control to optimize gate performance.  In particular, the focus is on extending 
+holonomic optimal control  to  `qudits', which are $d\geq 3$ dimensional carriers of 
+quantum information \cite{wang20}. These qudits are implemented in quantum systems, 
+typically a trapped atom or ion, exhibiting a bipartite structure, defined by two coupled 
+sub-groups of mutually uncoupled energy levels. One such system is the $d$-pod, in which 
+$d$ uncoupled `ground state' levels, forming the qudit, is coupled to a single excited state. 
+The couplings are typically induced by external laser pulses with tailored shape and duration. 
+
+The key point with extending holonomic optimal control to qudits is two-fold: first, qudits 
+allow for an exponential increase of information capacity, when the number of primitive 
+systems grows; secondly, the use of qudits increases the dimensionality of the parameter space and 
+thus an increased flexibility in gate optimization. The purpose of the project is to 
+optimize the gate performance to systematic errors combined with decoherence 
+in such qudit systems. The aim is to contribute to the realization of efficient and error 
+resilient quantum gates for robust quantum computation. 
+
+\section*{Method}
+The project involves a combination of (i) analytical derivation of Hamiltonian parameters 
+via inverse engineering, and (ii) numerical simulation and optimisation of qudit gates in the 
+presence of systematic and decoherence-induced errors. 
+
+The main focus is on the $d$-pod setting, which can be described by the 
+Morris-Shore parametrization \cite{morris83,kyoseva06} of the corresponding state 
+space. Equations for these parameters are found by a combination of inverse engineering 
+of the system Hamiltonian, and a cancellation of dynamical phases yielding purely 
+holonomic quantum evolution. Resilience to systematic amplitude and phase errors, as well 
+as decoherence simulated by means of Lindblad-type equations \cite{nielsen00}, are 
+optimized over the restricted parameter space. Specifically, the optimization is carried 
+out by maximizing the fidelity of the simulated gates with respect to the ideal gates over 
+the Hamiltonian parameters. 
+
+\section*{Relevant courses}
+\begin{itemize}
+
+\item Quantum Mechanics, 1FA352
+
+\item Quantum Information, 1FA592
+
+\item Scientific Computing 3, 1TD397
+
+\item Computational Physics, 1FA573
+
+\end{itemize}
+
+\section*{Boundaries of task}
+The project is limited to: 
+\begin{itemize}
+
+\item[-] Finite dimensional Hilbert spaces with a $d$-pod structure; 
+
+\item[-] Classical treatment of the laser fields that induce transitions between the levels; 
+
+\item[-] Treatment of open system effects in the Markovian approximation, by means 
+of the Lindblad equations. 
+
+\end{itemize}
+These limitations are designed for efficient and accurate modelling of the qudit gates.  
+
+\section*{Time plan}
+\begin{itemize}
+
+\item[-] Week 35-36: Preparatory literature studies. 
+  
+\item[-] Week 36-39: Derivation of parameter equations for the inverse engineering. 
+
+\item[-]  Week 38-45: Code development.  
+
+\item[-] Week 43-49: Numerical optimisation of qudit gates in presence of errors. 
+
+\item[-] Week 47-51: Writing of report. 
+
+\item[-] Week 2 (2022): Presentation.   
+
+\end{itemize}
+
+\begin{thebibliography}{99}
+\bibitem{shor94} P. W. Shor, 
+Algorithms for quantum computation:  Discrete logarithms and  factoring, 
+Proceedings  35th  annual  symposium  on  foundations  of computer science 
+{\bf 1}, 124 (Murray Hill, NJ, USA, 1994). 
+\bibitem{grover97} L. Grover, 
+Quantum Mechanics Helps in Searching for a Needle in a Haystack, 
+Phys. Rev. Lett. {\bf 79}, 325 (1997). 
+\bibitem{berry84} M. V. Berry,
+Quantal Phase Factors Accompanying Adiabatic Changes, 
+Proc. R. Soc. London Ser. A {\bf 392}, 45 (1984).
+\bibitem{wilczek84} F. Wilczek and A. Zee, 
+Appearance of Gauge Structure in Simple Dynamical Systems, 
+Phys. Rev. Lett. {\bf 52}, 2111 (1984). 
+\bibitem{aharonov87} Y. Aharonov and J. Anandan, 
+Phase change during a cyclic quantum evolution, 
+Phys. Rev. Lett. {\bf 58}, 1593 (1987). 
+\bibitem{anandan88} J. Anandan, 
+Non-adiabatic non-Abelian geometric phase, 
+Phys. Lett. A {\bf 133}, 171  (1988).
+\bibitem{zanardi99} P. Zanardi and M. Rasetti, 
+Holonomic quantum computation, 
+Phys. Lett. A {\bf 264}, 94 (1999).
+\bibitem{sjoqvist12} E. Sj\"oqvist, D. M. Tong, L. M. Andersson, B. Hessmo, 
+M. Johansson, and K. Singh,  
+Non-adiabatic holonomic quantum computation, 
+New J. Phys. {\bf 14}, 103035 (2012).
+\bibitem{wang20} Y. Wang, Z. Hu, B. C. Sanders, and S. Kais, 
+Qudits and High- Dimensional Quantum Computing, 
+Front. Phys. {\bf 8}, 589504 (2020).
+\bibitem{liu19} B.-J. Liu, X.-K. Song, Z.-Y Xue, X. Wang, and M.-H. Yung, 
+Plug-and-Play Approach to Nonadiabatic Geometric Quantum Gates, 
+Phys. Rev. Lett. {\bf 123}, 100501 (2019); 
+\bibitem{li20} S. Li, T. Chen, and Z.-Y. Xue, 
+Fast Holonomic Quantum Computation on Superconducting Circuits With Optimal Control, 
+Adv. Quantum Technol. {\bf 3}, 2000001 (2020). 
+\bibitem{morris83} J. R. Morris and B. W. Shore, 
+Reduction of degenerate two-level excitation to independent two-state systems, 
+Phys. Rev. A {\bf 27}, 906 (1983). 
+\bibitem{kyoseva06} E. S. Kyoseva and N. V. Vitanov, 
+Coherent pulsed excitation of degenerate multistate systems: Exact analytic solutions, 
+Phys. Rev. A {\bf 73}, 023420 (2006).
+\bibitem{nielsen00} M. A. Nielsen and I. L. Chuang, 
+Quantum Computation and Quantum Information, 
+(Cambridge University Press, Cambridge, UK, 2000), Chap. 8.4.1.
+\end{thebibliography}
+\end{document}
+
+

@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{NHQC}
+Sjöqvist E, Tong DM, Mauritz~Andersson L, Hessmo B, Johansson M, Singh K.
+\newblock Non-adiabatic holonomic quantum computation.
+\newblock New journal of physics. 2012;14(10):103035.
+
+\bibitem{morris}
+Morris JR, Shore BW.
+\newblock Reduction of degenerate two-level excitation to independent two-state
+  systems.
+\newblock Physical review A, General physics. 1983;27(2):906--912.
+
+\bibitem{qudit}
+Wang Y, Hu Z, Sanders BC, Kais S.
+\newblock Qudits and High-Dimensional Quantum Computing.
+\newblock Frontiers in physics. 2020;8.
+
+\end{thebibliography}

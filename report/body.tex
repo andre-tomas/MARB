@@ -1,0 +1,138 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{pmgraph}
+\usepackage[a4paper,portrait, margin=2.5cm]{geometry}
+\usepackage[normalem]{ulem}
+\usepackage[swedish,english]{babel}
+\usepackage{graphicx,here,times,tabularx,rotating}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[bottom]{footmisc}
+\usepackage{physics}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage{framed,color}
+\usepackage[nottoc]{tocbibind}
+\usepackage[toc,page]{appendix}
+\usepackage{lipsum}
+\usepackage{framed,color}
+\usepackage{libertine}
+\usepackage{algorithm2e}
+\usepackage{bm}% bold math
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+
+\pagenumbering{gobble}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Uppsala University}\\[1.5cm] % Name of your university/college
+\textsc{\Large Degree Project D in Computational Science, 30c}\\[0.5cm] % Major heading such as course name
+\textsc{\large Department of Physics and Astronomy\\ Division of Material stuff?}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Holonomic optimal control for qudits}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Tomas \textsc{André} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Erik \textsc{Sjöqvist} \\
+\emph{Subject reader:} \\
+Martin \textsc{Almquist} %% Supervisor's Name
+\end{flushright}
+\end{minipage}\\[2cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale = 0.11]{figures/uulogga.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{abstract}1
+    Engelskt abstrakt
+\end{abstract}
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\begin{otherlanguage}{swedish}
+\begin{abstract}
+    Svenskt abstrakt
+  
+\end{abstract}
+\end{otherlanguage}
+
+
+\newpage
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+Hej! Här är några relevant källor! \cite{NHQC},\cite{morris},\cite{qudit}
+
+\newpage
+\bibliographystyle{vancouver}
+\bibliography{ref.bib}
+
+
+\appendix
+
+
+
+
+
+
+\end{document}
