@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  23 JUN 2021 14:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  17 AUG 2021 13:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2682,19 +2682,26 @@ een already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.121 \newpage
-               [2] [1] (./body.bbl) [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+               [2] (./intro.tex) [1] (./body.bbl) [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
  (./body.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
-Package rerunfilecheck Info: File `body.out' has not changed.
-(rerunfilecheck)             Checksum: 4CE983AEC613CB83A090103ED131A03B;46.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+
+
+Package rerunfilecheck Warning: File `body.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `body.out':
+(rerunfilecheck)             Before: 4CE983AEC613CB83A090103ED131A03B;46
+(rerunfilecheck)             After:  6BE6A47B09C0D83FDEEDA969B0AE7B0A;93.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
  ) 
 Here is how much of TeX's memory you used:
- 30911 strings out of 492982
- 572357 string characters out of 6134896
+ 30915 strings out of 492982
+ 572391 string characters out of 6134896
  734414 words of memory out of 5000000
  33957 multiletter control sequences out of 15000+600000
  560082 words of font info for 78 fonts, out of 8000000 for 9000
@@ -2707,10 +2714,10 @@ ive/texmf-dist/fonts/enc/dvips/libertine/lbtn_n3gv2c.enc}</usr/share/texlive/te
 xmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on body.pdf (5 pages, 410680 bytes).
+Output written on body.pdf (5 pages, 412421 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
+ 65 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,9 @@
+Fidelity - Distance measure between quantum states. Used to determine how well a quantum channel preserves information.
+Holonomic - 
+Adiabatic -
+Non-Adiabatic -
+Rabi - https://en.wikipedia.org/wiki/Rabi_cycle
+Grassmann manifold -
+Steifel manifold -
+Dark state -
+Bright state -
