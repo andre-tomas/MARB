@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  17 AUG 2021 13:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  22 SEP 2021 08:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1584,22 +1584,6 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@loff=\dimen190
 \@vwid@roff=\dimen191
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip63
-\fb@frw=\dimen192
-\fb@frh=\dimen193
-\FrameRule=\dimen194
-\FrameSep=\dimen195
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-)
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has section divisions on input line 50.
@@ -1616,6 +1600,31 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count289
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip63
+\fb@frw=\dimen192
+\fb@frh=\dimen193
+\FrameRule=\dimen194
+\FrameSep=\dimen195
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/libertine.sty
 Package: libertine 2018/01/03 (Bob Tennent) Supports Libertine and Biolinum fon
@@ -1784,24 +1793,6 @@ LaTeX Info: Redefining \bm on input line 207.
 Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
 
-(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 709.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
-Package xcolor Info: Model `RGB' extended on input line 1364.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -2476,39 +2467,47 @@ File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen306
 )) (./body.aux)
 \openout1 = `body.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 28.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineT-TLF on
- input line 28.
+ input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/OT1LinuxLibertineT-TLF.fd
 File: OT1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for OT1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 28.
+(Font)              scaled to size 12.0pt on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2547,13 +2546,13 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count317
-\scratchdimen=\dimen306
+\scratchdimen=\dimen307
 \scratchbox=\box97
 \nofMPsegments=\count318
 \nofMParguments=\count319
 \everyMPshowfont=\toks51
 \MPscratchCnt=\count320
-\MPscratchDim=\dimen307
+\MPscratchDim=\dimen308
 \MPnumerator=\count321
 \makeMPintoPDFobject=\count322
 \everyMPtoPDFconversion=\toks52
@@ -2577,17 +2576,17 @@ e
 \symgns@font=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
 (Font)                  TS1/LinuxLibertineT-TLF/m/n --> TS1/LinuxLibertineT-TLF
-/bx/n on input line 28.
-Package gensymb Info: Math companion symbols declared on input line 28.
-LaTeX Info: Redefining \degree on input line 28.
-LaTeX Info: Redefining \celsius on input line 28.
+/bx/n on input line 37.
+Package gensymb Info: Math companion symbols declared on input line 37.
+LaTeX Info: Redefining \degree on input line 37.
+LaTeX Info: Redefining \celsius on input line 37.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 28.
-LaTeX Info: Redefining \ohm on input line 28.
-Package gensymb Info: Using \textohm for \ohm on input line 28.
-Package gensymb Info: Using \textmu for \micro on input line 28.
+erthousand on input line 37.
+LaTeX Info: Redefining \ohm on input line 37.
+Package gensymb Info: Using \textohm for \ohm on input line 37.
+Package gensymb Info: Using \textmu for \micro on input line 37.
 \AtBeginShipoutBox=\box98
-Package hyperref Info: Link coloring OFF on input line 28.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -2597,9 +2596,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count323
 )
-LaTeX Info: Redefining \ref on input line 28.
-LaTeX Info: Redefining \pageref on input line 28.
-LaTeX Info: Redefining \nameref on input line 28.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 (./body.out) (./body.out)
 \@outlinefile=\write4
@@ -2609,67 +2608,67 @@ LaTeX Info: Redefining \nameref on input line 28.
 \c@mv@boldtabular=\count325
  ABD: EveryShipout initializing macros
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 43.
+(Font)              scaled to size 12.0pt on input line 54.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 20.74pt on input line 43.
+(Font)              scaled to size 20.74pt on input line 54.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 44.
+(Font)              scaled to size 17.28pt on input line 55.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 45.
+(Font)              scaled to size 14.4pt on input line 56.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 52.
+(Font)              scaled to size 24.88pt on input line 63.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 52.
+(Font)              scaled to size 24.88pt on input line 63.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 60.
+(Font)              scaled to size 14.4pt on input line 71.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 14.4pt on input line 61.
-LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+(Font)              scaled to size 14.4pt on input line 72.
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 64.
+ input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 64.
+(Font)              scaled to size 12.0pt on input line 75.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 64.
+(Font)              scaled to size 8.0pt on input line 75.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 64.
-<figures/uulogga.png, id=11, 1033.8625pt x 1027.84pt>
+(Font)              scaled to size 6.0pt on input line 75.
+<figures/uulogga.png, id=31, 1033.8625pt x 1027.84pt>
 File: figures/uulogga.png Graphic file (type png)
 <use figures/uulogga.png>
-Package pdftex.def Info: figures/uulogga.png  used on input line 89.
+Package pdftex.def Info: figures/uulogga.png  used on input line 100.
 (pdftex.def)             Requested size: 113.72522pt x 113.06274pt.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/uulogga.png>]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 99.
+(Font)              scaled to size 10.95pt on input line 110.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 99.
+(Font)              scaled to size 10.95pt on input line 110.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.119 \newpage
+l.130 \newpage
                [1]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 120.
+(Font)              scaled to size 17.28pt on input line 131.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 120.
+(Font)              scaled to size 17.28pt on input line 131.
  (./body.toc
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 4.
@@ -2681,43 +2680,713 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 \newpage
-               [2] (./intro.tex) [1] (./body.bbl) [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 141.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 141.
+l.132 \newpage
+               [2]
+
+LaTeX Warning: Citation `NHQC' on page 1 undefined on input line 135.
+
+
+LaTeX Warning: Citation `morris' on page 1 undefined on input line 135.
+
+
+LaTeX Warning: Citation `qudit' on page 1 undefined on input line 135.
+
+(./intro.tex) (./background.tex
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
+(Font)              scaled to size 14.4pt on input line 1.
+ [1]
+Overfull \hbox (9.66704pt too wide) detected at line 63
+\OT1/cmr/m/n/12 
+(\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = 2(([] [][][] [][][]) [][][] [][][]
+ []
+
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 8.0pt on input line 73.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 73.
+[2]
+LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineMonoT-TL
+F on input line 110.
+
+(/usr/share/texlive/texmf-dist/tex/latex/libertine/OT1LinuxLibertineMonoT-TLF.f
+d
+File: OT1LinuxLibertineMonoT-TLF.fd 2017/03/20 (autoinst) Font definitions for 
+OT1/LinuxLibertineMonoT-TLF.
+)
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineMonoT-TLF/m/n' will be
+(Font)              scaled to size 12.0pt on input line 110.
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+
+Overfull \hbox (3018.95149pt too wide) in paragraph at lines 137--137
+[]                                                                             
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                                                               
+                                               \OT1/LinuxLibertineMonoT-TLF/m/n
+/12 0[] 
+ []
+
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+
+Overfull \hbox (143.80026pt too wide) in paragraph at lines 137--137
+[] \OT1/LinuxLibertineMonoT-TLF/m/n/12 -(2(1/2)*(abs(w11)2 + abs(w12)2 + abs(w1
+3)2 + abs(w21)2 + abs(w22)2 + abs(w23)2 -
+ []
+
+
+Overfull \hbox (786.36253pt too wide) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 (abs(w11)4 + abs(w12)4 + abs(w13)4 + abs(w2
+1)4 + abs(w22)4 + abs(w23)4 + 2*abs(w11)2*abs(w12)2 + 2*abs(w11)2*abs(w13)2 + 2
+*abs(w12)2*abs(w13)2 + 2*abs(w11)2*abs(w21)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w22)2 - 2*abs(w12)2*abs(w21
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w23)2 + 2*abs(w12)2*abs(w22
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w21)2 - 2*abs(w12)2*abs(w23
+)2 -
+ []
+
+
+Overfull \hbox (1981.8818pt too wide) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w22)2 + 2*abs(w13)2*abs(w23
+)2 + 2*abs(w21)2*abs(w22)2 + 2*abs(w21)2*abs(w23)2 + 2*abs(w22)2*abs(w23)2 + 4*
+w11*w22*conj(w12)*conj(w21) + 4*w12*w21*conj(w11)*conj(w22) + 4*w11*w23*conj(w1
+3)*conj(w21) + 4*w13*w21*conj(w11)*conj(w23) + 4*w12*w23*conj(w13)*conj(w22) + 
+4*w13*w22*conj(w12)*conj(w23))(1/2))(1/2))/2[] 
+ []
+
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+
+Overfull \hbox (1390.52731pt too wide) in paragraph at lines 137--137
+[] \OT1/LinuxLibertineMonoT-TLF/m/n/12 -(2(1/2)*(abs(w11)2 + abs(w12)2 + abs(w1
+3)2 + abs(w21)2 + abs(w22)2 + abs(w23)2 + (abs(w11)4 + abs(w12)4 + abs(w13)4 + 
+abs(w21)4 + abs(w22)4 + abs(w23)4 + 2*abs(w11)2*abs(w12)2 + 2*abs(w11)2*abs(w13
+)2 + 2*abs(w12)2*abs(w13)2 + 2*abs(w11)2*abs(w21)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w22)2 - 2*abs(w12)2*abs(w21
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w23)2 + 2*abs(w12)2*abs(w22
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w21)2 - 2*abs(w12)2*abs(w23
+)2 -
+ []
+
+
+Overfull \hbox (1981.8818pt too wide) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w22)2 + 2*abs(w13)2*abs(w23
+)2 + 2*abs(w21)2*abs(w22)2 + 2*abs(w21)2*abs(w23)2 + 2*abs(w22)2*abs(w23)2 + 4*
+w11*w22*conj(w12)*conj(w21) + 4*w12*w21*conj(w11)*conj(w22) + 4*w11*w23*conj(w1
+3)*conj(w21) + 4*w13*w21*conj(w11)*conj(w23) + 4*w12*w23*conj(w13)*conj(w22) + 
+4*w13*w22*conj(w12)*conj(w23))(1/2))(1/2))/2[] 
+ []
+
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+
+Overfull \hbox (141.24068pt too wide) in paragraph at lines 137--137
+[]  \OT1/LinuxLibertineMonoT-TLF/m/n/12 (2(1/2)*(abs(w11)2 + abs(w12)2 + abs(w1
+3)2 + abs(w21)2 + abs(w22)2 + abs(w23)2 -
+ []
+
+
+Overfull \hbox (786.36253pt too wide) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 (abs(w11)4 + abs(w12)4 + abs(w13)4 + abs(w2
+1)4 + abs(w22)4 + abs(w23)4 + 2*abs(w11)2*abs(w12)2 + 2*abs(w11)2*abs(w13)2 + 2
+*abs(w12)2*abs(w13)2 + 2*abs(w11)2*abs(w21)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w22)2 - 2*abs(w12)2*abs(w21
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w23)2 + 2*abs(w12)2*abs(w22
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w21)2 - 2*abs(w12)2*abs(w23
+)2 -
+ []
+
+
+Overfull \hbox (1981.8818pt too wide) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w22)2 + 2*abs(w13)2*abs(w23
+)2 + 2*abs(w21)2*abs(w22)2 + 2*abs(w21)2*abs(w23)2 + 2*abs(w22)2*abs(w23)2 + 4*
+w11*w22*conj(w12)*conj(w21) + 4*w12*w21*conj(w11)*conj(w22) + 4*w11*w23*conj(w1
+3)*conj(w21) + 4*w13*w21*conj(w11)*conj(w23) + 4*w12*w23*conj(w13)*conj(w22) + 
+4*w13*w22*conj(w12)*conj(w23))(1/2))(1/2))/2[] 
+ []
+
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no _ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+Missing character: There is no ^ in font LinLibertineMT-tlf-ot1!
+
+Overfull \hbox (1387.96773pt too wide) in paragraph at lines 137--137
+[]  \OT1/LinuxLibertineMonoT-TLF/m/n/12 (2(1/2)*(abs(w11)2 + abs(w12)2 + abs(w1
+3)2 + abs(w21)2 + abs(w22)2 + abs(w23)2 + (abs(w11)4 + abs(w12)4 + abs(w13)4 + 
+abs(w21)4 + abs(w22)4 + abs(w23)4 + 2*abs(w11)2*abs(w12)2 + 2*abs(w11)2*abs(w13
+)2 + 2*abs(w12)2*abs(w13)2 + 2*abs(w11)2*abs(w21)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w22)2 - 2*abs(w12)2*abs(w21
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w11)2*abs(w23)2 + 2*abs(w12)2*abs(w22
+)2 -
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w21)2 - 2*abs(w12)2*abs(w23
+)2 -
+ []
+
+
+Overfull \hbox (1981.8818pt too wide) in paragraph at lines 137--137
+\OT1/LinuxLibertineMonoT-TLF/m/n/12 2*abs(w13)2*abs(w22)2 + 2*abs(w13)2*abs(w23
+)2 + 2*abs(w21)2*abs(w22)2 + 2*abs(w21)2*abs(w23)2 + 2*abs(w22)2*abs(w23)2 + 4*
+w11*w22*conj(w12)*conj(w21) + 4*w12*w21*conj(w11)*conj(w22) + 4*w11*w23*conj(w1
+3)*conj(w21) + 4*w13*w21*conj(w11)*conj(w23) + 4*w12*w23*conj(w13)*conj(w22) + 
+4*w13*w22*conj(w12)*conj(w23))(1/2))(1/2))/2[] 
+ []
+
+
+Overfull \hbox (50.9075pt too wide) detected at line 153
+[]\OML/cmm/m/it/12 H[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = \O
+ML/cmm/m/it/12 T[]H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm
+/m/it/12 T \OT1/cmr/m/n/12 = [] + [] []  +  []
+ []
+
+[3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
  (./body.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 141.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 141.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
+Package rerunfilecheck Info: File `body.out' has not changed.
+(rerunfilecheck)             Checksum: 3300958A677A789D306FDBF3A7D2E2EC;391.
 
 
-Package rerunfilecheck Warning: File `body.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `body.out':
-(rerunfilecheck)             Before: 4CE983AEC613CB83A090103ED131A03B;46
-(rerunfilecheck)             After:  6BE6A47B09C0D83FDEEDA969B0AE7B0A;93.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 141.
- ) 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
+ ) ) 
 Here is how much of TeX's memory you used:
- 30915 strings out of 492982
- 572391 string characters out of 6134896
- 734414 words of memory out of 5000000
- 33957 multiletter control sequences out of 15000+600000
- 560082 words of font info for 78 fonts, out of 8000000 for 9000
+ 31539 strings out of 492982
+ 589442 string characters out of 6134896
+ 754553 words of memory out of 5000000
+ 34557 multiletter control sequences out of 15000+600000
+ 564738 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,5n,56p,10400b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/us
-r/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_kijugd.enc}{/usr/shar
-e/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_lyu3x3.enc}{/usr/share/texl
-ive/texmf-dist/fonts/enc/dvips/libertine/lbtn_n3gv2c.enc}</usr/share/texlive/te
-xmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb>
-Output written on body.pdf (5 pages, 412421 bytes).
+ 62i,8n,56p,10400b,670s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_3dk467.enc}{/
+usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/sh
+are/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_kijugd.enc}{/usr/share/te
+xlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_lyu3x3.enc}{/usr/share/texlive/
+texmf-dist/fonts/enc/dvips/libertine/lbtn_n3gv2c.enc}</usr/share/texlive/texmf-
+dist/fonts/type1/public/libertine/LinLibertineMT.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on body.pdf (7 pages, 532432 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

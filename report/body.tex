@@ -14,16 +14,25 @@
 \usepackage{gensymb}
 \usepackage{hyperref}
 \usepackage[export]{adjustbox}
-\usepackage{framed,color}
 \usepackage[nottoc]{tocbibind}
 \usepackage[toc,page]{appendix}
 \usepackage{lipsum}
-\usepackage{framed,color}
+\usepackage{framed,xcolor}
 \usepackage{libertine}
 \usepackage{algorithm2e}
 \usepackage{bm}% bold math
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\newcommand{\note}[1]{{\color{red}\textbf{TODO: #1} } }
+
+
 
 \begin{document}
 
@@ -32,9 +41,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \begin{titlepage}
 
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
 \center % Center everything on the page
+ 
+ 
+ 
  
 %----------------------------------------------------------------------------------------
 %	HEADING SECTIONS
@@ -125,6 +136,9 @@ Test! Här är några relevant källor! \cite{NHQC},\cite{morris},\cite{qudit}
 
 \section{Introduction}
 \input{intro.tex}
+
+\section{Background}
+\input{background.tex}
 
 \newpage
 \bibliographystyle{vancouver}
