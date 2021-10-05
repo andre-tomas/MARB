@@ -1,51 +1,25 @@
 clear all;
-syms(sym('w', [2 3]));
-%syms(sym('d',[1 3]));
-syms K
-syms(sym('a', [1 2]))
+syms chi xi theta phi real
+
+c1 = exp(1i*chi)*sin(theta)*cos(phi);
+c2 = exp(1i*xi)*sin(theta)*sin(phi);
+c3 = cos(theta);
+
+A = [abs(c1)^2/2, conj(c1)*c2, conj(c1)*c3;
+    0, abs(c2)^2/2, conj(c2)*c3; 
+    0, 0, abs(c3)^2/2]; 
+A = simplify(A + ctranspose(A));
+
+x = (c1 - 1/conj(c1));
+B = [abs(x)^2/2, conj(x)*c2, conj(x)*c3; 
+    0, abs(c2)^2/2, conj(c2)*c3;
+    0, 0, abs(c3)^2/2];
+B = simplify((abs(c1)/(1 - abs(c1)))*(B + ctranspose(B)));
 
 
-
-%H = [0, 0, w1_1, w1_2, w1_3;
- %     0, 0, w2_1, w2_2, w2_3;
-  %    conj(w1_1), conj(w2_1), 0, 0, 0;
-   %   conj(w1_2), conj(w2_2), 0, 0, 0;
-    %  conj(w1_3), conj(w2_3), 0, 0, 0];
-
-    H = [0, 0, w1_1, w1_2, a1, 0;
-         0, 0, w2_1, w2_2, 0, a2;
-         conj(w1_1), conj(w2_1), 0, 0, 0, 0;
-         conj(w1_2), conj(w2_2), 0, 0, 0, 0;
-         conj(a1), 0, 0, 0, 0, 0;
-         0, conj(a2), 0, 0, 0, 0];
-      
-  
-  H_e = simplify(eig(H));
-
-  
-  
-    
-  %T = [1, 0, 0, 0, 0, 0;
-     %  0, 1, 0, 0, 0, 0;
-     %  0, 0, 0, -conj(d2), d1;
-      % 0, 0, 0, conj(d1), d2;
-      % 0, 0, 1, 0, 0];
-   %Td = ctranspose(T);
-   
-  d1 = (1/a1)*(w2_2*w1_1 - w1_2*w2_1);
-  d2 = -d1*a1/a2;
-  
-  T = [1, 0, 0, 0, 0, 0;
-       0, 1, 0, 0, 0, 0;
-       0, 0, -w1_1, -w2_1, -w2_2, -w1_2;
-       0, 0, -w1_2, -w2_2, w2_1, w1_1;
-       0, 0, -a1, 0, d1, 0;
-       0, 0, 0, -a2, 0, d2];
-   Td = ctranspose(T);
-   
-   
-   H_d = simplify(simplify(Td*H*T));
-   
-   old_Hd = H_d
-   
-   
+C = [0, 0, 0;
+     0, abs(c3)^2/2, -conj(c2)*c3
+     0, 0, abs(c2)^2/2];
+ C = simplify((1/(1 - abs(c1)))*(C + ctranspose(C)));
+ 
+ U = simplify(A + B + C)

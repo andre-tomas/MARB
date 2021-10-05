@@ -1,0 +1,16 @@
+import numpy as np
+import pyplot.matplotlib as plt
+
+# takes 4 angles (chi, eta, theta, phi) and returns the coeffs [c1, c2, c3]
+def genCoeff(chi, eta, theta, phi):
+    c1 = np.exp(i*chi)*np.sin(theta)*np.cos(phi)
+    c2 = np.exp(i*eta)*np.sin(theta)*np.sin(phi)
+    c3 = np.cos(theta)
+    return [c1, c2, c3]
+
+# given ([c1, c2, c3], initalstate, phi_2), return [f1,f2,f3] that fullfills that state
+def genInitalCoeff(C,I,phi_2):
+    c1 = C[1]; c2 = C[2]; c3 = C[3];
+    N1 = np.abs(c1)/(np.sqrt(1-np.abs(c1))); N2 = N1;
+
+    A = [[c1, 0, np.exp(-i*phi_2)*N2], [c2, -N1*c3, np.exp(-i*phi_2)*N2*c2], [c3, N1*np.conj(c2), N2*c3]]
