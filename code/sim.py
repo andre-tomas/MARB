@@ -1,9 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import itertools
 
-
-T = 1
-eta = 4
+T = 1.0
+t = np.linspace(0, T, 100)
+eta = 4.0
 
 kete1 = np.array([1, 0, 0, 0, 0, 0])
 kete2 = np.array([0, 1, 0, 0, 0, 0])
@@ -15,53 +16,59 @@ ket4 = np.array([0, 0, 0, 0, 0, 1])
     
 
 def u(t,T):
-    return np.pi/2*(np.sin(np.pi*t/T))**2
+    return (np.pi/2)*(np.sin(np.pi*t/T))**2
 
-def v(t,T, eta):
+def v(t,T):
     return eta*(1 - np.cos(u(t,T)))
 
 def D1(t,phi1,C):
     _, b1, _ = giveStateVectors(C)
 
-    return np.cos(u(t,T))*b1 + 1j*np.exp(1j*phi1)*np.sin(u(t,T))*kete1
+    if t<T/2.0:
+        phi1 = 0
+    
+    return np.exp(-1j*phi1)*np.cos(u(t,T))*b1 + 1j*np.sin(u(t,T))*kete1
 
 def D2(t,phi2,C):
     _, _, b2 = giveStateVectors(C)
 
-    return np.cos(u(t,T))*np.cos(v(t,T,eta))*np.exp(-1j*phi2)*b2 - 1j*np.sin(u(t,T))*kete2 - np.cos(u(t,T))*np.sin(v(t,T,eta))*ket4
+    if t<T/2.0:
+        phi2 = 0
 
-    
-    
+    return np.cos(u(t,T))*np.cos(v(t,T))*np.exp(-1j*phi2)*b2 - 1j*np.sin(u(t,T))*kete2 - np.cos(u(t,T))*np.sin(v(t,T))*ket4
 
-# takes 4 angles (chi, xi, theta, phi) and returns the coeffs [c1, c2, c3]
-def genCoeff(chi, xi, theta, phi):
+
+def genCoeff(par):
+    chi = par[0]; xi = par[1]; theta = par[2]; phi = par[3];
+    
     c1 = np.exp(1j*chi)*np.sin(theta)*np.cos(phi)
     c2 = np.exp(1j*xi)*np.sin(theta)*np.sin(phi)
     c3 = np.cos(theta)
-    return np.array([c1, c2, c3])
+    
+    N1 = np.abs(c1)/(np.sqrt(1-np.abs(c1)**2))
+    N2 = 1/(np.sqrt(1-np.abs(c1)**2))
+    
+    return np.array([c1, c2, c3, N1, N2]) 
 
 # given ([c1, c2, c3], initialstate, phi_2), return [f1,f2,f3] that fullfills that state
 def genInitialCoeff(C,initialState,phi_2):
-    c1 = C[0]; c2 = C[1]; c3 = C[2];
-    N1 = np.abs(c1)/(np.sqrt(1-np.abs(c1)**2)); N2 = 1/(np.sqrt(1-np.abs(c1)**2))
+    c1 = C[0]; c2 = C[1]; c3 = C[2]; N1 = C[3]; N2 = C[4]
 
-    A = [[c1, N1*(c1 - 1/np.conj(c1)), 0], [c2, N1*c2, -np.exp(-1j*phi_2)*N2*c3], [c3, N1*c3, N2*np.exp(-1j*phi_2)*np.conj(c2)]]
-
-    #A = [[c1, N1*c1*((np.abs(c1)**2 - 1)/(1 - np.abs(c2)**2 - np.abs(c3)**2)), 0], [c2, N1*c2, np.exp(-1j*phi_2)*N2*c3], [c3, N1*c3, N2*np.exp(-1j*phi_2)*np.conj(c2)]]
-
-    print(f" in {initialState}")
+    phi_2 = 0 # Since gamma2 = 0 if t<T/2
+    
+    A = [[c1, N1*(c1 - 1/np.conj(c1)), 0],
+         [c2, N1*c2, -N2*np.exp(-1j*phi_2)*c3],
+         [c3, N1*c3, N2*np.exp(-1j*phi_2)*np.conj(c2)]]
+    
     f = np.matmul(np.linalg.inv(A),initialState)
-    print(f"f {f}")
     return f
 
 # Returns the d, b1, b2 state vectors
 def giveStateVectors(C):
-    c1 = C[0]; c2 = C[1]; c3 = C[2];
-    N1 = np.abs(c1)/(np.sqrt(1-np.abs(c1)**2)); N2 = 1/(np.sqrt(1-np.abs(c1)**2))
-
+    c1 = C[0]; c2 = C[1]; c3 = C[2]; N1 = C[3]; N2 = C[4]
 
     d = c1*ket1 + c2*ket2 + c3*ket3;
-    b1 = N1*((c1- 1/np.conj(c1))*ket1 + c2*ket2 + c3*ket3)
+    b1 = N1*(  (c1 - 1/np.conj(c1)) *ket1 + c2*ket2 + c3*ket3)
     b2 = N2*(-np.conj(c3)*ket2 + np.conj(c2)*ket3)
 
     return d,b1,b2
@@ -69,45 +76,208 @@ def giveStateVectors(C):
 def unitaryGate(C,gamma1, gamma2):
     d, b1, b2 = giveStateVectors(C)
 
-    return np.transpose(d)*d + np.exp(1j*gamma1)*np.transpose(b1)*b1 + np.exp(1j*gamma2)*np.transpose(b2)*b2
+    return np.outer(d,np.conj(d)) + np.exp(1j*gamma1)*np.outer(b1,np.conj(b1)) + np.exp(1j*gamma2)*np.outer(b2,np.conj(b2))
 
+
+
+def check(C,F):
+    d, b1, b2 = giveStateVectors(C);
+
+    #Start  = F[0]*d + F[1]*D1(0,-gamma1,C) + F[2]*D2(0, -gamma2, C)
+    #print(f"The constructed starting state is {np.round(Start[2:5],4)}, should match with given initial state.")
 
     
+    print("CHECK")
+    print(f"<d|b1> = {np.round(np.dot(np.conj(d),b1),5)}")
+    print(f"<d|b2> = {np.round(np.dot(np.conj(d),b2),5)}")
+    print(f"<b2|b1> = {np.round(np.dot(np.conj(b2),b1),5)}")
+    
+    print(f"<d|d> = {np.round(np.dot(np.conj(d),d),5)}")
+    print(f"<b1|b1> = {np.round(np.dot(np.conj(b1),b1),5)}")
+    print(f"<b2|b2> = {np.round(np.dot(np.conj(b1),b1),5)}")
+
+    print(f"c1 = {np.round(C[0],3)}")
+    print(f"c2 = {np.round(C[1],3)}")
+    print(f"c3 = {np.round(C[2],3)}")
+
+
+
+def simulate(t,C,F,gamma1,gamma2):
+    d, b1, b2 = giveStateVectors(C)
+    
+    Prob = []
+    state = []
+    for x in t:
+        X = F[0]*d + F[1]*D1(x,-gamma1,C) + F[2]*D2(x, -gamma2, C)
+        state.append(X)
+        pe1 = np.abs(X[0])**2
+        pe2 = np.abs(X[1])**2
+        p1 = np.abs(X[2])**2
+        p2 = np.abs(X[3])**2
+        p3 = np.abs(X[4])**2
+        p4 = np.abs(X[5])**2
+        Prob.append([pe1, pe2, p1, p2, p3, p4])
+
+        finalState = np.array(state[-1])
+    return Prob, finalState
+
+
+# par - parameters = (chi, xi, theta, phi, gamma1, gamma2)
+# I - inital state - 1x3 normalized vector
+# returns Prob, U
+def singleLoop(initialState,par):
+    #print(f"Running simulation with \npar = {np.round(par,6)} \nfrom initial state {initialState} ")
+    chi = par[0]; xi = par[1]; theta = par[2]; phi = par[3]; gamma1 = par[4]; gamma2 = par[5]
+    C = genCoeff(par)
+    F = genInitialCoeff(C, initialState, -gamma2)
+
+    #check(C,F)
+    
+    Prob, finalState = simulate(t,C,F,gamma1,gamma2)
+    U = unitaryGate(C, gamma1, gamma2)
+
+    return Prob, U, finalState
+
+# Applies singleLoop() twice, first with par1, then par2
+def doubleLoop(initialState, par1, par2):
+
+    prob1, U1, intermedState = singleLoop(initialState, par1)
+    prob2, U2, finalState = singleLoop(intermedState[2:5], par2)
+
+    U = np.matmul(U2,U1)
+    prob = prob1 + prob2
+
+    return prob, U, finalState
+
+
+def XGate(initialState):
+    par1 = [0, 0, np.pi/4, np.pi/2, 0, np.pi]
+    par2 = [0, 0, np.pi/2, np.pi/4, np.pi, 0]
+    initialState = initialState/np.linalg.norm(initialState) # Make sure state is normalized
+
+    prob, U, finalState = doubleLoop(initialState, par1, par2)
+
+    return prob, U, finalState
+
+
+def ZGate(initialState):
+    par1 = [2*np.pi/3, 2*np.pi/3, np.pi, np.pi, 2*np.pi/3, 2*np.pi/3]
+    par2 = [0, 2*np.pi/3, np.pi/2, np.pi/2, 4*np.pi/3, 4*np.pi/3]
+    initialState = initialState/np.linalg.norm(initialState)
+
+    prob, U, finalState = doubleLoop(initialState,par1,par2)
+
+    return prob, U, finalState
     
 
-print("Running main...\n")
 
-chi = 0; xi = 0; theta = np.pi/4; phi = np.pi/4;
-gamma1 = 0; gamma2 = np.pi
+def Gate_analysis(initialState):
+    print(f"initial state: {np.round(initialState,3)}")
+    global eta
 
-initialState = np.array([1, 1, 0]);
-initialState = initialState/np.linalg.norm(initialState) 
-C = genCoeff(chi, xi, theta, phi)
-F = genInitialCoeff(C, initialState, -gamma2)
-N1 = np.abs(C[0])/(np.sqrt(1-np.abs(C[0])**2)); N2 = 1/(np.sqrt(1-np.abs(C[0])**2))
 
-d, b1, b2 = giveStateVectors(C)
+    prob_X, X, finalState_X = XGate(initialState)
+    prob_Z, Z, finalState_Z = ZGate(initialState)
 
-onestate = np.real(F[0]*d + F[1]*D1(0,gamma1,C) + F[2]*D2(0,gamma2,C))
+    print(f"Unitary is X =\n{np.round(X[2:5,2:5],3)}")
+    print(f"Unitary is Z =\n{np.round(Z[2:5,2:5],3)}")
 
-print(f"Initial state = {onestate},\ncomputation state = {onestate[2:-1]}.")
+    plt.figure()
+    tt = np.linspace(0,len(prob_Z)/len(t),len(prob_Z))
+    labels = ["pe1","pe2","p1","p2","p3","p4"]
+    probPlotZ = plt.plot(tt,prob_Z,'--')
+    plt.legend(iter(probPlotZ), labels)
+    plt.title(f"Probability amplitudes of Z-gate with $\eta$ = {eta}")
+    plt.xlabel("time")
+    plt.ylabel("Probability")
+    plt.axis([0, len(prob_Z)/len(t), 0, 1.1])
+    plt.grid()
 
-t = np.linspace(0, T, 50)
-P = []
-for x in t:
-    X = F[0]*d + F[1]*D1(x,gamma1,C) + F[2]*D2(x, gamma2, C)
-    pe1 = np.abs(X[0])**2
-    pe2 = np.abs(X[1])**2
-    p1 = np.abs(X[2])**2
-    p2 = np.abs(X[3])**2
-    p3 = np.abs(X[4])**2
-    p4 = np.abs(X[5])**2
-    P.append([pe1, pe2, p1, p2, p3, p4])
+    plt.figure()
+    tt = np.linspace(0,len(prob_X)/len(t),len(prob_X))
+    labels = ["pe1","pe2","p1","p2","p3","p4"]
+    probPlotX = plt.plot(tt,prob_X,'--')
+    plt.legend(iter(probPlotX), labels)
+    plt.title(f"Probability amplitudes of X-gate with $\eta$ = {eta}")
+    plt.xlabel("time")
+    plt.ylabel("Probability")
+    plt.axis([0, len(prob_X)/len(t), 0, 1.1])
+    plt.grid()
+
+    plt.show()
+
+
+
+def bruteForce(H):
+    phase = [2*np.pi/3, 4*np.pi/3, np.pi, np.pi/3, np.pi/4, 2*np.pi/5, 4*np.pi/5, 6*np.pi/5, 8*np.pi/5, 2*np.pi/7, 2*np.pi/9, 0 ]
+    angle = phase
+    #H = np.array([[1, 1, 1], [1, np.exp(2*np.pi*1j/3), np.exp(4*np.pi*1j/3)], [1, np.exp(4*np.pi*1j/3), np.exp(2*np.pi*1j/3)]])
+    print(H)
+    par = []
+    for chi, xi, gamma1, gamma2 in itertools.product(phase,phase,phase,phase):
+        for theta, phi in itertools.product(angle,angle):
+            par.append([chi,xi,theta,phi,gamma1,gamma2])
+    print(len(par))
+
+    for par1 in par:
+        C = genCoeff(par1)
+        U = unitaryGate(C,par1[4],par1[5])[2:5,2:5]
+        if np.isclose(np.linalg.norm(np.abs(H-U)),0.0):
+                print(np.round(par1,2))
+                print(np.round(par2,2))
+                print(np.round(U,3))
     
-labels = ["pe1","pe2","p1","p2","p3","p4"]
-probPlot = plt.plot(t,P,'--')
-plt.legend(iter(probPlot), labels)
-plt.xlabel("time")
-plt.ylabel("Probability")
-plt.axis([0, T, 0, 1])
-plt.show()
+def bruteForceDouble(H):
+    phase = [ 2*np.pi/3, 4*np.pi/3, np.pi/2, np.pi, np.pi/3, 5*np.pi/6, np.pi/6, 0]
+    angle = phase
+    
+    print(H)
+    par = []
+    for chi, xi,gamma1,gamma2 in itertools.product(phase,phase,phase,phase):
+            for theta, phi in itertools.product(angle,angle):
+                par.append([chi,xi,theta,phi,gamma1,gamma2])
+    print(len(par)*len(par))
+    
+    i = 0
+    for par1 in par:
+        C1 = genCoeff(par1)
+        U1 = unitaryGate(C1,par1[4],par1[5])
+        for par2 in par:
+            i = i + 1
+            if i % 1000000 == 0: print(i)
+            C2 = genCoeff(par2)
+            U2 = unitaryGate(C2,par2[4],par2[5])
+            U = np.matmul(U2[2:5,2:5],U1[2:5,2:5])
+            if np.isclose(np.linalg.norm(np.abs(H-U)),0.0) or np.isclose(np.linalg.norm(np.abs((1/np.sqrt(3))*H-U)),0.0):
+                print("Match found!")
+                print(f"par1 = {np.round(par1,2)}")
+                print(f"par2 = {np.round(par2,2)}")
+                print(np.round(U,3))
+            
+
+
+print("\nRunning main...\n")
+
+initialState = np.array([9,8,7]);
+initialState = initialState/np.linalg.norm(initialState)
+
+
+#Gate_analysis(initialState)
+
+
+#T = np.array([[1,0,0],[0,np.exp(2*np.pi*1j/9),0],[0,0,np.exp(-2*np.pi*1j/9)]])
+#H = np.array([[1, 1, 1], [1, np.exp(2*np.pi*1j/3), np.exp(4*np.pi*1j/3)], [1, np.exp(4*np.pi*1j/3), np.exp(2*np.pi*1j/3)]])
+X = np.array([[0,0,1], [1,0,0], [0,1,0]])
+#Z = np.array([[1,0,0], [0,np.exp(2*np.pi*1j/3),0], [0,0,np.exp(4*np.pi*1j/3)]])
+
+bruteForce(X)
+#bruteForceDouble(X)
+
+
+
+
+
+
+
+
+

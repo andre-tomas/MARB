@@ -1,0 +1,9 @@
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+N = 8
+M = 10
+
+x = np.array(range(1,M))
+

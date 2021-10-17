@@ -1,15 +1,15 @@
 \begin{thebibliography}{1}
 
-\bibitem{NHQC}
-Sjöqvist E, Tong DM, Mauritz~Andersson L, Hessmo B, Johansson M, Singh K.
-\newblock Non-adiabatic holonomic quantum computation.
-\newblock New journal of physics. 2012;14(10):103035.
-
 \bibitem{morris}
 Morris JR, Shore BW.
 \newblock Reduction of degenerate two-level excitation to independent two-state
   systems.
 \newblock Physical review A, General physics. 1983;27(2):906--912.
+
+\bibitem{sLoop}
+Herterich E, Sjöqvist E.
+\newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
+\newblock Physical review A. 2016;94(5).
 
 \bibitem{qudit}
 Wang Y, Hu Z, Sanders BC, Kais S.

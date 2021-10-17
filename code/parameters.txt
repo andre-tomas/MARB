@@ -1,0 +1,8 @@
+# Swaps 2 <-> 3
+# chi = 0; xi = 0; theta = np.pi/4; phi = np.pi/2; gamma1 = 0; gamma2 = np.pi
+# par = [0, 0, np.pi/4, np.pi/2, 0, np.pi]
+
+# Swaps 1 <-> 2 
+# chi = 0;  xi = 0; theta = np.pi/2; phi = np.pi/4; gamma1 = np.pi; gamma2 = 0;
+# par = [0, 0, np.pi/2, np.pi/4, np.pi, 0]
+

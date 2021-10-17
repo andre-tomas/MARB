@@ -1,149 +1,169 @@
 \subsection{The Qutrit}
+A system given by the Hamiltonian
+\begin{equation}
+\label{eq:Ham}
+H = \sum_{j = 1}^2 \sum_{i =j}^{3} \omega_{ij}\ket{i}\bra{e_j}  + \frac{\Omega(t)_{a}}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
+\end{equation}
+which is shown in Figure \ref{fig:Ham}.  It consists of two excited states, $\ket{e_1}, \ket{e_2}$, an auxiliary state $\ket{a}$ and the ground states $\ket{1}, \ket{2}, \ket{3}$ which 
+makes up the computational basis of the qutrit. By a transformation of basis the Hamiltonian can be rewritten as 
+\begin{equation}
+\label{eq:Hamd}
+H_d = \sum_{j = 1}^2 \frac{\Omega_j(t)}{2}e^{-i\phi_j}\ket{b_j}\bra{e_j}  + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
+\end{equation} 
+by a Morris-Shore transformation\cite{morris}. Now one can find a dark state to this hamiltonian, an eigenstate with eigenvalue $0$, $H\ket{d} = 0$. In this basis for 3 fixed angles, $\theta, \varphi, $, there exists a normalized dark state $\ket{d} = \cos\theta\ket{1} + e^{i\chi}\sin\theta\cos\varphi\ket{2} + e^{i\xi}\sin\theta\sin\varphi\ket{3}$, additionally one can determine two states $\ket{b_1} = N_1 \left(-e^{i\xi}\sin\theta\sin\varphi\ket{1} + \cos\theta\ket{2} \right)$ and $\ket{b_2} = N_2 \left(\cos\theta\ket{1} +  e^{i\chi}\sin\theta\cos\varphi\ket{2} + \Lambda \ket{3}\right ) $, where $N_1, N_2$ are normalization factors and $\Lambda$ can be chosen such that $\bra{d}\ket{b_2} = 0$.
+
 \begin{figure}[H]
+\label{fig:Ham}
     \begin{tikzpicture}[
       scale=0.5,
       level/.style={thick},
       virtual/.style={thick,densely dashed},
       trans/.style={thick,<->,shorten >=2pt,shorten <=2pt,>=stealth},
+      arrow/.style={thick,->,shorten >=2pt,shorten <=2pt,>=stealth},
       classical/.style={thin,double,<->,shorten >=4pt,shorten <=4pt,>=stealth}]
       
-    % Draw the energy levels.
-    \draw[level] (6cm,0em) -- (7cm,0em) node[midway,above] {$\ket{e_1}$};    
-
+    % Excited
+    \draw[level] (5cm,0em) -- (6cm,0em) node[midway,above] {$\ket{e_1}$};    
+    \draw[level] (7cm,0em) -- (8cm,0em) node[midway,above] {$\ket{e_2}$};
+	% Ground states
     \draw[level] (4cm,-11em) -- (5cm,-11em) node[midway,below] {$\ket{1}$};
     \draw[level] (6cm,-11em) -- (7cm,-11em) node[midway,below] {$\ket{2}$};
     \draw[level] (8cm,-11em) -- (9cm,-11em) node[midway,below] {$\ket{3}$};
-    \draw[level] (10cm,-11em) -- (11cm,-11em) node[midway,below] {$\ket{4}$};
+    \draw[level] (10.5cm,-11em) -- (11.5cm,-11em) node[midway,below] {$\ket{a}$};
+    % e_1
     % Draw the transitions.
-   
-    \draw[trans] (6.5cm,-0.5em) -- (4.5cm,-10.5em) node[midway,left] {};
-    \draw[trans] (6.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
-    \draw[trans] (6.5cm,-0.5em) -- (8.5cm,-10.5em) node[midway,left] {};
-
+    \draw[trans] (5.5cm,-0.5em) -- (4.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (5.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (5.5cm,-0.5em) -- (8.5cm,-10.5em) node[midway,left] {};
+   	% e_2
+    \draw[trans] (7.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (7.5cm,-0.5em) -- (8.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (7.5cm,-0.5em) -- (11cm,-10.5em) node[midway,left] {};
     
-    \draw[trans] (8.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
-    \draw[trans] (8.5cm,-0.5em) -- (8.5cm,-10.5em) node[midway,left] {};
-    \draw[trans] (8.5cm,-0.5em) -- (10.5cm,-10.5em) node[midway,left] {};
-
-
-    \draw[level] (8cm,0em) -- (9cm,0em) node[midway,above] {$\ket{e_2}$};
+    
+    \draw[arrow] (12cm,-5em) -- (20cm,-5em) node[] {}; 
+    
+    % Excited
+    \draw[level] (22cm,0em) -- (23cm,0em) node[midway,above] {$\ket{e_1}$};    
+    \draw[level] (24cm,0em) -- (25cm,0em) node[midway,above] {$\ket{e_2}$};
+    
+     \draw[level] (22cm,-11em) -- (23cm,-11em) node[midway,below] {$\ket{b_1}$};
+    \draw[level] (24cm,-11em) -- (25cm,-11em) node[midway,below] {$\ket{b_2}$};
+    \draw[level] (27cm,-11em) -- (28cm,-11em) node[midway,below] {$\ket{a}$};
+    \draw[level] (29cm,-11em) -- (30cm,-11em) node[midway,below] {$\ket{d}$};
+  	\draw[trans] (22.5cm,-0.5em) -- (22.5cm,-10.5em) node[midway,left] {};
+	\draw[trans] (24.5cm,-0.5em) -- (24.5cm,-10.5em) node[midway,left] {};
+	
+	\draw[trans] (24.5cm,-0.5em) -- (27.5cm,-10.5em) node[midway,left] {};
     \end{tikzpicture}
     
-    \caption{test figure}
+    \caption{The system given by the Hamiltonian shown in Equation \ref{eq:Ham} (left) and the transformed system from Equation \ref{eq:Hamd} (right)} 
 \end{figure}
-This system has a dark state $\ket{d}$ on the form 
+
+These states are bright states which will make up a new orthonormal basis.
+Explicitly the states are
 \begin{equation}
-\ket{d} = c_1\ket{1} + c_2\ket{2} + c_3\ket{3},\;\; |c_1|^2 + |c_2|^2 + |c_3|^2 = 1
+\label{eq:states}
+\begin{aligned}
+\ket{d} &= \cos\theta\ket{1} + e^{i\chi}\sin\theta\cos\varphi\ket{2} + e^{i\xi}\sin\theta\sin\varphi\ket{3}
+\\
+\ket{b_1} &= \frac{1}{\sqrt{1-\sin^2\theta\sin^2\varphi}} \left(-e^{i\xi}\sin\theta\sin\varphi\ket{1} + \cos\theta\ket{2} \right)
+\\
+\ket{b_2} &= \frac{\sin\theta\sin\varphi}{\sqrt{1-\sin^2\theta\sin^2\varphi}} \left(\cos\theta\ket{1} + e^{i\chi}\sin\theta\cos\varphi\ket{2} + \frac{\sin^2\theta\sin^2\varphi - 1}{\sin\theta\sin\varphi} \ket{3}\right)
+\end{aligned}
 \end{equation}
+The parameters $\omega_{ij}$ in the original basis can be determined by replacing the states in $H_d$ by their form in the $\{\ket{1},\ket{2},\ket{3}\}$ basis.
 
-There exists two orthogonal bright states on the form 
+Now lets introduce the concept of a dark path, $\bra{D(t)}H_d\ket{D(t)} = 0$, along this path the average energy is always zero. Thus no dynamical phase is accumulated during the time evolution.
 
+The following two states satisfy the dark path condition and can be parametrized by two angles $u(t), v(t)$.
 \begin{equation}
-\begin{aligned} &
-\ket{b_1} = N_1 \left(x\ket{1} + c_2\ket{2} + c_3\ket{3} \right)
-\\ &
-\ket{b_2} = N_2 \left(-c_3^{*}\ket{2} + c_2^{*}\ket{3} \right)
+\label{eq:dpaths}
+\begin{aligned}
+\ket{D_1(t)} &= \cos u e^{-i\phi_1}\ket{b_1} + i\sin u \ket{e_1}
+\\
+\ket{D_2(t)} &= \cos u\cos v e^{-i\phi_2}\ket{b_1} - i\sin u \ket{e_2} - \cos u\sin v \ket{a}
+\end{aligned}
+\end{equation}
+it can easily be verified that $\bra{D_i(t)}H_d\ket{D_j(t)} = 0, i,j = 1,2$. The angles can be chosen with the constraint that the boundary condition $\ket{D_i(0)}\bra{D_i(0)} = \ket{D_i(T)}\bra{D_i(T)}, i = 1,2$. This can be achieved by choosing $u(0) = u(T) = v(0) = v(T) = 0$. A valid choice is $u(t) = \frac{\pi}{2}\sin^2\frac{\pi t}{T}$ and $v(t) = \eta\left[1 - \cos u(t)\right]$, as for the 2D case. Unless mentioned otherwise $\eta = 4.0$. Each dark path starts in the respective bright state and travels along a curve and then returns to the bright state. The choice 
+
+Using the schrödinger equation one can relate the dark path to the Hamiltonian,
+\begin{equation}
+i\pdv{}{t}\ket{D_i(t)} = H_d\ket{D_i(t)},
+\end{equation}
+and thusly one can reverse engineer the time dependent parameters $\Omega_i(t)$ by matching the factors of states. A calulation yields 
+\begin{equation}
+\begin{aligned}
+\Omega_1(t) &= -2\dot{u}
+\\ 
+\Omega_2(t) &= 2\left(\dot{v}\cot u\sin v + \dot{u}\cos v \right)
+\\
+\Omega_a(t) &= 2\left(\dot{v}\cot u\sin v - \dot{u}\sin v \right).
 \end{aligned}
 \end{equation}
 
-One can see that
-$\bra{b_1}\ket{b_2} = \bra{d}\ket{b_1} 0$, find $x$ such that $\bra{d}\ket{b_1} = 0$.
-
-After finding $x$ and normalizing the result is 
-\begin{equation}
-\begin{aligned}&
-\ket{d} = c_1\ket{1} + c_2\ket{2} + c_3\ket{3}
-\\ &
-\ket{b_1} = \frac{|c_1|}{\sqrt{1-|c_1|^2}} \left(\left(c_1 - \frac{1}{c_1^{*}}\right)\ket{1} + c_2\ket{2} + c_3\ket{3} \right)
-\\ &
-\ket{b_2} =  \frac{1}{\sqrt{1-|c_1|^2}} \left(-c_3^{*}\ket{2} + c_2^{*}\ket{3} \right)
-\end{aligned}
-\end{equation}
-
-The hamiltonian in the space spanned by $\{e_1, e_2, b_1, b_2, 4, d\}$ is given by 
-\begin{equation}
-H_d = \frac{\Omega_1(t)}{2}e^{-i\phi_1} \ket{b_1}\bra{e_1} + \frac{\Omega_2(t)}{2}e^{-i\phi_2} \ket{b_2}\bra{e_2} + \frac{\Omega_3(t)}{2}\ket{4}\bra{e_2} + \; \text{h.c}
-\end{equation}
-
-Two dark paths $\ket{D_i}$ exists such that  $\bra{D_i}H_d\ket{D_i} = 0, \; i=1,2$, on the form
-
-\begin{equation}
-\begin{aligned}&
-\ket{D_1} = \alpha_1\ket{b_1} + \beta_1\ket{e_1}
-\\&
-\ket{D_2} = \alpha_2\ket{b_2} + \beta_2\ket{e_2} + \gamma\ket{4}
-\end{aligned}
-\end{equation}
-A choice would be, given two functions, $u(0) = u(T) = v(0) = v(T) = 0$,
-\begin{equation}
-\begin{aligned}&
-\alpha_1 = \cos u(t)e^{-i\phi_1}
-\\&
-\beta_1 = i\sin u(t)
-\\&
-\alpha_2 = \cos u \cos v e^{-i\phi_2}
-\\&
-\beta_2 = -i\sin u
-\\&
-\gamma = -\cos u\sin v
-\end{aligned}
-\end{equation}
-The phase factor MUST be on the $\alpha_i$ coefficients since it must be paired with the bright state for dynamics.
-
-the coeffcients of the dark state could be parametrized by 4 angles, $\chi, \xi, \theta, \varphi$ 
-
-\begin{equation}
-\begin{aligned}&
-c_1 = e^{i\chi}\sin \theta \cos \varphi, 
-\\&
-c_2 = e^{i\xi} \sin \theta \sin \varphi,
-\\&
-c_3 = \cos \theta.
-\end{aligned}
-\end{equation}
-
-Now to find the parameters $\Omega_1(t), \Omega_2(t), \Omega_3(t)$, this can be done by reverse engineering by solving the schrödinger equation for $\ket{D_1}, \ket{D_2}$, 
-
-\begin{equation}
-\begin{aligned}&
-i\pdv{}{t}\ket{D_1(t)} = H_d\ket{D_1(t)}
-\\&
-i\pdv{}{t}\ket{D_2(t)} = H_d\ket{D_2(t)}
-\end{aligned}
-\end{equation}
-a calculation yields
-\begin{equation}
-\begin{aligned}&
-\Omega_1(t) = -2\dot{u}
-\\ &
-\Omega_2(t) = 2\left(\dot{v}\cot u\sin v + \dot{u}\cos v \right)
-\\ &
-\Omega_3(t) = 2\left(\dot{v}\cot u\sin v - \dot{u}\sin v \right)
-\end{aligned}
-\end{equation}
-
-Split time evol. into two parts.
-The relevant part of the time evolution operator is
-\begin{equation}
+To construct a universal quantum gate, first the use the method of multi-pulse single-loops\cite{sLoop}, the relevant part of the time evolution operator is \begin{equation}
 \begin{aligned}&
 U_1 = \ket{d}\bra{d} -i\ket{e_1}\bra{b_1} -i\ket{e_2}\bra{b_2},\; \phi_1 = \phi_2 = 0
 \\&
 U_2 = \ket{d}\bra{d} +ie^{i\gamma_1}\ket{b_1}\bra{e_1} +ie^{i\gamma_2}\ket{b_2}\bra{e_2},\; \phi_1 = -\gamma_1,\; \phi_2 = -\gamma_2
 \end{aligned}
 \end{equation}
-
-The complete operator is then given by 
+so the operator for one full loop is 
 \begin{equation}
-U = U_2U_1 = \ket{d}\bra{d} + e^{i\gamma_1}\ket{b_1}\bra{b_1} + e^{i\gamma_2}\ket{b_2}\bra{b_2}
+U = U_2U_1 = \ket{d}\bra{d} + e^{i\gamma_1}\ket{b_1}\bra{b_1} + e^{i\gamma_2}\ket{b_2}\bra{b_2}.
 \end{equation}
-Then $U$ is unitary in the computational subspace $\{d,b_1,b_2\}$, since $UU^{\dagger} = U^{\dagger}U = \mathbbm{1}$ 
+This transformation can be parametrized by $6$ real parameters, $U(\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2)$, however it is not enough to achieve universality, this is since one loop does not cover all degrees of freedom. The reason for this is elaborated on in a later section \note{ref sec}. So the full gate is given by repeating $U$ with another set of parameters. So the full gate $\mathbb{U}$ is given by 
+\begin{equation}
+\mathbb{U} = U(\chi',\xi',\theta',\varphi',\gamma_1',\gamma_2') U(\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2)
+\end{equation}
+
+A selection of qutrit gates\cite{qudit} can be obtained by the following parameters.\\ \note{find parameters for H,T}
+\begin{equation}
+\begin{aligned}
+X_3 &= U(0,0,\dfrac{\pi}{2},\dfrac{\pi}{4},\pi,0)U(0,0,\dfrac{\pi}{4},\dfrac{\pi}{2},0,\pi) 
+= \begin{pmatrix}
+0&0&1
+\\
+1&0&0
+\\
+0&1&0
+\end{pmatrix}
+\\ 
+Z_3 &= U(0,\dfrac{2\pi}{3},\dfrac{\pi}{2},\dfrac{\pi}{2},\dfrac{4\pi}{3},\dfrac{4\pi}{3})U(\dfrac{2\pi}{3},\dfrac{2\pi}{3},\pi,\pi,\dfrac{2\pi}{3},\dfrac{2\pi}{3})
+= \begin{pmatrix}
+1&0&0
+\\
+0&e^{\frac{2\pi i}{3}}&0
+\\
+0&0&e^{\frac{4\pi i}{3}}
+\end{pmatrix}
+\\
+T_3 &=U()U() 
+= \begin{pmatrix}
+1&0&0
+\\
+0&e^{\frac{2\pi i}{9}}&0
+\\
+0&0&e^{\frac{-2\pi i}{9}}
+\end{pmatrix}
+\\
+H_3 &= U()() 
+= \begin{pmatrix}
+1&1&1
+\\
+1&e^{\frac{2\pi i}{3}}&e^{\frac{4\pi i}{3}}
+\\
+1&e^{\frac{4\pi i}{3}}&e^{\frac{2\pi i}{3}}
+\end{pmatrix}
+\end{aligned}
+\end{equation}
+which are suffcient to acheive universality\cite{qudit} as discussed in \note{ref backgrond?}.
+\\
+\note{Describe the simulations and put plots here?}
 
 
-One can set $u(t) = \frac{\pi}{2}\sin^2\frac{\pi t}{T}$ and $v(t) = \eta\left[1 - \cos u(t)\right]$
 
-Now $U$ can be determined by the 6(?) real parameters $\chi, \xi, \theta, \varphi, \gamma_1, \gamma_2$ as $U(\chi, \xi, \theta, \varphi, \gamma_1, \gamma_2)$ 
-
-\newpage 
 \subsection{Generalization}
 \begin{figure}[H]
     \begin{tikzpicture}[
@@ -327,7 +347,7 @@ By using these states one can reverse engineer the Hamiltonian using the schröd
 \begin{equation}
 i\pdv{}{t}\ket{D_i(t)} = H_d\ket{D_i(t)},\; i = 1,2,\dots,m
 \end{equation}
-a calulation \note{actually do the calculation} yimatchingelds
+a calulation \note{actually do the calculation} yields
 \begin{equation}
 \begin{aligned}
 \Omega_1(t) &= -2\dot{u}
@@ -367,7 +387,8 @@ A quick calulation shows
 \begin{equation}
 \frac{n^2 -1}{3(n-1)} = \frac{(3p+2)^2-1}{3((3p+2)-1)} = \frac{3(3p^2 + 4p + 1)}{3(3p+1)} = \frac{(3p + 1)(p + 1)}{(3p +1)} = p + 1
 \end{equation}
-and since $p$ is an integer, $p + 1$ is also always an integer.
+and since $p$ is an integer, $p + 1$ is also always an integer.\\
+\note{OBS! The $T$ gate is only defined for prime number dimensions... \citep{qudit}}
 \begin{table}[H]
 \centering 
 \begin{tabular}{|c|c|c|c|c|}
@@ -403,6 +424,7 @@ The quantum gate $U$ can be simulated simply as a function of a linear combinati
 \ket{\psi(t)} = f_0\ket{d} + \sum_{i = 1}^{m}f_i\ket{D_i(t)}, t \in [0,T]
 \end{equation}
 where the coeffcient can be solved for by choosing an initial state $\ket{\psi(0)}$. This corresponds to one loop, by using $\ket{\psi(T)}$ as an initial state for the next loop one can simulate $U^k$ by iterating this method.
+
 
 
 
