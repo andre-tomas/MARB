@@ -1,4 +1,67 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{shor}
+Shor PW.
+\newblock Algorithms for quantum computation: discrete logarithms and
+  factoring.
+\newblock IEEE Comput Soc Press. 1994;p. 124--134.
+
+\bibitem{Grover}
+Grover LK.
+\newblock Quantum Mechanics Helps in Searching for a Needle in a Haystack.
+\newblock Physical review letters. 1997;79(2):325--328.
+
+\bibitem{HQC}
+Zanardi P, Rasetti M.
+\newblock Holonomic quantum computation.
+\newblock Physics letters A. 1999;264(2):94--99.
+
+\bibitem{NHQC}
+Sjöqvist E, Tong DM, Mauritz~Andersson L, Hessmo B, Johansson M, Singh K.
+\newblock Non-adiabatic holonomic quantum computation.
+\newblock New journal of physics. 2012;14(10):103035.
+
+\bibitem{berry}
+Berry MV.
+\newblock Quantal phase factors accompanying adiabatic changes.
+\newblock Proceedings of the Royal Society of London Series A, Mathematical and
+  physical sciences. 1984;392(1802):45--57.
+
+\bibitem{anandan1}
+AHARONOV Y, ANANDAN J.
+\newblock Phase change during a cyclic quantum evolution.
+\newblock Physical review letters. 1987;58(16):1593--1596.
+
+\bibitem{anandan2}
+Anandan J.
+\newblock Non-adiabatic non-abelian geometric phase.
+\newblock Physics letters A. 1988;133(4):171--175.
+
+\bibitem{zee}
+WILCZEK F, ZEE A.
+\newblock Appearance of gauge structure in simple dynamical systems.
+\newblock Physical review letters. 1984;52(24):2111--2114.
+
+\bibitem{qutrit1}
+Li B, Yu ZH, Fei SM.
+\newblock Geometry of quantum computation with qutrits.
+\newblock Scientific reports. 2013;3(1):2594--2594.
+
+\bibitem{qudit2}
+Lu H, Hu Z, Alshaykh MS, Moore AJ, Wang Y, Imany P, et~al.
+\newblock Quantum Phase Estimation with Time‐Frequency Qudits in a Single
+  Photon.
+\newblock Advanced quantum technologies (Online). 2020;3(2):1900074--n/a.
+
+\bibitem{qudit3}
+Luo M, Wang X.
+\newblock Universal quantum computation with qudits.
+\newblock Science China Physics, mechanics \& astronomy. 2014;57(9):1712--1717.
+
+\bibitem{qudit}
+Wang Y, Hu Z, Sanders BC, Kais S.
+\newblock Qudits and High-Dimensional Quantum Computing.
+\newblock Frontiers in physics. 2020;8.
 
 \bibitem{morris}
 Morris JR, Shore BW.
@@ -10,10 +73,5 @@ Morris JR, Shore BW.
 Herterich E, Sjöqvist E.
 \newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
 \newblock Physical review A. 2016;94(5).
-
-\bibitem{qudit}
-Wang Y, Hu Z, Sanders BC, Kais S.
-\newblock Qudits and High-Dimensional Quantum Computing.
-\newblock Frontiers in physics. 2020;8.
 
 \end{thebibliography}

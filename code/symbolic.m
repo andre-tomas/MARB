@@ -27,3 +27,6 @@ C = [0, 0, 0;
  C = simplify(exp(1j*g2)*N2kvad*(C + ctranspose(C)));
  
  U = simplify(A + B + C)
+ 
+ simplify(det(U))
+ simplify(det(U*U))

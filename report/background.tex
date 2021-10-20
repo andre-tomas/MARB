@@ -1,20 +1,55 @@
-\subsection{Quantum mechanics, part I}
+The Background consists of a quick introduction to the most important quantum mechanical concepts and notation. Readers familiar with quantum mechanics may skip it. The second part explores the fundamentals of quantum computation and 
+
+\subsection{Basic quantum mechanics, part I}
 This part offers a quick introduction to the necessary  quantum mechanics for readers whom are not familiar with the subject. The section contains nothing relevant for later parts of the thesis and can be safely skipped. For a more complete introduction I suggest chapter 1 of Sakurai.
 
-\subsubsection{Dirac notation and quantum states}
-A \textbf{quantum state} is a complex vector in a \textbf{Hilbert space}, a complete space with inner product induced metric, with finite or infinite dimension depending on characteristics of the system it represents. A quantum state vector is represented by a so-called \textbf{ket}, which is written as $\ket{\psi}$. Kets follow the same rules as a standard vector, as in that they can be added to one another, multiplied by a scalars. The ket itself is just $\ket{}$, the content of the ket is just a label which (usually) give some sense of what the state represents. \\
-An \textbf{operator} is a matrix that can act on a ket, often defined by a set of rules. Written as 
+\subsubsection{Kets, Bras and Operators}
+When talking about Quantum mechanics the term \textbf{quantum state}, or more likley just state, is mentioned a lot. A quantum mechanical state is represented by a \textbf{ket}, an complex-valued vector with either finite or infinite entries. Closely related to the ket is the \textbf{bra}, which is the corresponding vector to the ket in the dual space, or more simply, the hermitian conjugate of the ket, see Equation \ref{eq:ket}.
 \begin{equation}
-\hat{O}\cdot (\ket{\psi}) = \hat{O}\ket{\psi}
-\end{equation}
-Since operators are matrices and kets are vectors, the existence of \textbf{eigenkets} are analogous eigenvectors. A common example of this is the time-independent Schrödinger equation
+\label{eq:ket}
+\ket{\psi} = \begin{pmatrix}
+a_1 \\ a_2 \\ \vdots \\ a_n
+\end{pmatrix},\;
+\bra{\psi} = (\ket{\psi})^{\dagger} = (a_1^{*}, a_2^{*}, \dots, a_n^{*}),\; a_1,a_2,\dots,a_n \in \mathbb{C}
+\end{equation} 
+An arbitrary ket can be rewritten as a linear combination of its eigenkets that span the same space, $\ket{\psi} = \sum_i a_i\ket{i}$ The coefficient is know as the probability amplitude, and $|a_i|^2$ corresponds to the probability to find the state in the $i$th state. 
+The inner product of two quantum states is simply written as 
+$\bra{\varphi}\ket{\psi} = (\bra{\varphi}\ket{\psi})^\dagger \in \mathbb{C}$. 
+An operator can act on a quantum state and corresponds to multiplication with a matrix, and will always yield a new state, ket. 
 \begin{equation}
-\hat{H}\ket{\psi} = E \ket{\psi}
+\hat{O}\ket{\psi} = \ket{\psi'}
 \end{equation}
-Where $\hat{H}$ is the Hamiltonian operator, and $E$ is the energy of the quantum state $\ket{\psi}$. In this case $\ket{\psi}$ is an eigenstate to the Hamiltonian.
+Operators are often written in terms of of kets and bras, for example and operator which takes the state $\ket{1}$ and returns the state $\ket{2}$ is written as
+\begin{equation}
+(\ket{2}\bra{1})\ket{1} = \ket{2}\bra{1}\ket{1} = \ket{2}(\bra{1}\ket{1}) = (\bra{1}\ket{1})\ket{2} = 1 \ket{2} = \ket{2}
+\end{equation}
+or a identity $2\times 2$ matrix would be
+\begin{equation}
+ \begin{pmatrix}
+ 1 & 0 \\ 0 & 1
+ \end{pmatrix} = \ket{1}\bra{1} + \ket{2}\bra{2} 
+\end{equation}
+and so on. An operator for a physical measurable quantity is called an observable.
 
+\subsubsection{Measurements and Observables and Uncertainty}
+A quantum mechanical measurement ''breaks'' the superposition of a quantum states and shifts it into a eigenstate of the observable,
+\begin{equation}
+\ket{\psi} \longrightarrow \ket{i}
+\end{equation}
+the probability to find the $i$th eigenstate is $|a_i|^2$. 
+In quantum mechanics the relation $AB - BA = 0$,where $A$ and $B$ are operators, does not generally hold. This is due to the uncommutative nature of quantum mechanics, it relates to uncertainty but it also required since it a can realize a more complex mathematical structure. The fact that matrices are non-commutative are not surprising, and since operators can be represented by matrices this should not be that confusing. 
+To make it more concrete to which degree two operators commute one can define  the commutator on operators $A,B$ as $[A,B] = AB - BA$, which is zero for commuting operators and non-zero otherwise. 
+Observables which don't commute are called incompatible observables, a well know pair of incompatible observables are position and momentum, $\mathbf{x}$ and $\mathbf{p}$, which can not be measured to arbitrary precision, this is due to the fact that $[\mathbf{x},\mathbf{p}] \neq 0$. So for two incompatible observables the general uncertainty the measurements will be limited by \note{uncertainty relation here.} 
 
+\subsubsection{Time evolution and the Schrödinger equation}
 
+\subsection{Quantum Computation and Quantum Information theory, part 2}
 
+\subsubsection{Qubits}
 
-\end{document}
+\subsubsection{Information content}
+
+\subsubsection{Universal computation}
+
+\subsubsection{Holonomic Quantum Computation}
+

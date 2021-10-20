@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import itertools
+from scipy.optimize import minimize
 
 T = 1.0
 t = np.linspace(0, T, 100)
@@ -150,6 +151,30 @@ def doubleLoop(initialState, par1, par2):
     return prob, U, finalState
 
 
+def ob1(par,V):
+
+        C = genCoeff(par)
+        U = unitaryGate(C,par[4],par[5])[2:5,2:5]
+        
+        return np.linalg.norm(np.abs(V-U))
+
+def ob2(par,V):
+        par1 = par[:6]
+        par2 = par[6:]
+        
+        C1 = genCoeff(par1)
+        U1 = unitaryGate(C1,par1[4],par1[5])
+        C2 = genCoeff(par2)
+        U2 = unitaryGate(C2,par2[4],par2[5])
+        
+        U = np.matmul(U2[2:5,2:5],U1[2:5,2:5])
+        #U = np.reshape(U,-1)
+       #V = np.reshape(V,-1)
+        
+        return np.linalg.norm(np.abs(V-U), 2)
+
+
+
 def XGate(initialState):
     par1 = [0, 0, np.pi/4, np.pi/2, 0, np.pi]
     par2 = [0, 0, np.pi/2, np.pi/4, np.pi, 0]
@@ -169,6 +194,34 @@ def ZGate(initialState):
 
     return prob, U, finalState
     
+# parameters found via optimization and thus not fancy as for X and Z
+def HGate(initialState):
+   par1 =  [3.26663471e-05, 6.23142963e-07, 7.85500884e-01, 1.55046988e+00,
+            3.90065684e-07, 1.46869209e+00]
+   par2 = [7.26857018e-07, 7.08801531e-07, 1.23972372e+00, 3.50879272e-01,
+           3.14159383e+00, 1.02104013e-01]
+   initialState = initialState/np.linalg.norm(initialState)
+
+   prob, U, finalState = doubleLoop(initialState,par1,par2)
+
+   return prob, U, finalState
+
+
+# parameters found via optimization and thus not fancy as for X and Z
+def TGate(initialState):
+
+    par1 = [2.96354146e-05, 5.42512346e-01, 1.57081559e+00, 1.58052317e+00,
+        7.89789389e-17, 1.22336707e+00]
+    par2 = [9.97719830e-06, 4.61245655e-02, 1.57081215e+00, 5.14467434e-21,
+        4.36168364e+00, 6.98143949e-01]
+
+    
+    initialState = initialState/np.linalg.norm(initialState)
+
+    prob, U, finalState = doubleLoop(initialState,par1,par2)
+
+    return prob, U, finalState
+
 
 
 def Gate_analysis(initialState):
@@ -208,72 +261,67 @@ def Gate_analysis(initialState):
 
 
 
-def bruteForce(H):
-    phase = [2*np.pi/3, 4*np.pi/3, np.pi, np.pi/3, np.pi/4, 2*np.pi/5, 4*np.pi/5, 6*np.pi/5, 8*np.pi/5, 2*np.pi/7, 2*np.pi/9, 0 ]
-    angle = phase
-    #H = np.array([[1, 1, 1], [1, np.exp(2*np.pi*1j/3), np.exp(4*np.pi*1j/3)], [1, np.exp(4*np.pi*1j/3), np.exp(2*np.pi*1j/3)]])
-    print(H)
-    par = []
-    for chi, xi, gamma1, gamma2 in itertools.product(phase,phase,phase,phase):
-        for theta, phi in itertools.product(angle,angle):
-            par.append([chi,xi,theta,phi,gamma1,gamma2])
-    print(len(par))
+def optPar1(V, x0):
+    par = x0
+    b = (0.0, 2*np.pi)
+    bnds = (b,b,b,b,b,b)
+    
+    sol = minimize(ob1, par,args = (V), method='SLSQP',bounds=bnds)
+    return sol
+    
+def optPar2(V, x0):
+    par1 = x0[:6]
+    par2 = x0[6:]
+    par = par1 + par2
+    
+    b = (0.0, 2*np.pi)
+    bnds = (b,b,b,b,b,b,b,b,b,b,b,b)
 
-    for par1 in par:
-        C = genCoeff(par1)
-        U = unitaryGate(C,par1[4],par1[5])[2:5,2:5]
-        if np.isclose(np.linalg.norm(np.abs(H-U)),0.0):
-                print(np.round(par1,2))
-                print(np.round(par2,2))
-                print(np.round(U,3))
     
-def bruteForceDouble(H):
-    phase = [ 2*np.pi/3, 4*np.pi/3, np.pi/2, np.pi, np.pi/3, 5*np.pi/6, np.pi/6, 0]
-    angle = phase
-    
-    print(H)
-    par = []
-    for chi, xi,gamma1,gamma2 in itertools.product(phase,phase,phase,phase):
-            for theta, phi in itertools.product(angle,angle):
-                par.append([chi,xi,theta,phi,gamma1,gamma2])
-    print(len(par)*len(par))
-    
-    i = 0
-    for par1 in par:
-        C1 = genCoeff(par1)
-        U1 = unitaryGate(C1,par1[4],par1[5])
-        for par2 in par:
-            i = i + 1
-            if i % 1000000 == 0: print(i)
-            C2 = genCoeff(par2)
-            U2 = unitaryGate(C2,par2[4],par2[5])
-            U = np.matmul(U2[2:5,2:5],U1[2:5,2:5])
-            if np.isclose(np.linalg.norm(np.abs(H-U)),0.0) or np.isclose(np.linalg.norm(np.abs((1/np.sqrt(3))*H-U)),0.0):
-                print("Match found!")
-                print(f"par1 = {np.round(par1,2)}")
-                print(f"par2 = {np.round(par2,2)}")
-                print(np.round(U,3))
+    sol = minimize(ob2, par,args = (V), method='SLSQP',bounds=bnds,options={'maxiter':10000000000,'disp':True})
+    return sol
             
 
 
 print("\nRunning main...\n")
 
+Tg = np.array([[1,0,0],[0,np.exp(2*np.pi*1j/9),0],[0,0,np.exp(-2*np.pi*1j/9)]])
+Hg = (1/np.sqrt(3))*np.array([[1, 1, 1], [1, np.exp(2*np.pi*1j/3), np.exp(4*np.pi*1j/3)], [1, np.exp(4*np.pi*1j/3), np.exp(2*np.pi*1j/3)]])
+Xg = np.array([[0,0,1], [1,0,0], [0,1,0]])
+Zg = np.array([[1,0,0], [0,np.exp(2*np.pi*1j/3),0], [0,0,np.exp(4*np.pi*1j/3)]])
+G1 = np.array([[0,1,0], [1,0,0], [0,0,0]])
+
+
+
+
 initialState = np.array([9,8,7]);
 initialState = initialState/np.linalg.norm(initialState)
 
+#par1 = [0,0,np.pi,np.pi/2,0,0]
+#par2 = [0, 2*np.pi/3, np.pi/2, np.pi/2, 4*np.pi/3, 4*np.pi/3]
 
-#Gate_analysis(initialState)
+#par0 = par1 + par2
 
+#par = optPar1(G1, par1).x
 
-#T = np.array([[1,0,0],[0,np.exp(2*np.pi*1j/9),0],[0,0,np.exp(-2*np.pi*1j/9)]])
-#H = np.array([[1, 1, 1], [1, np.exp(2*np.pi*1j/3), np.exp(4*np.pi*1j/3)], [1, np.exp(4*np.pi*1j/3), np.exp(2*np.pi*1j/3)]])
-X = np.array([[0,0,1], [1,0,0], [0,1,0]])
-#Z = np.array([[1,0,0], [0,np.exp(2*np.pi*1j/3),0], [0,0,np.exp(4*np.pi*1j/3)]])
+prob, U, finalState = XGate(initialState)
+#prob, U, finalState = singleLoop(initialState, par)
+#prob, U, finalState = doubleLoop(initialState, par[:6],par[6:])
+#print(np.round(G1,4))
+print(np.round(U[2:5,2:5],4))
 
-bruteForce(X)
-#bruteForceDouble(X)
+plt.figure()
+tt = np.linspace(0,len(prob)/len(t),len(prob))
+labels = ["pe1","pe2","p1","p2","p3","p4"]
+probPlot = plt.plot(tt,prob,'--')
+plt.legend(iter(probPlot), labels)
+plt.title(f"Probability amplitudes with $\eta$ = {eta}")
+plt.xlabel("time")
+plt.ylabel("Probability")
+plt.axis([0, len(prob)/len(t), 0, 1.1])
+plt.grid()
 
-
+plt.show()
 
 
 

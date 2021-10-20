@@ -2,8 +2,17 @@
 \babel@toc {swedish}{}
 \babel@toc {english}{}
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
-\contentsline {section}{\numberline {2}Background}{1}{section.2}
-\contentsline {section}{\numberline {3}Method}{1}{section.3}
-\contentsline {subsection}{\numberline {3.1}The Qutrit}{1}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Generalization}{3}{subsection.3.2}
-\contentsline {section}{References}{7}{section*.2}
+\contentsline {section}{\numberline {2}Theoretical background}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Basic quantum mechanics, part I}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Kets, Bras and Operators}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Measurements and Observables and Uncertainty}{3}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Time evolution and the Schr\IeC {\"o}dinger equation}{3}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Quantum Computation and Quantum Information theory, part 2}{3}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Qubits}{3}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Information content}{3}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Universal computation}{3}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Holonomic Quantum Computation}{3}{subsubsection.2.2.4}
+\contentsline {section}{\numberline {3}Method}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}The Qutrit}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Generalization}{7}{subsection.3.2}
+\contentsline {section}{References}{11}{section*.2}
