@@ -45,9 +45,29 @@ Observables which don't commute are called incompatible observables, a well know
 
 \subsection{Quantum Computation and Quantum Information theory, part 2}
 
-\subsubsection{Qubits}
+\subsubsection{The Qubit}
+A classical bit is a binary system which, so it can occupy two states, either 0 or 1. So with $n$ bits there is $2^n$ possible states that can be represented, but only one at a time.
 
-\subsubsection{Information content}
+A qubit is a quantum state that is in a superposition of $\ket{0}$ and $\ket{1}$, so a general qubit would have the form
+\begin{equation}
+\label{eq:qubit}
+\ket{\psi} = \alpha\ket{0} + \beta\ket{1},\,\alpha,\beta \in \mathbb{C},\, |\alpha|^2 + |\beta|^2 = 1.
+\end{equation}
+The qubit is no limited to 0 and 1, but can exist in a linear combination of those states. When a measurement is performed the qubit will collapse into $\ket{1}$ or $\ket{2}$ with probability $|\alpha|^2$ and $|\beta|^2$ respectively. A consequence of superposition is that $n$ qubits can represent $2^n$ states simultaneously.
+
+The combined state of two qubits $\ket{\psi_1}$ and $\ket{\psi_2}$ is given by 
+\begin{equation}
+\ket{\psi_1} \otimes \ket{\psi_2} = (\alpha_1\ket{0} + \beta_1\ket{1})\otimes(\alpha_2\ket{0} + \beta_2\ket{1})
+\end{equation}
+the tensor product is often omitted and one would write $\ket{\psi_1} \otimes \ket{\psi_2} = \ket{\psi_1}\ket{\psi_2} = \ket{\psi_1, \psi_2}$.
+
+Some of the common qubit gates are the Pauli gates $X,Y,Z$, the Hadamard gate $H$, and the T-gate $T$.
+
+
+
+
+
+\subsubsection{Information stuff}
 
 \subsubsection{Universal computation}
 
