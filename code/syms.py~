@@ -1,0 +1,4 @@
+import numpy as np
+import sympy as sp
+
+def b(c1,c2,c3)

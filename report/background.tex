@@ -1,7 +1,65 @@
 The Background consists of a quick introduction to the most important quantum mechanical concepts and notation. Readers familiar with quantum mechanics may skip it. The second part explores the fundamentals of quantum computation and 
 
 \subsection{Basic quantum mechanics, part I}
-This part offers a quick introduction to the necessary  quantum mechanics for readers whom are not familiar with the subject. The section contains nothing relevant for later parts of the thesis and can be safely skipped. For a more complete introduction I suggest chapter 1 of Sakurai.
+This part offers a quick introduction to the necessary quantum mechanics for readers whom are not familiar with the subject. Quantum mechanics is nothing more than linear algebra with fancy notation and some additional rules. The section contains nothing relevant for later parts of the thesis and can be safely skipped. For a more complete introduction I suggest chapter 1 of Sakurai.
+
+
+\subsubsection{Quantum states and Dirac notation}
+First lets define what is meant by the term \textbf{state}. In classical physics a state would be given by the position and momentum of all its individual constituents. An example would be a system of $N$ particles, the state would be given by $\{ (\vec{x}, \vec{p})_i \}_{i=1}^N$, where $\vec{x},\vec{p} \in \mathbb{R}^3$ are the position and momentum in 3 dimensions. In Quantum Mechanics (QM) it more subtle than this, since exact information of the system can not be obtained in the same way. So a state is represented by a normalized vector in a complex vector space. The vector space in which the state vector lives is called a \textbf{Hilbert space} and has the following properties. given two vectors $u,v$ in $H$ they satisfy:
+
+\noindent The inner product is conjugate symmetric
+\begin{enumerate}
+\item $\inp{u}{v} = \overline{\inp{v}{u}} \in \mathbb{C}$
+\end{enumerate}
+The inner product is linear in the first argument, for constants $a,b\in \mathbb{C}$
+\begin{enumerate}[resume]
+\item $\inp{au_1 + bu_2}{v} = a\inp{u_1}{v} + b\inp{u_2}{v}$
+\end{enumerate}
+The inner product is positive definite 
+\begin{enumerate}[resume]
+\item $\inp{u}{u} = 0 \iff u = 0$
+\end{enumerate}
+These properties can be combined to find some other useful facts that holds,
+combining the 1st and 2nd property,
+
+\begin{equation}
+\inp{v}{au_1 + bu_2} = \overline{\inp{au_1 + bu_2}{v}} = a^{*}\overline{\inp{u_1}{v}} + b^{*}\overline{\inp{u_2}{v}} =   a^{*}\inp{v}{u_1} + b^{*}\inp{v}{u_2}
+\end{equation} 
+the inner product is anti-linear in the second term.
+Using the 1st and 3rd property 
+\begin{equation}
+\inp{u}{u} = \overline{\inp{u}{u}} \implies \text{Im}(\inp{u}{u}) = 0
+\end{equation}
+or in words, the inner product of two identical vectors is a real number.
+
+So now we have established that a quantum state is a normalized vector $v$ in a Hilbert space $H$. Now a property of vector spaces is that any vector can be multiplied by a matrix, and the resulting vector will be a new vector in the same vector space. This is what is meant when a quantum state is \textbf{acted} upon. For a matrix $A$ we have that 
+\begin{equation}
+H \ni v  \xrightarrow{A} Av = v' \in H
+\end{equation}
+acting on a state alters it in various ways.
+
+Now lets go from this linear algebra notation to the Dirac notation commonly used in quantum mechanics, also know as bra-ket notation.
+
+Vectors are replaced by \textbf{kets},$\ket{}$, or \textbf{bras},$\bra{}$. \\
+$v \mapsto \ket{\psi}$ \\
+$v^\dagger \mapsto \bra{\psi}$\\
+and matrices are replaced by operators\\
+$A \mapsto \hat{A}$\\
+The same rules applies to these as for the usual vectors.
+The label inside the brackets does no in itself have any meanings and are in some sense only just that, labels, but more often than not it is used to represent some property of the state. With this notation the inner product between to states $\ket{\psi},\ket{\varphi}$ is written as 
+\begin{equation}
+\bra{\psi}\ket{\varphi} = a_1^{*}b_1 + a_2^{*}b_2 + \dots + a_n^{*}b_n = \begin{pmatrix} a_1^{*} & a_2^{*} & \dots & a_n^{*}\end{pmatrix} \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n\end{pmatrix}
+\end{equation}
+from the properties defined earlier the relations $(\ket{\psi})^\dagger = \bra{\psi}$ and $ (\bra{\psi}\ket{\varphi})^\dagger = \bra{\varphi}\ket{\psi}$,
+this suggest that another way to define the states would simply be
+\begin{equation}
+\ket{\psi} = \begin{pmatrix}
+a_1 \\ a_2 \\ \vdots \\ a_n
+\end{pmatrix},\;
+\bra{\psi} = (\ket{\psi})^{\dagger} = (a_1^{*}, a_2^{*}, \dots, a_n^{*}),\; a_1,a_2,\dots,a_n \in \mathbb{C}
+\end{equation}
+which is nothing more than a complex vector.
+
 
 \subsubsection{Kets, Bras and Operators}
 When talking about Quantum mechanics the term \textbf{quantum state}, or more likley just state, is mentioned a lot. A quantum mechanical state is represented by a \textbf{ket}, an complex-valued vector with either finite or infinite entries. Closely related to the ket is the \textbf{bra}, which is the corresponding vector to the ket in the dual space, or more simply, the hermitian conjugate of the ket, see Equation \ref{eq:ket}.

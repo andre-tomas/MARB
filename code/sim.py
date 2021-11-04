@@ -44,25 +44,30 @@ def genStates(par):
     c2 = np.exp(1j*chi)*np.sin(theta)*np.cos(phi)
     c3 = np.exp(1j*xi)*np.sin(theta)*np.sin(phi)
 
-    N1 = 1/(np.sqrt(1-np.abs(c3)**2))
-    N2 = np.abs(c3)/(np.sqrt(1-np.abs(c3)**2))
 
-    if np.isclose(np.abs(c1)**2, 1.0):
-        d = ket1
-        b1 = ket2
-        b2 = -np.exp(1j*xi)*ket3
-    else:
+    if np.isclose(np.abs(c3)**2,1.0) or np.isclose(np.abs(c2)**2,1.0):
         d = c1*ket1 + c2*ket2 + c3*ket3;
-        b1 = N1* ( -np.conj(c2)*ket1 + c1*ket2 );
-        b2 = N2*(c1*ket1 + c2*ket2 + (c3 - 1/np.conj(c3))*ket3 ); 
+        b1 = (1.0/np.sqrt(2))*(-np.exp(-1j*chi)*ket1 + ket2)
+        b2 = (1.0/np.sqrt(3))*(ket1 + np.exp(1j*chi)*ket2 - np.exp(1j*xi)*ket3)
+        
+    else:
+        N1 = 1/(np.sqrt(1-np.abs(c3)**2))
+        N2 = np.abs(c3)/(np.sqrt(1-np.abs(c3)**2))
 
-    
+        if np.isclose(np.abs(c1)**2, 1.0):
+            d = ket1
+            b1 = ket2
+            b2 = -np.exp(1j*xi)*ket3
+
+        else:
+            d = c1*ket1 + c2*ket2 + c3*ket3;
+            b1 = N1* ( -np.conj(c2)*ket1 + c1*ket2 );
+            b2 = N2*(c1*ket1 + c2*ket2 + (c3 - 1/np.conj(c3))*ket3 ); 
+
     return d,b1,b2 
 
 def genInitialCoeff(d,b1,b2,initialState):
-
     A = np.transpose(np.array([d[2:5],b1[2:5],b2[2:5]]))
-
     f = np.matmul(np.linalg.inv(A),initialState)
     
     return f
@@ -96,8 +101,8 @@ def simulate(d,b1,b2,F,gamma1,gamma2):
         p3 = np.abs(X[4])**2
         p4 = np.abs(X[5])**2
         Prob.append([pe1, pe2, p1, p2, p3, p4])
-genStates
-        finalState = np.array(state[-1])
+
+    finalState = np.array(state[-1])
     return Prob, finalState
 
 
@@ -137,6 +142,13 @@ def ob2(par,V):
         
         return np.linalg.norm(np.abs(V-U), 2)
 
+def ob1(par,V):
+
+    d,b1,b2 = genStates(par1)
+    U = (unitaryGate(d,b1,b2,par1[4],par1[5]))[2:5,2:5]
+        
+    return np.linalg.norm(np.abs(V-U), 2)
+
 
 def XGate(initialState):
     par1 = [0, 0, np.pi/4, np.pi/2, 0, np.pi]
@@ -171,7 +183,7 @@ def optPar1(V, x0):
     b = (0.0, 2*np.pi)
     bnds = (b,b,b,b,b,b)
     
-    sol = minimize(ob1, par,args = (V), method='SLSQP',bounds=bnds)
+    sol = minimize(ob1, par,args = (V), method='SLSQP',bounds=bnds, options={'maxiter':10000,'disp':True})
     return sol
     
 def optPar2(V, x0):
@@ -196,35 +208,35 @@ Zg = np.array([[1,0,0], [0,np.exp(2*np.pi*1j/3),0], [0,0,np.exp(4*np.pi*1j/3)]])
 
 initialState = np.array([1,0,0]);
 initialState = initialState/np.linalg.norm(initialState)
-#A = np.pi/4
-#par1 = [A,A,A,A,A,A]
-#par2 = [A,A,A,A,A,A]
-#par0 = par1 + par2
-#par = optPar2(Hg, par0).x
-#print(par)
+B = np.pi/4
+par1 = [-B,B,B,B,B,B]
+par2 = [-B,B,B,B,B,B]
+par0 = par1 + par2
+par = optPar2(Hg, par0).x
+print(par)
 
-prob, U, finalState = HGate(initialState)
-#prob, U, finalState = singleLoop(initialState, par)
-#prob, U, finalState = doubleLoop(initialState, par[:6],par[6:])
-#print(np.round(Hg,4))
+
+#prob, U, finalState = HGate(initialState)
+#prob, U, finalState = singleLoop(initialState, par1)
+prob, U, finalState = doubleLoop(initialState, par[:6],par[6:])
 print(np.round(U[2:5,2:5],4))
+print(np.round(Hg,4))
+
+#print(f"exact: {np.round(U[2:5,2:5] @ initialState,4)}")
+#print(f"numerical: {np.round(finalState[2:5],4)}")
 
 plt.figure()
 tt = np.linspace(0,len(prob)/len(t),len(prob))
-labels = ["pe1","pe2","p1","p2","p3","p4"]
+labels = ["p_e1","p_e2","p_1","p_2","p_3","p_a"]
 probPlot = plt.plot(tt,prob,'--')
 plt.legend(iter(probPlot), labels)
-plt.title(f"Probability amplitudes with $\eta$ = {eta}")
+plt.title(f"Probabilities amplitudes with $\eta$ = {eta}")
 plt.xlabel("time")
 plt.ylabel("Probability")
 plt.axis([0, len(prob)/len(t), 0, 1.1])
 plt.grid()
 
-plt.show()
-
-
-
-
+#plt.show()
 
 
 

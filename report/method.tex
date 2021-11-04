@@ -3,19 +3,19 @@ The 'Method' will be split into two sections first on of an explicit example for
 
 
 \subsection{The Qutrit}
-
-A system given by the Hamiltonian
+In \cite{darkpath} a qubit is implemented by modifying the lambda system, adding an additional level, an auxiliary state, effectively turning it into a tripod. 
+The generalization to implement a qutrit is not trivial but it is clear that one extra ground state is required to make the computational basis larger. Another thing that is needed is to limit the number of dark states to one. The number of dark states is the the difference of number of exited states and the number of ground states\cite{lambda} (here the auxiliary state is \textbf{not} counted as a ground state). Therefor another excited state must be added as well. How these state are coupled is the hard part, we will see that the system given by the Hamiltonian
 \begin{equation}
 \label{eq:Ham}
-H = \sum_{j = 1}^2 \sum_{i =j}^{3} \omega_{ij}\ket{i}\bra{e_j}  + \frac{\Omega(t)_{a}}{2}\ket{a}\bra{e_2}  +\,\text{h.c}<
+H = \sum_{j = 1}^2 \sum_{i =j}^{3} \omega_{ij}\ket{i}\bra{e_j}  + \frac{\Omega_{a}(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
 \end{equation}
-which is shown in Figure \ref{fig:Ham}.  It consists of two excited states, $\ket{e_1}, \ket{e_2}$, an auxiliary state $\ket{a}$ and the ground states $\ket{1}, \ket{2}, \ket{3}$ which 
-makes up the computational basis of the qutrit. By a transformation of basis the Hamiltonian can be rewritten as 
+which is shown in Figure \ref{fig:Ham}, will work.  It consists of two excited states, $\ket{e_1}, \ket{e_2}$, an auxiliary state $\ket{a}$ and the ground states $\ket{1}, \ket{2}, \ket{3}$ which 
+makes up the computational basis of the qutrit. By changing the basis of the Hamiltonian, it can be rewritten as 
 \begin{equation}
 \label{eq:Hamd}
 H_d = \sum_{j = 1}^2 \frac{\Omega_j(t)}{2}e^{-i\phi_j}\ket{b_j}\bra{e_j}  + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
 \end{equation} 
-by a Morris-Shore transformation\cite{morris}. Now one can find a dark state to this Hamiltonian, an eigenstate with eigenvalue $0$, $H\ket{d} = 0$. In this basis for 3 fixed angles, $\theta, \varphi, $, there exists a normalized dark state $\ket{d} = \cos\theta\ket{1} + e^{i\chi}\sin\theta\cos\varphi\ket{2} + e^{i\xi}\sin\theta\sin\varphi\ket{3}$, additionally one can determine two states $\ket{b_1} = N_1 \left(-e^{i\xi}\sin\theta\sin\varphi\ket{1} + \cos\theta\ket{2} \right)$ and $\ket{b_2} = N_2 \left(\cos\theta\ket{1} +  e^{i\chi}\sin\theta\cos\varphi\ket{2} + \Lambda \ket{3}\right ) $, where $N_1, N_2$ are normalization factors and $\Lambda$ can be chosen such that $\bra{d}\ket{b_2} = 0$.
+by a Morris-Shore transformation\cite{morris}. We call this new basis the dark state basis. To find this basis find a dark state to the original  Hamiltonian, an eigenstate with eigenvalue $0$, $H\ket{d} = 0$, then find two bright states, orthogonal to both $\ket{d}$ and each other. This basis can be parametrized with 4 angles, $\theta, \varphi, \chi, \xi$, the dark state is on the form $\ket{d} = \cos\theta\ket{1} + e^{i\chi}\sin\theta\cos\varphi\ket{2} + e^{i\xi}\sin\theta\sin\varphi\ket{3}$, additionally the two bright states are $\ket{b_1} = N_1 \left(-e^{i\xi}\sin\theta\sin\varphi\ket{1} + \cos\theta\ket{2} \right)$ and $\ket{b_2} = N_2 \left(\cos\theta\ket{1} +  e^{i\chi}\sin\theta\cos\varphi\ket{2} + \Lambda \ket{3}\right ) $, where $N_1, N_2$ are normalization factors and $\Lambda$ can be chosen such that $\bra{d}\ket{b_2} = 0$.
 
 \begin{figure}[H]
 \label{fig:Ham}
@@ -84,7 +84,7 @@ The following two states satisfy the dark path condition and can be parametrized
 \begin{aligned}
 \ket{D_1(t)} &= \cos u e^{-i\phi_1}\ket{b_1} + i\sin u \ket{e_1}
 \\
-\ket{D_2(t)} &= \cos u\cos v e^{-i\phi_2}\ket{b_1} - i\sin u \ket{e_2} - \cos u\sin v \ket{a}
+\ket{D_2(t)} &= \cos u\cos v e^{-i\phi_2}\ket{b_2} - i\sin u \ket{e_2} - \cos u\sin v \ket{a}
 \end{aligned}
 \end{equation}
 it can easily be verified that $\bra{D_i(t)}H_d\ket{D_j(t)} = 0, i,j = 1,2$. The angles can be chosen with the constraint that the boundary condition $\ket{D_i(0)}\bra{D_i(0)} = \ket{D_i(T)}\bra{D_i(T)}, i = 1,2$. This can be achieved by choosing $u(0) = u(T) = v(0) = v(T) = 0$. A valid choice is $u(t) = \frac{\pi}{2}\sin^2\frac{\pi t}{T}$ and $v(t) = \eta\left[1 - \cos u(t)\right]$, as for the 2D case. Unless mentioned otherwise $\eta = 4.0$. Each dark path starts in the respective bright state and travels along a curve and then returns to the bright state. The choice 
@@ -100,11 +100,12 @@ and thusly one can reverse engineer the time dependent parameters $\Omega_i(t)$ 
 \\ 
 \Omega_2(t) &= 2\left(\dot{v}\cot u\sin v + \dot{u}\cos v \right)
 \\
-\Omega_a(t) &= 2\left(\dot{v}\cot u\sin v - \dot{u}\sin v \right).
+\Omega_a(t) &= 2\left(\dot{v}\cot u\cos v - \dot{u}\sin v \right).
 \end{aligned}
 \end{equation}
 
-To construct a universal quantum gate, first the use the method of multi-pulse single-loops\cite{sLoop}, the relevant part of the time evolution operator is \begin{equation}
+To construct a quantum gate, first the use the method of multi-pulse single-loops\cite{sLoop}, the relevant part of the time evolution operator is 
+\begin{equation}
 \begin{aligned}&
 U_1 = \ket{d}\bra{d} -i\ket{e_1}\bra{b_1} -i\ket{e_2}\bra{b_2},\; \phi_1 = \phi_2 = 0
 \\&
@@ -119,49 +120,9 @@ This transformation can be parametrized by $6$ real parameters, $U(\chi,\xi,\the
 \begin{equation}
 \mathbb{U} = U(\chi',\xi',\theta',\varphi',\gamma_1',\gamma_2') U(\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2)
 \end{equation}
+Now the problem is only a matter of finding all parameters to replicate the desired gate. This is a non-trivial problem since it include solving a system of 9 non-linear equation containing 12 variables for a gate requiring two loops. Some gates that only require a single loop can with some work be found analytically but the problem quickly becomes too complex to handle.
 
-A selection of qutrit gates from \cite{qudit} can be obtained by the following parameters.\\
-\begin{equation}
-\begin{aligned}
-X_3 &= U(0,0,\dfrac{\pi}{2},\dfrac{\pi}{4},\pi,0)U(0,0,\dfrac{\pi}{4},\dfrac{\pi}{2},0,\pi) 
-= \begin{pmatrix}
-0&0&1
-\\
-1&0&0
-\\
-0&1&0
-\end{pmatrix}
-\\ 
-Z_3 &= U(0,\dfrac{2\pi}{3},\dfrac{\pi}{2},\dfrac{\pi}{2},\dfrac{4\pi}{3},\dfrac{4\pi}{3})U(\dfrac{2\pi}{3},\dfrac{2\pi}{3},\pi,\pi,\dfrac{2\pi}{3},\dfrac{2\pi}{3})
-= \begin{pmatrix}
-1&0&0
-\\
-0&e^{\frac{2\pi i}{3}}&0
-\\
-0&0&e^{\frac{4\pi i}{3}}
-\end{pmatrix}
-\\
-T_3 &=U()U() 
-= \begin{pmatrix}
-1&0&0
-\\
-0&e^{\frac{2\pi i}{9}}&0
-\\
-0&0&e^{\frac{-2\pi i}{9}}
-\end{pmatrix}
-\\
-H_3 &= U()() 
-= \dfrac{1}{\sqrt{3}}\begin{pmatrix}
-1&1&1
-\\
-1&e^{\frac{2\pi i}{3}}&e^{\frac{4\pi i}{3}}
-\\
-1&e^{\frac{4\pi i}{3}}&e^{\frac{2\pi i}{3}}
-\end{pmatrix}
-\end{aligned}
-\end{equation}
-which are some of the important gates to acheive universality\cite{qudit} as discussed in \note{ref background?}. Note that the choice of parameters are not unique and there are multiple ways to create the same unitary.
-\\
+\subsubsection{Implementation}
 The implementation is quite straight forward, for given set of parameters, say that we want to see how the initial state $\ket{\psi(0)}$ evolves with time.
 Let $\ket{\psi(0)} = (a,b,c)^T$ in the computational basis $\{1,2,3\}$. Then the following equation can be formulated, for some coefficients $f_i$,
 \begin{equation}
@@ -198,12 +159,73 @@ Then the system can be solved for any time $t \in T$ using Equation
 \ket{\psi(t)} = f_0\ket{d} + f_1\ket{D_1(t)} + f_2\ket{D_2(t)}, t \in [0,T]
 \end{equation}
 \note{Some plots here?}
+
+
+\subsubsection{Important gates, Universality and parameter selection}
+\note{Rewrite following part}
+\\
+A selection of qutrit gates from \cite{qudit} can be obtained by the following parameters.\\
+\begin{equation}
+\begin{aligned}
+X_3 &= U(0,0,\dfrac{\pi}{4},\dfrac{\pi}{2},0,\pi)U(0,0,\dfrac{\pi}{2},\dfrac{\pi}{4},0,\pi) 
+= \begin{pmatrix}
+0&0&1
+\\
+1&0&0
+\\
+0&1&0
+\end{pmatrix}
+\\ 
+Z_3 &= U(0,0,0,0,\dfrac{2\pi}{3},\dfrac{4\pi}{3})
+= \begin{pmatrix}
+1&0&0
+\\
+0&e^{\frac{2\pi i}{3}}&0
+\\
+0&0&e^{\frac{4\pi i}{3}}
+\end{pmatrix}
+\\
+T_3 &= U(0,0,0,0,\dfrac{2\pi}{9},\dfrac{-2\pi}{9})
+= \begin{pmatrix}
+1&0&0
+\\
+0&e^{\frac{2\pi i}{9}}&0
+\\
+0&0&e^{\frac{-2\pi i}{9}}
+\end{pmatrix}
+\\
+H_3 &= U()U() 
+= \dfrac{1}{\sqrt{3}}\begin{pmatrix}
+1&1&1
+\\
+1&e^{\frac{2\pi i}{3}}&e^{\frac{4\pi i}{3}}
+\\
+1&e^{\frac{4\pi i}{3}}&e^{\frac{2\pi i}{3}}
+\end{pmatrix}
+\end{aligned}
+\end{equation}
+which are some of the important gates to acheive universality\cite{qudit} as discussed in \note{ref background?}. Note that the choice of parameters are not unique and there are multiple ways to create the same unitary.
+
+\note{fix formating}
+\begin{figure}[H]
+\includegraphics[scale=0.45]{figures/fid-Z-gate.png}
+\includegraphics[scale=0.45]{figures/fid-X-gate.png}
+\includegraphics[scale=0.45]{figures/fid-T-gate.png}
+\includegraphics[scale=0.45]{figures/fid-H-gate.png}
+\caption{Fidelity of of some gates.}
+
+
+\end{figure}
+
+
+
 \newpage
 \subsection{Generalization}
+To generalize the scheme to a qudit with arbitrary dimension $n$,  the same idea from the qutrit case can be extended, $n$ ground states, $m = n - 1$ excited states and 1 auxiliary state, there for the dimension of the Hilbert space is  $n + m + 1 = n + 1 -1 = 2n$. Once again the couplings are not trivial and will be somewhat intricate, but the couplings given by the Hamiltonian in Equation \ref{eq:HamN}, will do the trick. 
 
 \begin{equation}
-\label{eq:Gham}
 H = \sum_{j = 1}^m \sum_{i = j}^n \omega_{ij} \ket{i}\bra{e_j} + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_m} +\;\text{h.c}
+\label{eq:HamN}
 \end{equation}
 
 \begin{figure}[H]
@@ -212,6 +234,7 @@ H = \sum_{j = 1}^m \sum_{i = j}^n \omega_{ij} \ket{i}\bra{e_j} + \frac{\Omega_a(
       level/.style={thick},
       virtual/.style={thick,densely dashed},
       trans/.style={thin,<->,shorten >=2pt,shorten <=2pt,>=stealth},
+      arrow/.style={thick,->,shorten >=2pt,shorten <=2pt,>=stealth},
       classical/.style={thin,double,<->,shorten >=4pt,shorten <=4pt,>=stealth}]
     \draw[level] (4cm,-11em) -- (5cm,-11em) node[midway,below] {$\ket{1}$};
     \draw[level] (6cm,-11em) -- (7cm,-11em) node[midway,below] {$\ket{2}$};
@@ -255,84 +278,45 @@ H = \sum_{j = 1}^m \sum_{i = j}^n \omega_{ij} \ket{i}\bra{e_j} + \frac{\Omega_a(
 	\draw[trans] (19.5cm,-0.5em) -- (16.5cm,-10.5em) node[midway,left] {};
    	\draw[trans] (19.5cm,-0.5em) -- (19.5cm,-10.5em) node[midway,left] {};   			 
    	\draw[trans] (19.5cm,-0.5em) -- (22cm,-10.5em) node[midway,left] {};
-    \end{tikzpicture}
-    \caption{big mess \note{is this the correct system? }}
-\end{figure}
-
-
-\begin{figure}[H]
-    \begin{tikzpicture}[
-      scale=0.5,
-      level/.style={thick},
-      virtual/.style={thick,densely dashed},
-      trans/.style={thin,<->,shorten >=2pt,shorten <=2pt,>=stealth},
-      classical/.style={thin,double,<->,shorten >=4pt,shorten <=4pt,>=stealth},
-      arrow/.style={thick,->,shorten >=2pt,shorten <=2pt,>=stealth}]
-      
-    \draw[level] (4cm,-11em) -- (5cm,-11em) node[midway,below] {$\ket{1}$};
-    \draw[level] (6cm,-11em) -- (7cm,-11em) node[midway,below] {$\ket{2}$};
-    \draw (11cm,-11em)  node[below] {$\dots$}; 
-    \draw[level] (16cm,-11em) -- (17cm,-11em) node[midway,below] {$\ket{n}$};
-    \draw[level] (18cm,-11em) -- (19cm,-11em) node[midway,below] {$\ket{a}$}; 
-  % Draw the energy levels.
-    \draw[level] (6cm,0em) -- (7cm,0em) node[midway,above] {$\ket{e_1}$};    
-   	\draw[level] (8cm,0em) -- (9cm,0em) node[midway,above] {$\ket{e_2}$};
-    \draw (11cm, 0em) node[above] {$\dots$}; 
-    \draw[level] (13cm,0em) -- (14cm,0em) node[midway,above] {$\ket{e_{m-1}}$};
-    \draw[level] (16cm,0em) -- (17cm,0em) node[midway,above] {$\ket{e_{m}}$};
-    % Draw the transitions.
-   % e_1
-    \draw[trans] (6.5cm,-0.5em) -- (4.5cm,-10.5em) node[midway,left] {};
-    \draw[trans] (6.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
-    \draw[trans] (6.5cm,-0.5em) -- (16.5cm,-10.5em) node[midway,left] {};       
-   % e_2
-    \draw[trans] (8.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
-    \draw[trans] (8.5cm,-0.5em) -- (16.5cm,-10.5em)	node[midway,left] {};
-	% e_m-1
-	\draw[trans] (13.5cm,-0.5em) -- (4.5cm,-10.5em) node[midway,left] {};
-	\draw[trans] (13.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
-   	\draw[trans] (13.5cm,-0.5em) -- (16.5cm,-10.5em) node[midway,left] {};
-	% e_m
-	\draw[trans] (16.5cm,-0.5em) -- (4.5cm,-10.5em) node[midway,left] {};
-	\draw[trans] (16.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
-   	\draw[trans] (16.5cm,-0.5em) -- (16.5cm,-10.5em) node[midway,left] {};   			 
-   	\draw[trans] (16.5cm,-0.5em) -- (18.5cm,-10.5em) node[midway,left] {};
    	
-   	% Transformation
-   	\draw (21cm,-5em) node[below] {$\longrightarrow$}; 
    	
-   	\draw[level] (23cm,-11em) -- (24cm,-11em) node[midway,below] {$\ket{b_1}$};
-    \draw (25.5cm,-11em)  node[below] {$\dots$};    
+   	
+   	 \draw[arrow] (22cm,-5em) -- (23cm,-5em) node[] {}; 
+   	
+   	\draw[level] (24cm,-11em) -- (25cm,-11em) node[midway,below] {$\ket{b_1}$};
+    \draw (26cm,-11em)  node[below] {$\dots$};    
     \draw[level] (28cm,-11em) -- (29cm,-11em) node[midway,below] {$\ket{b_{m-1}}$};
     \draw[level] (31cm,-11em) -- (32cm,-11em) node[midway,below] {$\ket{b_m}$};
     \draw[level] (33cm,-11em) -- (34cm,-11em) node[midway,below] {$\ket{a}$};
     \draw[level] (35cm,-11em) -- (36cm,-11em) node[midway,below] {$\ket{d}$};
     
   % Draw the energy levels.
-    \draw[level] (23cm,0em) -- (24cm,0em) node[midway,above] {$\ket{e_1}$};    
-    \draw (25.5cm, 0em) node[above] {$\dots$};
-    \draw[level] (28cm,0em) -- (29cm,0em) node[midway,above] {$\ket{e_{m-1}}$};
-    \draw[level] (31cm,0em) -- (32cm,0em) node[midway,above] {$\ket{e_{m}}$};
+    \draw[level] (24cm,0em) -- (25cm,0em) node[midway,above] {$\ket{e_1}$};    
+    \draw (26cm, 0em) node[above] {$\dots$};
+    \draw[level] (27.5cm,0em) -- (28.5cm,0em) node[midway,above] {$\ket{e_{m-1}}$};
+    \draw[level] (30.5cm,0em) -- (31.5cm,0em) node[midway,above] {$\ket{e_{m}}$};
         
     % Draw the transitions.
    % e_1
-    \draw[trans] (23.5cm,-0.5em) -- (23.5cm,-10.5em) node[midway,left] {};     
+    \draw[trans] (24.5cm,-0.5em) -- (24.5cm,-10.5em) node[midway,left] {};     
 	% e_m-1
-	\draw[trans] (28.5cm,-0.5em) -- (28.5cm,-10.5em) node[midway,left] {};
+	\draw[trans] (28cm,-0.5em) -- (28cm,-10.5em) node[midway,left] {};
 	% e_m
-	\draw[trans] (31.5cm,-0.5em) -- (31.5cm,-10.5em) node[midway,left] {};
-	\draw[trans] (31.5cm,-0.5em) -- (33.5cm,-10.5em) node[midway,left] {};
+	\draw[trans] (31cm,-0.5em) -- (31cm,-10.5em) node[midway,left] {};
+	\draw[trans] (31cm,-0.5em) -- (33cm,-10.5em) node[midway,left] {};
     \end{tikzpicture}
-    \caption{\note{still wrong mess}}
+    \caption{The system given by the Hamiltonian shown in Equation \ref{eq:HamN} (left) and the transformed system from Equation \ref{eq:HamdN} (right)}
+    \label{fig:HamN}
 \end{figure}
 
 
-The system is given by $m$ ''excited'' states $\ket{e_i},\,i = 0,1,\dots,m$ and $n$ ''ground'' states labeled $\ket{i},\,i = 1,2,\dots,n$ and one auxiliary state $\ket{a}$. The number of states always follows that $n-m = 1$.(if auxiliary state is counted as a ''ground state'' it is = 2) So for $m = 5$ excited states there would be $n = 6$ ground states.
-The transitions (except for auxiliary) occur only between excited states and ground states. the first excited state $e_1$ is connected to all ground states, $e_2$ is connected to all but $\ket{1}$, in general the excited state $\ket{e_i}$ is connected to the $(n - i)$th ground states with the highest label. Unless when $i = m$, the excited state $\ket{e_m}$ which is connected to the two highest labeled ground states and the auxiliary state $\ket{a}$.
 
-This is the standard basis $\{e_1,e_2,\dots,e_m,1,2,\dots,n,a\}$, it is possible define a new basis, the dark state basis given by $\{e_1,e_2,\dots,e_m,b_1,b_2,\dots,b_{m},a,d\}$.
+The general system for a qudit is given by $m$ excited states $\ket{e_i},\,i = 0,1,\dots,m$ and $n$ ground states labeled $\ket{i},\,i = 1,2,\dots,n$ and one auxiliary state $\ket{a}$. The number of states always follows that $n-m = 1$ to limit the number of dark states to one\cite{lambda}.
+The transitions occur only between excited states and ground states. The couplings follow a pattern, the first excited state $e_1$ is connected to all ground states, $e_2$ is connected to all ground states except $\ket{1}$, in general the excited state $\ket{e_i}$ is connected to the $(n - i)$th ground states with the highest label. Unless when $i = m$, the excited state $\ket{e_m}$ which is connected to the two highest labeled ground states and the auxiliary state $\ket{a}$. See Equation \ref{eq:HamN} and Figure \ref{fig:HamN} for a clarification. 
 
-Given a dark state on the form 
+From the standard basis $\{e_1,e_2,\dots,e_m,1,2,\dots,n,a\}$, it is possible define a new basis, the dark state basis given by $\{e_1,e_2,\dots,e_m,b_1,b_2,\dots,b_{m},a,d\}$.
+
+Assume a dark state on the form 
 \begin{equation}
 \ket{d} = c_1\ket{1} + c_2\ket{2} + c_3\ket{3} \dots + c_{n}\ket{n},\, |c_1|^2 + |c_2|^2 + \dots + |c_{n}|^2 = 1
 \end{equation}
@@ -381,49 +365,9 @@ $c_1$ does not need a phase factor since the overall phase of a state is non-mea
 In this newly defined space the Hamiltonian can be written as
 \begin{equation}
 H_d = \sum_{i = 1}^m \frac{\Omega_i(t)}{2}e^{-i\phi_i}\ket{b_i}\bra{e_i} + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_n} +\;\text{h.c}
+\label{eq:HamdN}
 \end{equation}
 with $\Omega_i$ being real-valued time dependent parameters and the $\phi_i$ time independent phase factors.
-
-\begin{figure}[H]
-    \begin{tikzpicture}[
-      scale=0.5,
-      level/.style={thick},
-      virtual/.style={thick,densely dashed},
-      trans/.style={thick,<->,shorten >=2pt,shorten <=2pt,>=stealth},
-      classical/.style={thin,double,<->,shorten >=4pt,shorten <=4pt,>=stealth}]
-    \draw[level] (0cm,-11em) -- (1cm,-11em) node[midway,below] {$\ket{b_1}$};
-    \draw[level] (2cm,-11em) -- (3cm,-11em) node[midway,below] {$\ket{b_2}$};
-    \draw[level] (4cm,-11em) -- (5cm,-11em) node[midway,below] {$\ket{b_3}$};
-    \draw (7cm,-11em)  node[below] {$\dots$};    
-    \draw[level] (10cm,-11em) -- (11cm,-11em) node[midway,below] {$\ket{b_{m-1}}$};
-    \draw[level] (12cm,-11em) -- (13cm,-11em) node[midway,below] {$\ket{b_m}$};
-    \draw[level] (14cm,-11em) -- (15cm,-11em) node[midway,below] {$\ket{a}$};
-    \draw[level] (16cm,-11em) -- (17cm,-11em) node[midway,below] {$\ket{d}$};
-    
-  % Draw the energy levels.
-    \draw[level] (0cm,0em) -- (1cm,0em) node[midway,above] {$\ket{e_1}$};    
-   	\draw[level] (2cm,0em) -- (3cm,0em) node[midway,above] {$\ket{e_2}$};
-   	\draw[level] (4cm,0em) -- (5cm,0em) node[midway,above] {$\ket{e_3}$};
-    \draw (7cm, 0em) node[above] {$\dots$};
-    \draw[level] (10cm,0em) -- (11cm,0em) node[midway,above] {$\ket{e_{m-1}}$};
-    \draw[level] (12cm,0em) -- (13cm,0em) node[midway,above] {$\ket{e_{m}}$};
-        
-    % Draw the transitions.
-   % e_1
-    \draw[trans] (0.5cm,-0.5em) -- (0.5cm,-10.5em) node[midway,left] {};     
-   % e_2
-    \draw[trans] (2.5cm,-0.5em) -- (2.5cm,-10.5em) node[midway,left] {};
-    % e_3
-    \draw[trans] (4.5cm,-0.5em) -- (4.5cm,-10.5em) node[midway,left] {};
-	% e_m-1
-	\draw[trans] (10.5cm,-0.5em) -- (10.5cm,-10.5em) node[midway,left] {};
-	% e_m
-	\draw[trans] (12.5cm,-0.5em) -- (12.5cm,-10.5em) node[midway,left] {};
-	\draw[trans] (12.5cm,-0.5em) -- (14.5cm,-10.5em) node[midway,left] {};
-    \end{tikzpicture}  
-    \caption{less mess}
-\end{figure}
-
 
 With this Hamiltonian $m$ dark paths can be constructed, and must fullfill $\bra{D_i(t)}H_d\ket{D_i(t)} = 0, i = 1,2,\dots,m$ and $\bra{D_i(t)}\ket{D_j(t)} = \delta_{ij}$.\\
 The dark paths can be parametrized by two functions $u(t),v(t)$ that satisfy the conditions $u(0) = v(0) = u(T) = v(T) = 0$,  will have the form
@@ -453,7 +397,7 @@ a calculation \note{actually do the calculation} yields
 \\
 \Omega_m(t) &= 2\left(\dot{v}\cot u\sin v + \dot{u}\cos v \right)
 \\
-\Omega_a(t) &= 2\left(\dot{v}\cot u\sin v - \dot{u}\sin v \right)
+\Omega_a(t) &= 2\left(\dot{v}\cot u\cos v - \dot{u}\sin v \right)
 \end{aligned}
 \end{equation}
 
@@ -512,11 +456,11 @@ $n$ & $3(n-1)$ & $n^2 - 1$ & $k$ & is perfect?\\
 
 This seems to hint that for when $n$ is perfect the amount of information has greater efficiency since in higher dimensions more information can be contained but can be executed in the same number of loops as a non-perfect dim. 
 \\ 
-The quantum gate $U$ can be as a linear combination of the dark state and dark paths
+The quantum gate $U$ can be formulated as a linear combination of the dark state and dark paths just as in the qutrit case
 \begin{equation}
 \ket{\psi(t)} = f_0\ket{d} + \sum_{i = 1}^{m}f_i\ket{D_i(t)}, t \in [0,T]
 \end{equation}
-where the coefficient can be solved for by choosing an initial state $\ket{\psi(0)}$. This corresponds to one loop, by using $\ket{\psi(T)}$ as an initial state for the next loop. By iterating this method one can simulate $\mathbb{U} = U^k$ where each loop $U$ have a different set of parameters.
+where the coefficient can be solved for by choosing an initial state $\ket{\psi(0)}$. This corresponds to one loop, by using $\ket{\psi(T)}$ as an initial state for the next loop. By iterating this method one can simulate $\mathbb{U} = U^k$ where each loop $U$ have a different set of parameters. So in theory this can be implemented and simulated for any dimensional qudit, just as for the case of the qutrit. 
 
 
 
