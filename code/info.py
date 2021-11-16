@@ -2,16 +2,14 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
-N = 8
-M = 10
+max = 20
 
-X = range(1,10)
 
-info = []
-for n in range(2,N):
-    Y = [math.log(n**x,2)for x in X]
-    info.append(Y)
 
-plt.plot(X,np.transpose(info),'--*')
+Dims = [d for d in range(2,max)]
+Y = [1.0/math.log(d,2) for d in Dims]
+
+
+plt.plot(Dims,Y,'--*')
 plt.grid()
 plt.show()

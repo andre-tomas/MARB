@@ -1,8 +1,6 @@
 
-The 'Method' will be split into two sections first on of an explicit example for $n = 3$, the qutrit. The second section will show how the example generalizes to higher dimensions.
 
-
-\subsection{The Qutrit}
+\section{The Qutrit}
 In \cite{darkpath} a qubit is implemented by modifying the lambda system, adding an additional level, an auxiliary state, effectively turning it into a tripod. 
 The generalization to implement a qutrit is not trivial but it is clear that one extra ground state is required to make the computational basis larger. Another thing that is needed is to limit the number of dark states to one. The number of dark states is the the difference of number of exited states and the number of ground states\cite{lambda} (here the auxiliary state is \textbf{not} counted as a ground state). Therefor another excited state must be added as well. How these state are coupled is the hard part, we will see that the system given by the Hamiltonian
 \begin{equation}
@@ -122,7 +120,7 @@ This transformation can be parametrized by $6$ real parameters, $U(\chi,\xi,\the
 \end{equation}
 Now the problem is only a matter of finding all parameters to replicate the desired gate. This is a non-trivial problem since it include solving a system of 9 non-linear equation containing 12 variables for a gate requiring two loops. Some gates that only require a single loop can with some work be found analytically but the problem quickly becomes too complex to handle.
 
-\subsubsection{Implementation}
+\subsection{Implementation}
 The implementation is quite straight forward, for given set of parameters, say that we want to see how the initial state $\ket{\psi(0)}$ evolves with time.
 Let $\ket{\psi(0)} = (a,b,c)^T$ in the computational basis $\{1,2,3\}$. Then the following equation can be formulated, for some coefficients $f_i$,
 \begin{equation}
@@ -161,7 +159,7 @@ Then the system can be solved for any time $t \in T$ using Equation
 \note{Some plots here?}
 
 
-\subsubsection{Important gates, Universality and parameter selection}
+\subsection{Important gates, Universality and parameter selection}
 \note{Rewrite following part}
 \\
 A selection of qutrit gates from \cite{qudit} can be obtained by the following parameters.\\
@@ -216,11 +214,11 @@ which are some of the important gates to acheive universality\cite{qudit} as dis
 
 
 \end{figure}
-
+\note{The problem with the H gate}
 
 
 \newpage
-\subsection{Generalization}
+\section{Generalization}
 To generalize the scheme to a qudit with arbitrary dimension $n$,  the same idea from the qutrit case can be extended, $n$ ground states, $m = n - 1$ excited states and 1 auxiliary state, there for the dimension of the Hilbert space is  $n + m + 1 = n + 1 -1 = 2n$. Once again the couplings are not trivial and will be somewhat intricate, but the couplings given by the Hamiltonian in Equation \ref{eq:HamN}, will do the trick. 
 
 \begin{equation}
@@ -384,7 +382,7 @@ By using these states one can reverse engineer the Hamiltonian using the Schröd
 \begin{equation}
 i\pdv{}{t}\ket{D_i(t)} = H_d\ket{D_i(t)},\; i = 1,2,\dots,m
 \end{equation}
-a calculation \note{actually do the calculation} yields
+a calculation yields
 \begin{equation}
 \begin{aligned}
 \Omega_1(t) &= -2\dot{u}

@@ -42,6 +42,16 @@ WILCZEK F, ZEE A.
 \newblock Appearance of gauge structure in simple dynamical systems.
 \newblock Physical review letters. 1984;52(24):2111--2114.
 
+\bibitem{tricalc}
+Glusker M, Hogan DM, Vass P.
+\newblock The ternary calculating machine of Thomas Fowler.
+\newblock IEEE annals of the history of computing. 2005;27(3):4--22.
+
+\bibitem{setun}
+Brusentsov NP, Ramil~Alvarez J.
+\newblock In: Ternary Computers: The Setun and the Setun 70. vol. 357. Berlin,
+  Heidelberg: Springer Berlin Heidelberg; 2011. p. 74--80.
+
 \bibitem{qutrit1}
 Li B, Yu ZH, Fei SM.
 \newblock Geometry of quantum computation with qutrits.
@@ -68,5 +78,39 @@ Ming-Zhong A, Li S, He R, Xue ZY, Cui JM, Haung YF, et~al.
 \newblock Experimental Realization of Nonadiabatic Holonomic Single-Qubit
   Quantum Gates with Two Dark Paths in a Trapped Ion.
 \newblock Not yet published. 2021;.
+
+\bibitem{info_qudit}
+Pavlidis A, Floratos E.
+\newblock Quantum-Fourier-transform-based quantum arithmetic with qudits.
+\newblock Physical review A. 2021;103(3).
+
+\bibitem{Sakurai}
+Sakurai JJ, Napolitano J.
+\newblock {Modern quantum mechanics; 2nd ed.}
+\newblock San Francisco, CA: Addison-Wesley; 2011.
+\newblock Available from: \url{https://cds.cern.ch/record/1341875}.
+
+\bibitem{adiabatensatz}
+Born M, Fock V.
+\newblock Beweis des Adiabatensatzes.
+\newblock The European physical journal A, Hadrons and nuclei.
+  1928;51(3-4):165--180.
+
+\bibitem{lambda}
+Shkolnikov VO, Burkard G.
+\newblock Effective Hamiltonian theory of the geometric evolution of quantum
+  systems.
+\newblock Physical review A. 2020;101(4).
+
+\bibitem{morris}
+Morris JR, Shore BW.
+\newblock Reduction of degenerate two-level excitation to independent two-state
+  systems.
+\newblock Physical review A, General physics. 1983;27(2):906--912.
+
+\bibitem{sLoop}
+Herterich E, Sjöqvist E.
+\newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
+\newblock Physical review A. 2016;94(5).
 
 \end{thebibliography}

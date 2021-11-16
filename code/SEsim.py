@@ -13,6 +13,80 @@ ket1  = np.array([0, 0, 1, 0, 0, 0])
 ket2  = np.array([0, 0, 0, 1, 0, 0])
 ket3  = np.array([0, 0, 0, 0, 1, 0])
 keta  = np.array([0, 0, 0, 0, 0, 1])
+# Basis vectors for qubit
+Ke = np.array([1,0,0,0])
+K1 = np.array([0,1,0,0])
+K2 = np.array([0,0,1,0])
+Ka = np.array([0,0,0,1])
+
+################################
+
+def genStates2D(par):
+    theta = par[0]; phi = par[1]; gamma = par[2]
+    b = np.sin(theta/2.0)*K1-np.exp(1j*phi)*np.cos(theta/2.0)*K2
+    d = -np.cos(theta/2.0)*np.exp(-1j*phi)*K1 -np.sin(theta/2.0)*K2
+
+    return d,b
+
+def omegas2D(t,delta):
+    if t ==  0.0 or t == T:
+        O1 = 0; Oa = 0;
+    else:
+        O1 =  2*(vp(t)*cot(u(t))*np.sin(v(t)) + up(t)*np.cos(v(t)))
+        Oa =  2*(vp(t)*cot(u(t))*np.cos(v(t)) - up(t)*np.sin(v(t)))
+
+    return [O1*(1+delta),Oa*(1+delta)]
+
+
+def Ham2D(t,b,gamma,delta):
+    
+    if  t < T/2.0:
+        gamma = 0.0;
+    
+    O = omegas2D(t,delta)
+    
+    T1 = (O[0]/2)*np.exp(-1j*gamma)*np.outer(np.conj(b),Ke)
+    Ta = (O[1]/2)*np.outer(np.conj(Ka),Ke)
+
+    H = np.array(T1 + Ta)
+    H = np.array(H + np.conj(np.transpose(H)))
+    
+    return H
+
+def unitaryGate2D(d,b,gamma):
+    
+    return np.outer(d,np.conj(d)) + np.exp(1j*gamma)*np.outer(b,np.conj(b))
+
+
+def fidLoop2D(y0,par,method, deltas):
+    phi = par[1];
+    gamma = par[2]
+    d, b = genStates2D(par)
+    U = unitaryGate2D(d,b,gamma)
+        
+    print(np.round(U[1:3,1:3],4))
+    y_exact = U @ y0
+    
+    fids = []
+    for delt in deltas:
+        
+        sol1 = solve_ivp(f2D,(0,T),y0,method=method,
+                         args=(delt, b,-gamma))
+        y_num = np.array(sol1.y[:,-1]); #y_num = y_num/np.linalg.norm(y_num)
+
+
+        fids.append(Fidelity(y_exact[1:3],y_num[1:3]))
+
+    return deltas, fids
+
+def f2D(t,y,delta,b,gamma):
+
+    result =-1j*Ham2D(t,b,gamma,delta)@y
+    
+    return result
+
+
+###############################
 
 def cot(t):
     return np.cos(t)/np.sin(t)
@@ -89,7 +163,7 @@ def omegas(t,delta):
 
 def Ham(t,b1,b2,phi1,phi2,delta):
     
-    if  t < T/2:
+    if  t < T/2.0:
         phi1 = 0; phi2 = 0
     
     O = omegas(t,delta)
@@ -160,21 +234,29 @@ def fidLoop(y0,par,method, deltas):
 
     return deltas, fids
 
-def averageFid(par,n):
+def averageFid(par,n,FLAG):
 
-    k = 2
+    k = 6
     delta = 0.025
     deltas = [x*delta for x in range(-k,k+1)]
     
 
     fids = []
     for k in range(n):
-        y0 = np.array(np.random.rand(3),dtype="complex_")
-        y0 = y0/np.linalg.norm(y0)
-        y0 = np.concatenate(([0.0,0.0],y0,[0.0]),dtype="complex_")
+        if FLAG:
+            y0 = np.array(np.random.rand(2),dtype="complex_")
+            y0 = y0/np.linalg.norm(y0)
+            y0 = np.concatenate(([0.0],y0,[0.0]),dtype="complex_")
+            x,y = fidLoop2D(y0,par,'BDF', deltas)
+            fids.append(y)
+
+        else:
+            y0 = np.array(np.random.rand(3),dtype="complex_")
+            y0 = y0/np.linalg.norm(y0)
+            y0 = np.concatenate(([0.0,0.0],y0,[0.0]),dtype="complex_")
        
-        x,y = fidLoop(y0,par,'BDF', deltas)
-        fids.append(y)
+            x,y = fidLoop(y0,par,'BDF', deltas)
+            fids.append(y)
 
     return x, n_mean(fids)
 
@@ -197,31 +279,43 @@ def T_par():
 
 def H_par():
     par = [2.09439951e+00, 3.51170154e+00, 2.22537206e+00, 2.44565765e+00,1.85774118e-06, 2.40135293e+00, 2.50823733e-06, 8.38749813e-01, 3.67434570e-01, 3.14585361e-01, 2.31102036e+00, 1.42421265e-05]
-
-
     return par
-    
+
+
+
     
 
-def Fidplot(n, etas,par_func):
+def Fidplot(n, etas,par_func, FLAG):
     par = par_func()
     name =  par_func.__name__; name = name[0]
     print(name)
     
     global eta
-    
+
     eta = etas[0]
-    x1,y1 = averageFid(par,n)
+    x1,y1 = averageFid(par,n, False)
     eta = etas[1]
-    _,y2 = averageFid(par,n)
-    #eta = etas[2]
-    #_,y3 = averageFid(par,n)
+    _,y2 = averageFid(par,n, False)
+
+    if FLAG:
+        
+        par = [0.0, 0.0, np.pi]
+        
+        eta = etas[0]
+        x2,z1 = averageFid(par,n, FLAG)
+        eta = etas[1]
+        _,z2 = averageFid(par,n, FLAG)
+
+
 
 
     plt.figure()
-    plt.plot(x1,y1,'*--', label=f"$\eta =$ {etas[0]}")
-    plt.plot(x1,y2,'*--', label=f"$\eta =${etas[1]}")
-    #plt.plot(x1,y3,'*--', label=f"$\eta =${etas[2]}")
+    plt.plot(x1,y1,'*--', label=f"$\eta =$ {etas[0]} - 3D")
+    plt.plot(x1,y2,'*--', label=f"$\eta =${etas[1]} - 3D")
+    if FLAG:
+        plt.plot(x2,z1,'*--', label=f"$\eta =$ {etas[0]} - 2D")
+        plt.plot(x2,z2,'*--', label=f"$\eta =${etas[1]} - 2D")
+    
     plt.xlabel("$\delta\Omega$")
     plt.ylabel("Fidelity")
     plt.title(f"Fidelity averaged over {n} states in {name}-Gate")
@@ -232,14 +326,12 @@ def Fidplot(n, etas,par_func):
 
 
 etas = [0.0, 4.0]
-n = 5
+n = 25
 
-par = H_par(); par1 = par[:6]; par2 = par[6:]
-
-#Fidplot(n,etas,T_par)
-#Fidplot(n,etas,X_par)
-Fidplot(n,etas,H_par)
-#Fidplot(n,etas,Z_par)
+#Fidplot(n,etas,T_par,fidLoop, FLAG)
+#Fidplot(n,etas,X_par,False)
+#Fidplot(n,etas,H_par)
+Fidplot(n,etas,Z_par,True)
 
 plt.show()
 
