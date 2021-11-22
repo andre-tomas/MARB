@@ -1,11 +1,11 @@
-The Background consists of a quick introduction to the most important quantum mechanical concepts and notation. Readers familiar with quantum mechanics may skip it. The second part explores the fundamentals of quantum computation and 
+The Background consists of a quick introduction to the most important quantum mechanical concepts and notation.The second part explores the fundamentals of quantum computation and 
 
 \subsection{Basic quantum mechanics, part I}
-This part offers a quick introduction to the necessary quantum mechanics for readers whom are not familiar with the subject. Quantum mechanics is nothing more than linear algebra with fancy notation and some additional rules. The section contains nothing relevant for later parts of the thesis and can be safely skipped. For a more complete introduction I suggest chapter 1 of Sakurai.
+This part offers a quick introduction to the necessary quantum mechanics for readers whom are not familiar with the subject. Quantum mechanics is nothing more than linear algebra (with fancy notation and some additional rules). The section contains nothing relevant for later parts of the thesis and can be safely skipped. For a more complete introduction I suggest chapter 1 of Sakurai\cite{Sakurai}.
 
 
 \subsubsection{Quantum states and Dirac notation}
-First lets define what is meant by the term \textbf{state}. In classical physics a state would be given by the position and momentum of all its individual constituents. An example would be a system of $N$ particles, the state would be given by $\{ (\vec{x}, \vec{p})_i \}_{i=1}^N$, where $\vec{x},\vec{p} \in \mathbb{R}^3$ are the position and momentum in 3 dimensions. In Quantum Mechanics (QM) it more subtle than this, since exact information of the system can not be obtained in the same way. So a state is represented by a normalized vector in a complex vector space. The vector space in which the state vector lives is called a \textbf{Hilbert space} and has the following properties. given two vectors $u,v$ in $H$ they satisfy:
+First let's define what is meant by the term \textbf{state}. In classical physics a state would be given by the position and momentum of all its individual constituents. An example would be a system of $N$ particles, the state would be given by $\{ (\vec{x}, \vec{p})_i \}_{i=1}^N$, where $\vec{x},\vec{p} \in \mathbb{R}^3$ are the position and momentum in 3 dimensions. In Quantum Mechanics (QM) it is more subtle than this, since exact information of the system can not be obtained in the same way. A state is represented by a normalized vector in a complex vector space. The vector space in which the state vector lives is called a \textbf{Hilbert space} and has the following properties. Given two vectors $u,v$ in $H$ they satisfy:
 
 \noindent The inner product is conjugate symmetric
 \begin{enumerate}
@@ -32,20 +32,20 @@ Using the 1st and 3rd property
 \end{equation}
 or in words, the inner product of two identical vectors is a real number.
 
-So now we have established that a quantum state is a normalized vector $v$ in a Hilbert space $H$. Now a property of vector spaces is that any vector can be multiplied by a matrix, and the resulting vector will be a new vector in the same vector space. This is what is meant when a quantum state is \textbf{acted} upon. For a matrix $A$ we have that 
+So now we have sated that a quantum state is a normalized vector $v$ in a Hilbert space $H$. Now a property of vector spaces is that any vector can be multiplied by a matrix, and the resulting vector will be a new vector in the same vector space. This is what is meant when a quantum state is \textbf{acted} upon. For a matrix $A$ we have that 
 \begin{equation}
 H \ni v  \xrightarrow{A} Av = v' \in H
 \end{equation}
 acting on a state alters it in various ways.
 
-Now lets go from this linear algebra notation to the Dirac notation commonly used in quantum mechanics, also know as bra-ket notation.
+Now let's go from this linear algebra notation to the Dirac notation commonly used in quantum mechanics, also know as bra-ket notation.
 Vectors are replaced by \textbf{kets},$\ket{}$, or \textbf{bras},$\bra{}$. 
 $v \mapsto \ket{\psi}$ \\
 $v^\dagger \mapsto \bra{\psi}$\\
 and matrices are replaced by operators\\
 $A \mapsto \hat{A}$\\
-The same rules applies to these as for the usual vectors.
-The label inside the brackets does no in itself have any meanings and are in some sense only just that, labels, but more often than not it is used to represent some property of the state. With this notation the inner product between to states $\ket{\psi},\ket{\varphi}$ is written as 
+The same rules apply to these as for the usual vectors.
+The labels inside the brackets do not in themselves have any meanings and are in some sense only that, labels, but more often than not it is used to represent some property of the state. With this notation the inner product between to states $\ket{\psi},\ket{\varphi}$ is written as 
 \begin{equation}
 \bra{\psi}\ket{\varphi} = a_1^{*}b_1 + a_2^{*}b_2 + \dots + a_n^{*}b_n = \begin{pmatrix} a_1^{*} & a_2^{*} & \dots & a_n^{*}\end{pmatrix} \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_n\end{pmatrix}
 \end{equation}
@@ -57,19 +57,19 @@ a_1 \\ a_2 \\ \vdots \\ a_n
 \end{pmatrix},\;
 \bra{\psi} = (\ket{\psi})^{\dagger} = (a_1^{*}, a_2^{*}, \dots, a_n^{*}),\; a_1,a_2,\dots,a_n \in \mathbb{C}
 \end{equation}
-which is nothing more than a complex vector. A common way to represent kets is as a linear combination of eigenkets, which corresponds to the set of eigenvectors. Thus can any arbitrary ket be written as a linear combination of these kets if they span the space
+which is nothing more than a complex vector. A common way to represent kets is as a linear combination of eigenkets, which corresponds to the set of eigenvectors. Thus any ket can be written as a linear combination of these kets if they span the space
 \begin{equation}
-\ket{A} = \sum_{a} c_{a}\ket{a}
+\ket{\Psi} = \sum_{\psi} c_{\psi}\ket{\psi}
 \end{equation}
 where the $\ket{a}$s span the space in which $\ket{A}$ lives.
 \\
-Following are some example calculations to see how to use Dirac-notation, lets consider what the effect of the Pauli-Z operator of a spin-$\dfrac{1}{2}$ particle is
+Following are some example calculations to see how to use Dirac-notation, let's consider what the effect of the Pauli-Z operator of a spin-$\dfrac{1}{2}$ particle is
 \begin{enumerate}[label=\textbf{\alph*)}]
-\item on the up position $\ket{\psi} = \ket{\downarrow}$?
+\item on the up position $\ket{\psi} = \ket{\downarrow}$
 
-\item on an arbitrary superposition of up and down $\ket{\psi} = \alpha \ket{\uparrow} + \beta\ket{\downarrow}, |\alpha|^2 + |\beta|^2 = 1, \alpha,\beta \in \mathbb{C}$?
+\item on an arbitrary superposition of up and down $\ket{\psi} = \alpha \ket{\uparrow} + \beta\ket{\downarrow}, |\alpha|^2 + |\beta|^2 = 1, \alpha,\beta \in \mathbb{C}$
 \end{enumerate}
-Lets first show how this would be done using the matrix representation and then using dirac notation.
+Let's first show how this would be done using the matrix representation and then using dirac notation.
 Here the kets $\{\ket{\uparrow} \dot{=} \begin{pmatrix}
 1 \\ 0
 \end{pmatrix}, \, \ket{\downarrow} \dot{=} \begin{pmatrix}
@@ -104,7 +104,7 @@ Here the kets $\{\ket{\uparrow} \dot{=} \begin{pmatrix}
 \end{pmatrix} -\beta\begin{pmatrix}
 0 \\ 1
 \end{pmatrix} \dot{=}\, \alpha\ket{\uparrow} - \beta\ket{\downarrow}$ \end{enumerate}
-The matrix representation works great for small Hilbert spaces, lets do it again now using Dirac notation, here the inner product will be a key aspect, and making use of the orthonormality of $\ket{\uparrow},\ket{\downarrow}$ it follow that $\bra{\uparrow}\ket{\uparrow} = \bra{\downarrow}\ket{\downarrow} = 1$ and $\bra{\uparrow}\ket{\downarrow} = \bra{\downarrow}\ket{\uparrow} = 0$.
+The matrix representation works great for small Hilbert spaces, let us do it again now using Dirac notation, here the inner product will be a key aspect, and making use of the orthonormality of $\ket{\uparrow},\ket{\downarrow}$ it follows that $\bra{\uparrow}\ket{\uparrow} = \bra{\downarrow}\ket{\downarrow} = 1$ and $\bra{\uparrow}\ket{\downarrow} = \bra{\downarrow}\ket{\uparrow} = 0$.
 With Dirac notation operators can be expressed as outer products of bras and kets, thus Pauli-Z can be written as $\sigma_z = \ket{\uparrow}\bra{\uparrow} - \ket{\downarrow}\bra{\downarrow}$.
 
 \begin{enumerate}[label=\textbf{\alph*)}]
@@ -114,27 +114,27 @@ With Dirac notation operators can be expressed as outer products of bras and ket
 +
 \beta\ket{\uparrow}\underbrace{\bra{\uparrow}\ket{\downarrow}}_{ = 0} - \beta\ket{\downarrow}\underbrace{\bra{\downarrow}\ket{\downarrow}}_{ = 1} = \alpha\ket{\uparrow} - \beta\ket{\downarrow}$.
 \end{enumerate}
-Note that the final answer is the same for both cases, but using Dirac notation there was no need to bother with explicit vectors, thats one of the strong advantages of the Dirac notation. These calculations are quite analogous to how a qubit works which will be discussed in a later section. 
-
-
-\subsubsection{Probability amplitudes, Observables and Measurements}
-\note{Write this}
+Note that the final answer is the same for both cases, but using Dirac notation there was no need to bother with explicit vectors, that is one of the strong advantages of the Dirac notation. These calculations are quite analogous to how a qubit works which will be discussed in a later Section \note{section}. Measuring a quantum state $\ket{\psi} = \sum_{n}c_n\ket{n},\, c_n\in \mathbb{C}$ it collapses into a single base ket of the measured basis
+\begin{equation}
+\ket{\psi} \xrightarrow{Measurement} \ket{n},
+\end{equation}
+with probability $|c_n|^2$. 
 
 
 
 \subsubsection{Time evolution and the Schrödinger equation}
-Say we have a time-dependent state $\ket{\psi(t)}$, how does the system evolve when time goes from $t_0$ to some later time $t_1$, 
+Say we have a time-dependent state $\ket{\psi(t)}$. How does the system evolve when time goes from $t_0$ to some later time $t_1$, 
 \begin{equation}
 \ket{\psi(t_0)} \xrightarrow{t_0 \mapsto t_1} \ket{\psi(t_1)} 
 \end{equation}
 We can write this as an operator equation $\mathcal{U}(t,t_0)\ket{\psi(t_0)} = \ket{\psi(t)}$. To be a valid operator $\mathcal{U}$ must satisfy some properties. To preserve probability the operator must be unitary, $\mathcal{U}^\dagger\mathcal{U} = \mathcal{U}\mathcal{U}^\dagger = 1$.
-The second property that need to be fulfilled is composition, $\mathcal{U}(t_2,t_0) = \mathcal{U}(t_2,t_1)\mathcal{U}(t_1,t_0)$, which is to say that applying to consecutive time transformations, first between $t_0 \rightarrow t_1$ and then $t_1 \rightarrow t_2$ is equivalent with applying one transformation between $t_0 \rightarrow t_2$. 
-Proceeding lets define how the time evolution operator would act under an infinitesimal change $dt$, lets propose an operator on the form
+The second property that needs to be fulfilled is composition, $\mathcal{U}(t_2,t_0) = \mathcal{U}(t_2,t_1)\mathcal{U}(t_1,t_0)$, which is to say that applying two consecutive time transformations, first between $t_0 \rightarrow t_1$ and then $t_1 \rightarrow t_2$ is equivalent to applying one transformation between $t_0 \rightarrow t_2$. 
+Proceeding let's define how the time evolution operator would act under an infinitesimal change $dt$, let's propose an operator on the form
 \begin{equation}
 \mathcal{U}(t_0 +dt, t_0) = \mathbf{1} - i\,\Omega\,dt
 \end{equation}
 with $\Omega$ being hermitian, $\Omega = \Omega^\dagger$. $\Omega$ can be time dependent, and then must be evaluated at $t_0$. As $dt$ approaches $0$ it reduces to an identity operator, which is appropriate.
-Lets check the two other properties
+Let's check the two other properties
 \begin{enumerate}
 \item identity
 \end{enumerate}
@@ -147,22 +147,22 @@ Lets check the two other properties
 \begin{equation}
 \mathcal{U}(t_0 + dt_1 + dt_2,t_0 + dt_1)\mathcal{U}(t_0 + dt_1,t_0) = (\mathbf{1} - i\,\Omega\,dt_2)(\mathbf{1} - i\,\Omega\,dt_1) = \mathbf{1} - i\,\Omega\,dt_1 - i\,\Omega\,dt_2)(\mathbf{1} + \mathcal{O}(dt^2) \simeq \mathbf{1} - i\,\Omega(dt_1 + dt_2) = \mathcal{U}(t_0 + dt_1 + dt_2,t_0).
 \end{equation}
-The operator $\Omega$ happens \note{why?} to match with the Hamiltonian operator $H$ by a numerical factor, $\Omega = \frac{H}{\hbar}$, where $\hbar$ is Plancks reduced constant. So for an infinitesimal time shift the operator has the form $\mathcal{U}(t_0 + dt, t_0) = \mathbf{1} - i\,\frac{H}{\hbar} \,dt$
+The operator $\Omega$ happens \note{why?} to match with the Hamiltonian operator $H$ up to a factor, $\Omega = \frac{H}{\hbar}$, where $\hbar$ is Planck's reduced constant. So for an infinitesimal time shift the operator has the form $\mathcal{U}(t_0 + dt, t_0) = \mathbf{1} - i\,\frac{H}{\hbar} \,dt$
 \\
 \note{some smooth segway}
 \\
-One of Quantum Mechanics postulates is that a closed quantum state evolves according to the Schrödinger equation, Equation \ref{eq:schro}, here it becomes more obvious why it happens that $\Omega$ was related to the Hamiltonian. It is common to set $\hbar = 1$, as it is just a numerical shift, so lets do that, which simplifies both the Schrödinger equation and the time evolution operator $\mathcal{U}$. 
+One of Quantum Mechanics postulates is that a closed quantum state evolves according to the Schrödinger equation, Equation \ref{eq:schro}, here it becomes more obvious why it happens that $\Omega$ was related to the Hamiltonian. It is common to set $\hbar = 1$, as it is just a numerical shift, so let's do that, which simplifies both the Schrödinger equation and the time evolution operator $\mathcal{U}$. 
 \begin{equation} 
 i \hbar \pdv{}{t} \ket{\psi(t)} = H \ket{\psi(t)}
 \label{eq:schro}
 \end{equation} 
-Now its is clear that the time evolution operator is related to the Schrödinger equation in some way, notice that the solution $\ket{\psi(t)}$ can be written in terms of our time evolution operator as
+Now it is clear that the time evolution operator is related to the Schrödinger equation in some way, notice that the solution $\ket{\psi(t)}$ can be written in terms of our time evolution operator as
 $\ket{\psi(t)} = \mathcal{U}(t,t_0)\ket{\psi(t_0)}$. So given an initial condition we have solved the Schrödinger equation if we can determine $\mathcal{U}(t,t_0)$.  
 To find the time evolution operator for any time $t$, we could successively repeat the infinitesimal operator until the desired time is reached $t_0 \mapsto t_0 + dt \mapsto t_0 + 2\,dt \mapsto \dots \mapsto t - dt \mapsto t$. For the case of a time independent Hamiltonian $H$ it could be written as
 \begin{equation}
 \lim_{N \rightarrow \infty} \left(\mathbf{1} - i\,H\frac{(t-t_0)}{N} \right)^N = \exp\left(- i\,H(t-t_0) \right)
 \end{equation}
-For simplicity lets assume that $t_0 = 0$, then the time evolution operator for a finite time for a time independent Hamiltonian could be written as $\mathcal{U}(t,0) = e^{-i\,H\,t}$. If the Hamiltonian has time dependence but it commutes with itself at different times, then a integral can be introduces in the exponential, $\mathcal{U}(t,0) = e^{-i\,\int_0^t \,H(t')\, dt'}$, if the Hamiltonian does not commute at different times it becomes a bit more involved and will not be covered here. 
+For simplicity let us assume that $t_0 = 0$, then the time evolution operator for a finite time for a time independent Hamiltonian could be written as $\mathcal{U}(t,0) = e^{-i\,H\,t}$. If the Hamiltonian has time dependence but it commutes with itself at different times, then an integral can be introduced in the exponential, $\mathcal{U}(t,0) = e^{-i\,\int_0^t \,H(t')\, dt'}$, if the Hamiltonian does not commute at different times it becomes a bit more involved and will not be covered here. But the formal solution can be written as $\mathcal{U}(t,0) = \mathbf{T}e^{-i\,\int_0^t \,H(t')\, dt'}$.,  where $\mathbf{T}$ is time-ordering.
 
 To conclude, finding the time evolution operator corresponds to finding the solution to the Schrödinger Equation, which governs time evolution of quantum systems.
 
@@ -176,14 +176,14 @@ To conclude, finding the time evolution operator corresponds to finding the solu
 \subsection{Quantum Computation and Quantum Information theory, part 2}
 
 \subsubsection{The Qubit}
-A classical bit is a two state (binary) system, which means it can, occupy either one of two states, \textbf{0} or \textbf{1}. So with $n$ bits there is $2^n$ possible states that can be represented, but only one at a time.
+A classical bit is a two state (binary) system, which means it can, occupy either one of two states, \textbf{0} or \textbf{1}. So with $n$ bits there are $2^n$ possible states that can be represented, but only one at a time.
 
 The general way to define a qubit would be any two dimensional quantum system ($\text{dim}(\mathcal{H}) = 2$). In the orthonormal basis ${\ket{0},\ket{1}}$. Where qubits are on the form given in Equation \ref{eq:qubit}, any super position (linear combination) of the basis-kets $\ket{0},\ket{1}$.
 \begin{equation}
 \label{eq:qubit}
 \ket{\psi} = \alpha\ket{0} + \beta\ket{1},\,\alpha,\beta \in \mathbb{C},\, |\alpha|^2 + |\beta|^2 = 1.
 \end{equation}
-For most of the time it is better to work with the abstract concept of qubits without focusing on the physical implementation, we however see a lot of similarities with spin-$\dfrac{1}{2}$ particles ($\ket{\downarrow},\ket{\uparrow}$) or energy levels in a trapped ion ($\ket{g},\ket{e}$). There is no need to limit the system to a physical 2 dimensional system. Simply choose two appropriate states which form a 2 dimensional subspace.
+Most of the time it is better to work with the abstract concept of qubits without focusing on the physical implementation, we however see a lot of similarities with spin-$\dfrac{1}{2}$ particles ($\ket{\downarrow},\ket{\uparrow}$) or energy levels in a trapped ion ($\ket{g},\ket{e}$). There is no need to limit the system to a physical 2 dimensional system. Simply choose two appropriate states which form a 2 dimensional subspace.
 
 The coefficients $\alpha$ and $\beta$ are the probability amplitudes, and tells with what probability one will find either $\ket{0}$ or $\ket{1}$ when measuring. One finds $\ket{0}$,$\ket{1}$ with probability $|\alpha|^2$ and $|\beta|^2$ respectively.
 
@@ -221,15 +221,15 @@ To make logic gates suitable for quantum computation the classical logic gate ha
 \item Reversibility 
 \item Conservation of probability
 \end{enumerate}
-it will turn out that these properties more or less has the same consequence. The first property is not achieved by the classical gates. For example, given the output of the \textbf{AND}-gate it is impossible to to know the state of the bits that went in to the gate. An output of \textbf{1} only conveys that the inputs were equal, \textbf{1},\textbf{1} or \textbf{0},\textbf{0}, but not which one. Adding another output that simply is one of the input can make the gate reversible, if you get a \textbf{0} as output, and know that the first input was \textbf{0}, then the second input must be must be a \textbf{1}. This extends to all inputs and outputs. In the quantum mechanical context a quantum logic gate is an quantum operator acting on the state of the qubit. $A\ket{\psi} = \ket{\psi'}$, so the equivalence of the classical reversibility would be the existence of an inverse operator $A^{-1}$ such that the operation could be reversed $A^{-1}\ket{\psi'} = A^{-1}A\ket{\psi} = \mathbf{1}\ket{\psi} = \ket{\psi}$
+it will turn out that these properties more or less has the same consequence. The first property is not achieved by the classical gates. For example, given the output of the \textbf{AND}-gate it is impossible to know the state of the bits that went in to the gate. An output of \textbf{1} only conveys that the inputs were equal, \textbf{1},\textbf{1} or \textbf{0},\textbf{0}, but not which one. Adding another output that simply is one of the input can make the gate reversible, if you get a \textbf{0} as output, and know that the first input was \textbf{0}, then the second input must be must be a \textbf{1}. This extends to all inputs and outputs. In the quantum mechanical context a quantum logic gate is a quantum operator acting on the state of the qubit. $A\ket{\psi} = \ket{\psi'}$, so the equivalence of the classical reversibility would be the existence of an inverse operator $A^{-1}$ such that the operation could be reversed $A^{-1}\ket{\psi'} = A^{-1}A\ket{\psi} = \mathbf{1}\ket{\psi} = \ket{\psi}$
 
-Conservation of probability does not really have any classical analogue due to it being a quantum property. More concretely it means conservation of the inner product. Given the states $U\ket{\psi} = \ket{\psi'}$ and $U\ket{\varphi} = \ket{\varphi'}$, then the inner product of $ket{\psi},ket{\varphi}$ is the same as for $ket{\psi'},ket{\varphi'}$. Thus one can compute
+Conservation of probability does not really have any classical analogue due to it being a quantum property. More concretely it means conservation of the inner product. Given the states $U\ket{\psi} = \ket{\psi'}$ and $U\ket{\varphi} = \ket{\varphi'}$, then the inner product of $\ket{\psi},\ket{\varphi}$ is the same as for $ket{\psi'},ket{\varphi'}$. Thus one can compute
 \begin{equation}
 \bra{\psi'}\ket{\varphi'} = \bra{\psi}U^\dagger U\ket{\varphi} = \bra{\psi}\ket{\varphi}
 \end{equation}
 and see that this only holds if $U^\dagger U = UU^\dagger = \mathbf{1}$, which happens to be the condition for $U$ to be a unitary operator. From the unitarity it is possible to also see that $U^\dagger = U^{-1}$. The reversibility is also a consequence of the operators being Unitary.
 
-There are many ways to achieve creation and implementation of quantum gates, some of them will be discussed in more detail in the Section \note{Holonomic Quantum Computation?}, lets see in general how a quantum gate could be implemented. To apply a quantum gate to the qubit means to operate on a quantum state with a unitary operator. The time evolution operator discussed earlier happens to be unitary, and it acts on states according to the Schrödinger. Since $U = e^{-i\,H,t}$, the time evolution operator is determined by the Hamiltonian. So by constructing a Hamiltonian, $H$, that gives $U$ the form of an operator it one could in that way apply a quantum gate.
+There are many ways to achieve creation and implementation of quantum gates, some of them will be discussed in more detail in the Section Non-adiabatic Holonomic Quantum Computation, let's see in general how a quantum gate could be implemented. To apply a quantum gate to the qubit means to operate on a quantum state with a unitary operator. The time evolution operator discussed earlier happens to be unitary, and it acts on states according to the Schrödinger equation. Since $U = e^{-i\,H,t}$, the time evolution operator is determined by the Hamiltonian. So by constructing a Hamiltonian, $H$, that gives $U$ the form of an operator one could in that way apply a quantum gate.
 
 
 \subsubsection{Some important gates and Universal computation}
@@ -254,11 +254,11 @@ with the effect that is swaps the input qubits,
 $\begin{cases} X\ket{0} = \ket{1}\\
 X\ket{1} = \ket{0}
 \end{cases}$.
-The Z-gate introduces a phase-flip between the inputs, it does nothing to $\ket{0}$ and negates the sign of $\ket{1}$, $\begin{cases} Z\ket{0} = \ket{0}\\
-Z\ket{1} = -\ket{0}
+The Z-gate introduces a phase-flip between the inputs, it does nothing to $\ket{0}$ and reverses the sign of $\ket{1}$, $\begin{cases} Z\ket{0} = \ket{0}\\
+Z\ket{1} = -\ket{1}
 \end{cases}$.
  
-Superposition is one of the key aspects that makes QC able to surpass classical algorithms. The Hadamard gate, $H$ creates a superimposed quantum state, and is widely used all over QC, the gate is defined as
+Superposition is one of the key aspects that make QC able to surpass classical algorithms. The Hadamard gate, $H$ creates a superimposed quantum state, and is widely used all over QC, the gate is defined as
 \begin{equation}
 H \dot{=} \dfrac{1}{\sqrt{2}}\begin{pmatrix}
 1 & 1 \\ 1 & -1
@@ -277,7 +277,7 @@ H\dfrac{1}{\sqrt{2}}(\ket{0} + \ket{1}) = \ket{0}
 H\dfrac{1}{\sqrt{2}}(\ket{0} - \ket{1}) = \ket{1}
 \end{cases}.
 \end{equation}
-The well known quantum algorithms make heavy use out of this operator\cite{Grover}\cite{shor}, it is essential to QC.
+The well known quantum algorithms make heavy use of this operator\cite{Grover}\cite{shor}, it is essential to QC.
 The concept of the phase flip, $Z$, can be extended to a phase shift of any arbitrary angle, the gate is denoted by $P(\phi)$ or sometimes simply $\phi$. It is defined as 
 \begin{equation}
 P(\phi) \dot{=} \begin{pmatrix}
@@ -294,13 +294,13 @@ T = P({\pi/4}) \dot{=} \begin{pmatrix}
 \end{pmatrix}.
 \end{equation}
 
-All gates so far a single-qubit gates, to achieve full universality it turns out that two qubit-gates are enough. The two qubit gate used is the {\tt CNOT}, which stands for controlled not, the effect is defined as ${\tt CNOT}\ket{x,y} = \ket{x,x\oplus y}$, where $\oplus$ denotes addition mod 2. The gate takes two inputs, the control and the target. If the control is $\ket{1}$ then a {\tt NOT} is applied to the target $\ket{y} \mapsto X\ket{y}$, otherwise the gate leaves the inputs unchanged.
+All gates so far are single-qubit gates, to achieve full universality it turns out that two qubit-gates are enough. The two qubit gate used is the {\tt CNOT}, which stands for controlled not, the effect is defined as ${\tt CNOT}\ket{x,y} = \ket{x,x\oplus y}$, where $\oplus$ denotes addition mod 2. The gate takes two inputs, the control and the target. If the control is $\ket{1}$ then a {\tt NOT} is applied to the target $\ket{y} \mapsto X\ket{y}$, otherwise the gate leaves the inputs unchanged.
 
 
 
 \subsubsection{Qudit Generalizations}
-Inherently there are nothing special about bits and binary logic, same goes for qubits.  A qudit is the general name for a higher dimensional qubit, often with dimension $d$, the special case of $d = 3 
-$ is called a \textit{qutrit}, $d = 4$ a \textit{ququart} and so on. A bigger computational basis could even prove to be better in some sense. The information content per unit is higher, $N$ qubits can be reduced down to $\dfrac{N}{\log_2(d)}$ qudits\cite{info_qudit}, with quickly diminishing returns. The qutrit has a reduction factor of $\sim 0.64$, the ququart $0.5$, with less returns the higher the dimension. Due to more information per unit, less operations are required to build quantum gates, minimizing the loss of accuracy from operations. The toffoli gate can be constructed with only BLANK gates using qutrits, which need BLANK gates with qubits \note{reference and lookup actual numbers}. The drawback is the increased complexity in the schemes for physical implementation which could come with increased errors. There are already many promising results using qudits\cite{qutrit1}\cite{qudit2}\cite{qudit3}, and many more are discussed in \cite{qudit}. The question is if the benefits of qudits can outweight the extra cost.
+Inherently there is nothing special about bits and binary logic, same goes for qubits.  A qudit is the general name for a higher dimensional qubit, often with dimension $d$, the special case of $d = 3 
+$ is called a \textit{qutrit}, $d = 4$ a \textit{ququart} and so on. A bigger computational basis could even prove to be better in some sense. The information content per unit is higher, $N$ qubits can be reduced down to $\dfrac{N}{\log_2(d)}$ qudits\cite{info_qudit}, with quickly diminishing returns. The qutrit has a reduction factor of $\sim 0.64$, the ququart $0.5$, with less returns the higher the dimension. Due to more information per unit, less operations are required to build quantum gates, minimizing the loss of accuracy from operations. The toffoli gate can be constructed with only BLANK gates using qutrits, which need BLANK gates with qubits \note{reference and lookup actual numbers}. The drawback is the increased complexity in the schemes for physical implementation which could come with increased errors. There are already many promising results using qudits\cite{qutrit1}\cite{qudit2}\cite{qudit3}, and many more are discussed in \cite{qudit}. The question is if the benefits of qudits can outweigh the extra cost.
 
 In the following section let, let the dimension $d$ be any integer such that $d > 2$, some generalized qudits gates will be defined and discussed, the definitions used are the same used in \cite{qudit}.
 The effect of {\tt NOT} is ambiguous for when the number of basis states are more than 2. So instead of viewing it as NOT, it can be thought of as a permutation of the states $\ket{0},\ket{1}$. The higher dimensional correspondence of $X$ is defined as
@@ -325,7 +325,7 @@ Z_d = \begin{pmatrix}
 \end{pmatrix}
 \end{equation}
 
-with $\omega = \sqrt[d]{1} = e^{2\pi i/d}$ being the $d$th roots of unity. It shift the different basis a certain amount.
+with $\omega = \sqrt[d]{1} = e^{2\pi i/d}$ being the $d$th roots of unity. It shifts the different basis states a certain amount.
 
 The generalized version of the Hadamard gate for qudits $H_d$ easier to define of how it acts on each basis-ket, the effect is 
 \begin{equation}
@@ -333,7 +333,7 @@ H_d\ket{j} = \dfrac{1}{\sqrt{d}}\sum_{i=0}^{d-1} \omega^{i\,j}\ket{i},\; j\in \{
 \end{equation}
 with $\omega$ still the $d$th root of unity.
 
-Last lets define the generalized qudit $T$-gate, now $d$ is restricted to prime numbers, such $T_d$ is only defined for prime number dimensions\note{lookup why and cite}. 
+Last let us define the generalized qudit $T$-gate, now $d$ is restricted to prime numbers, such $T_d$ is only defined for prime number dimensions\note{lookup why and cite}. 
 The gate is defined by
 \begin{equation}
 T_d = \sum_{k=0}^{d-1} \omega^{\nu_k}\ket{k}\bra{k}
@@ -347,7 +347,7 @@ with $\omega$ being the $d$th root of unity. The exponent $\nu_k$ can be is defi
 \end{cases}
 \end{equation} 
 with $\gamma',z',\varepsilon' \in \mathbb{Z}_d$ restricted by \note{ta reda på vad sjutton som händer här egentligen}.
-The gate that will be implemented in this report is the $T_3$ with $z' = 1, \gamma' = 2$ and $\varepsilon' = 0$, which is explicitly turn out to be 
+The gate that will be implemented in this report is the $T_3$ with $z' = 1, \gamma' = 2$ and $\varepsilon' = 0$, which explicitly turn out to be 
 \begin{equation}
 T_3 = \begin{pmatrix}
 1 & 0 & 0\\
@@ -359,16 +359,17 @@ T_3 = \begin{pmatrix}
 \note{something about qudit universality here maybe??}
 
 
+
 \subsubsection{Non-Adiabatic Holonomic Quantum Computation}
-Holonomic QC makes use of holonomies, which is to which extent parallel transport around some closed loop fails to preserve the transported data. Which in the case of Quantum mechanics means that a periodic system, $H(\mathbf{R}(0)) = H(\mathbf{R}(T))$, where $\mathbf{R}$ is a vector of parameters, gains an additional phase. This was first introduced by M.V. Berry\cite{berry} and thus the phase is usually refereed to as the Berry phase, but is more generally called the geometric phase, since the phase arises from the geometry rather than the dynamics of the system. The geometric phase exists also in non-adiabatic and non-abelian context, which gives room for more complex structures\cite{anandan1}\cite{anandan2}\cite{zee}. 
+Holonomic Quantum Computation (HQC) makes use of holonomies, which is to which extent parallel transport around some closed loop fails to preserve the transported data. Which in the case of Quantum mechanics means that a periodic system, $H(\mathbf{R}(0)) = H(\mathbf{R}(T))$, where $\mathbf{R}$ is a vector of parameters, gains an additional phase. This was first introduced by M.V. Berry\cite{berry} and thus the phase is usually refereed to as the Berry phase, but is more generally called the geometric phase, since the phase arises from the geometry rather than the dynamics of the system. The geometric phase exists also in non-adiabatic and non-abelian context, which gives room for more complex structures\cite{anandan1,anandan2,zee}. 
 The in the adiabatic setting universal computation can be achieved through holonomies by transporting a set of control parameters along a loop(s) in a suitable space\cite{HQC}.
 
-To see how the effect of adibaticy impacts the time evolution lets introduce a time dependent orthonormal ordered basis $\ket{k(t)} \in \mathcal{C}^1, k = 0,1,2,\dots,N$. The following calculation is based on the section on the adiabatic theorem in Sakurai\cite{Sakurai}.
+To see how the effect of adibaticy impacts the time evolution let's introduce a time dependent orthonormal ordered basis $\ket{k(t)} \in \mathcal{C}^1, k = 0,1,2,\dots,N$. The following calculation is based on the section on the adiabatic theorem in Sakurai\cite{Sakurai}.
 
- For an arbitrary state $\ket{\psi(t)}$, the Schrödinger equation (\ref{eq:schro}) has a solution on the form 
+For an arbitrary state $\ket{\psi(T)}$ after one period $T$, the Schrödinger equation (\ref{eq:schro}) has a solution on the form 
 \begin{equation}
 \label{eq:gen_sol}
-\ket{\psi(t)} = \sum_{n} c_n(t)e^{i\theta_n(t)}\ket{n(t)}
+\ket{\psi(T)} = U(T,0)\ket{\psi}
 \end{equation}
 where 
 \begin{equation}
@@ -388,7 +389,7 @@ in the adiabatic approximation\cite{adiabatensatz}, the second term can be taken
 Then $c_n(t) = c_n(0)e^{i\gamma_n(t)}$ where $\gamma_n(t) = \int_0^t \bra{n(t')}\pdv{}{t'}\ket{n(t')} dt'$.
 The general solution to a state would then be $\ket{\psi(t)} = \sum_{n}c_n(0)e^{i\gamma_n}e^{i\theta_n}\ket{n(0)}$, the time evolution operator in this case would be $\mathcal{U}(t,0) = \sum_{n}c_n(0)e^{i\gamma_n}e^{i\theta_n}$. In the adiabatic case a unitary can be constructed by controlling $\theta$ and $\gamma$.
 
-In the non-adiabatic case some other means to control $\mathcal{U}$ must be engineered, since (\ref{eq:non-ad}) leads to state mixing and other unpleasantnesses. By removing the dependence on the dynamics of the system, the expressions takes on a much simpler form. 
+In the non-adiabatic, Non-adiabatic Holonomic Quantum Computation (NHQC), case some other means to control $\mathcal{U}$ must be engineered, since (\ref{eq:non-ad}) leads to state mixing and other unpleasantnesses. By removing the dependence on the dynamics of the system, the expressions takes on a much simpler form. 
 Let the average energy of any to states be zero\cite{NHQC}, time dependence suppressed for clarity.
 \begin{equation}
 \bra{m}H\ket{n} = 0,\,\forall m,n
@@ -410,3 +411,22 @@ the same holds if we swap $m,n$, thus the two last terms in (\ref{eq:non-ad-int}
 making it only depend on the initial conditions and the geometrical phase.
 Thus a unitary can be created by tracing the loop $C$ and one can obtain $U(T,0) = U(C) = \sum_{m,n}^N U_{mn}(C)\ket{m(0)}\bra{n(0)}$.
 By parametrization of basis states and the loop can be chosen in such a way that $U$ correspond to a quantum gate.
+
+\subsubsection{Dark states, Bright states and Dark paths}
+For a given Hamiltonian $H$ it will have eigenvalues for different energies and corresponding eigenkets to those eigenvalues. For a state $\ket{d}$ such that 
+\begin{equation}
+H\ket{d} = 0\ket{d},
+\end{equation}
+then $\ket{d}$ is an eigenstate with eigenvalue $0$. We say that $\ket{d}$ is a \textbf{dark state} of $H$. Furthermore we say that any state $\ket{b}$ such that 
+\begin{equation}
+\bra{b}\ket{d} = 0
+\end{equation}
+is called a \textbf{bright state}. A pod-like system with $n$ ground states and $m$ excited states will have $n-m$ darks states and $m$ bright states\cite{lambda}.
+The Hamiltonian can be rewritten in the \textit{dark-bright} basis (Morris-Shore basis), an equivalent basis spanned by the bright and dark states. Since the dark states are all individually decoupled from the Hamiltonian this new basis can be further split into two subspaces, one containing the bright states and one containing the dark states. This reduction can be useful since it simplifies the dynamics of the system. 
+The dynamics of a system is closely related to the Hamiltonian of the system. The part of the time evolution affected by the Hamiltonian, for some ordered basis, is $H_{nm}(t) = \bra{n}H(t)\ket{m}$. In the adiabatic case if the Hamiltonian starts in the dark subspace, it will remain and the energy will always be zero and it will remain in the dark subspace. Another way to assure the dynamical phase be zero, is to evolve the system along a \textbf{dark path}, a dark path is state $\ket{D(t)}$ such that 
+\begin{equation}
+\bra{D_n(t)}H(t)\ket{D_m(t)} = 0, \, \forall t\in[0,T].
+\end{equation}
+thus all elements of the dynamical phase will be zero. It is obvious that the dark state in itself is a dark path.
+
+In \cite{darkpath} they construct and experimentally implement a qubit in an $^{171}Yb^{+}$ ion, using a dark path and an auxiliary state to improve fidelity. They conclude that arbitrary NHQC gates can be constructed with better robustness. 

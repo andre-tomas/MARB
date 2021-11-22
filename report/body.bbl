@@ -28,7 +28,7 @@ Berry MV.
   physical sciences. 1984;392(1802):45--57.
 
 \bibitem{anandan1}
-AHARONOV Y, ANANDAN J.
+Aharonov Y, Anandan J.
 \newblock Phase change during a cyclic quantum evolution.
 \newblock Physical review letters. 1987;58(16):1593--1596.
 
@@ -38,7 +38,7 @@ Anandan J.
 \newblock Physics letters A. 1988;133(4):171--175.
 
 \bibitem{zee}
-WILCZEK F, ZEE A.
+Wilczek F, Zee A.
 \newblock Appearance of gauge structure in simple dynamical systems.
 \newblock Physical review letters. 1984;52(24):2111--2114.
 
@@ -79,16 +79,16 @@ Ming-Zhong A, Li S, He R, Xue ZY, Cui JM, Haung YF, et~al.
   Quantum Gates with Two Dark Paths in a Trapped Ion.
 \newblock Not yet published. 2021;.
 
-\bibitem{info_qudit}
-Pavlidis A, Floratos E.
-\newblock Quantum-Fourier-transform-based quantum arithmetic with qudits.
-\newblock Physical review A. 2021;103(3).
-
 \bibitem{Sakurai}
 Sakurai JJ, Napolitano J.
 \newblock {Modern quantum mechanics; 2nd ed.}
 \newblock San Francisco, CA: Addison-Wesley; 2011.
 \newblock Available from: \url{https://cds.cern.ch/record/1341875}.
+
+\bibitem{info_qudit}
+Pavlidis A, Floratos E.
+\newblock Quantum-Fourier-transform-based quantum arithmetic with qudits.
+\newblock Physical review A. 2021;103(3).
 
 \bibitem{adiabatensatz}
 Born M, Fock V.

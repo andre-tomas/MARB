@@ -236,13 +236,14 @@ def fidLoop(y0,par,method, deltas):
 
 def averageFid(par,n,FLAG):
 
-    k = 6
-    delta = 0.025
+    k = 20
+    delta = 0.015
     deltas = [x*delta for x in range(-k,k+1)]
     
 
     fids = []
     for k in range(n):
+        print(k)
         if FLAG:
             y0 = np.array(np.random.rand(2),dtype="complex_")
             y0 = y0/np.linalg.norm(y0)
@@ -273,12 +274,13 @@ def Z_par():
     return par
 
 def T_par():
-    par = [0,0,0,0,2*np.pi/9,-2*np.pi/9]
+    par = [0,0,0,0,2*np.pi/9.0,-2*np.pi/9.0]
     return par
     
 
 def H_par():
-    par = [2.09439951e+00, 3.51170154e+00, 2.22537206e+00, 2.44565765e+00,1.85774118e-06, 2.40135293e+00, 2.50823733e-06, 8.38749813e-01, 3.67434570e-01, 3.14585361e-01, 2.31102036e+00, 1.42421265e-05]
+    #par = [2.09439951e+00, 3.51170154e+00, 2.22537206e+00, 2.44565765e+00,1.85774118e-06, 2.40135293e+00, 2.50823733e-06, 8.38749813e-01, 3.67434570e-01, 3.14585361e-01, 2.31102036e+00, 1.42421265e-05]
+    par = [6.41010859e-04, 6.55568952e-04, 4.75667128e-01, 7.85362474e-01,1.58054108e+00, 1.56302702e+00, 9.81289849e-03, 3.56878815e-18,1.18743379e+00, 2.15063745e+00, 9.74301696e-17, 1.56882773e+00]
     return par
 
 
@@ -297,6 +299,8 @@ def Fidplot(n, etas,par_func, FLAG):
     eta = etas[1]
     _,y2 = averageFid(par,n, False)
 
+    return x1,y1,y2
+    """
     if FLAG:
         
         par = [0.0, 0.0, np.pi]
@@ -308,10 +312,9 @@ def Fidplot(n, etas,par_func, FLAG):
 
 
 
-
-    plt.figure()
-    plt.plot(x1,y1,'*--', label=f"$\eta =$ {etas[0]} - 3D")
-    plt.plot(x1,y2,'*--', label=f"$\eta =${etas[1]} - 3D")
+   
+    plt.plot(x1,y1,'*--', label=f"$\eta =$ {etas[0]}")
+    plt.plot(x1,y2,'*--', label=f"$\eta =${etas[1]}")
     if FLAG:
         plt.plot(x2,z1,'*--', label=f"$\eta =$ {etas[0]} - 2D")
         plt.plot(x2,z2,'*--', label=f"$\eta =${etas[1]} - 2D")
@@ -321,18 +324,44 @@ def Fidplot(n, etas,par_func, FLAG):
     plt.title(f"Fidelity averaged over {n} states in {name}-Gate")
     plt.legend()
     plt.grid()
+    """
 
 
 
 
 etas = [0.0, 4.0]
-n = 25
+n = 500
 
-#Fidplot(n,etas,T_par,fidLoop, FLAG)
-#Fidplot(n,etas,X_par,False)
-#Fidplot(n,etas,H_par)
-Fidplot(n,etas,Z_par,True)
 
+
+x, Ty1, Ty2 = Fidplot(n,etas,T_par,False)
+_, Xy1, Xy2 = Fidplot(n,etas,X_par,False)
+_, Hy1, Hy2 = Fidplot(n,etas,H_par,False)
+_, Zy1, Zy2 = Fidplot(n,etas,Z_par,False)
+
+fig, axs  = plt.subplots(2,2)
+#gs = fig.add_gridspec((2,2), hspace=0)
+#axs = gs.subplots(sharex=True, sharey=True)
+axs[0,0].plot(x,Ty1,'*--',label=f"$\eta =$ {etas[0]}")
+axs[0,0].plot(x,Ty2,'*--',label=f"$\eta =$ {etas[1]}")
+axs[0,0].set_title(f"T-Gate")
+axs[0,1].plot(x,Xy1,'*--',label=f"$\eta =$ {etas[0]}")
+axs[0,1].plot(x,Xy2,'*--',label=f"$\eta =$ {etas[1]}")
+axs[0,1].set_title(f"X-Gate")
+axs[1,0].plot(x,Hy1,'*--',label=f"$\eta =$ {etas[0]}")
+axs[1,0].plot(x,Hy2,'*--',label=f"$\eta =$ {etas[1]}")
+axs[1,0].set_title(f"H-Gate")
+axs[1,1].plot(x,Zy1,'*--',label=f"$\eta =$ {etas[0]}")
+axs[1,1].plot(x,Zy2,'*--',label=f"$\eta =$ {etas[1]}")
+axs[1,1].set_title(f"Z-Gate")
+
+fig.suptitle(f'Fidelity averaged over {n} states')
+for ax in fig.get_axes():
+    ax.set_ylim(ymax=1)
+    ax.set(xlabel='$\delta\Omega$', ylabel='Fidelity')
+    ax.label_outer()
+    ax.grid()
+    ax.legend()
 plt.show()
 
 

@@ -140,14 +140,14 @@ def ob2(par,V):
         
         U = np.matmul(U2[2:5,2:5],U1[2:5,2:5])
         
-        return np.linalg.norm(np.abs(V-U), 'fro')
+        return np.linalg.norm(np.abs(V-U), 2)
 
 def ob1(par,V):
 
     d,b1,b2 = genStates(par1)
     U = (unitaryGate(d,b1,b2,par1[4],par1[5]))[2:5,2:5]
         
-    return np.linalg.norm(np.abs(V-U), 'fro')
+    return np.linalg.norm(np.abs(V-U), 2)
 
 
 def XGate(initialState):
@@ -171,9 +171,10 @@ def TGate(initialState):
 
 # parameters found via optimization and thus not fancy as for X and Z
 def HGate(initialState):
-    par = [6.41010859e-04, 6.55568952e-04, 4.75667128e-01, 7.85362474e-01,1.58054108e+00, 1.56302702e+00, 9.81289849e-03, 3.56878815e-18,1.18743379e+00, 2.15063745e+00, 9.74301696e-17, 1.56882773e+00]
+    par1 = [2.47403048e+00, 2.93987718e-01, 9.36916572e-01, 7.70623264e-01, 1.89630144e-08, 1.95447946e+00]
+    par2 = [1.29921348e-03, 7.21385605e-03, 4.75815598e-01, 7.82256525e-01, 2.16348028e+00, 5.94438662e-01]
 
-    prob, U, finalState = doubleLoop(initialState,par[:6],par[6:])
+    prob, U, finalState = doubleLoop(initialState,par1,par2)
     return prob, U, finalState
 
 
@@ -205,21 +206,21 @@ Xg = np.array([[0,0,1], [1,0,0], [0,1,0]])
 Zg = np.array([[1,0,0], [0,np.exp(2*np.pi*1j/3),0], [0,0,np.exp(4*np.pi*1j/3)]])
 
 
-initialState = np.array([0,1,1]);
+initialState = np.array([1,0,0]);
 initialState = initialState/np.linalg.norm(initialState)
 B = np.pi/4
 par1 = [-B,B,B,B,B,B]
 par2 = [-B,B,B,B,B,B]
 par0 = par1 + par2
-#par = optPar2(Hg, par0).x
-#print(par)
+par = optPar2(Hg, par0).x
+print(par)
 
 
-prob, U, finalState = XGate(initialState)
+#prob, U, finalState = HGate(initialState)
 #prob, U, finalState = singleLoop(initialState, par1)
-#prob, U, finalState = doubleLoop(initialState, par[:6],par[6:])
-print(U[2:5,2:5])
-print(Hg)
+prob, U, finalState = doubleLoop(initialState, par[:6],par[6:])
+print(np.round(U[2:5,2:5],7))
+print(np.round(Hg,7))
 
 #print(f"exact: {np.round(U[2:5,2:5] @ initialState,4)}")
 #print(f"numerical: {np.round(finalState[2:5],4)}")
@@ -235,7 +236,7 @@ plt.ylabel("Probability")
 plt.axis([0, len(prob)/len(t), 0, 1.1])
 plt.grid()
 
-plt.show()
+#plt.show()
 
 
 
