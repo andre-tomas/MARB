@@ -96,6 +96,11 @@ Born M, Fock V.
 \newblock The European physical journal A, Hadrons and nuclei.
   1928;51(3-4):165--180.
 
+\bibitem{sLoop}
+Herterich E, Sjöqvist E.
+\newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
+\newblock Physical review A. 2016;94(5).
+
 \bibitem{lambda}
 Shkolnikov VO, Burkard G.
 \newblock Effective Hamiltonian theory of the geometric evolution of quantum
@@ -107,10 +112,5 @@ Morris JR, Shore BW.
 \newblock Reduction of degenerate two-level excitation to independent two-state
   systems.
 \newblock Physical review A, General physics. 1983;27(2):906--912.
-
-\bibitem{sLoop}
-Herterich E, Sjöqvist E.
-\newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
-\newblock Physical review A. 2016;94(5).
 
 \end{thebibliography}

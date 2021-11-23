@@ -1,0 +1,7 @@
+We have shown how to explicitly create a qutrit by expanding the dark path qubit scheme\cite{darkpath} into higher dimension and how it will generalize in the qudit case and using auxiliary states to improve robustness of the gates.
+The qutrit gates have a high fidelity and robustness is improved by the inclusion of the auxiliary state $\ket{a}$
+The scaling of number of loops for the qudit gate is linear at worst. In fact, any diagonal gate only requires one loop, by setting $\varphi_1 = \dots \varphi_m = \theta_1 = \dots = \theta_m = 0$ the unitary reduces to the form 
+\begin{equation}
+U(0,\dots,0,\gamma_1,\dots,\gamma_m) = \ket{1}\bra{1} + \sum_{k = 1}^m e^{i\gamma_k}\ket{k}\bra{k}.
+\end{equation}
+Thusly any phase flip gate, such as $Z_m$ and $T_m$ can be constructed in any dimension using only one loop.

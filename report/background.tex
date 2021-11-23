@@ -277,7 +277,7 @@ H\dfrac{1}{\sqrt{2}}(\ket{0} + \ket{1}) = \ket{0}
 H\dfrac{1}{\sqrt{2}}(\ket{0} - \ket{1}) = \ket{1}
 \end{cases}.
 \end{equation}
-The well known quantum algorithms make heavy use of this operator\cite{Grover}\cite{shor}, it is essential to QC.
+many well known quantum algorithms make heavy use of this operator\cite{Grover,shor}, making it is essential to QC.
 The concept of the phase flip, $Z$, can be extended to a phase shift of any arbitrary angle, the gate is denoted by $P(\phi)$ or sometimes simply $\phi$. It is defined as 
 \begin{equation}
 P(\phi) \dot{=} \begin{pmatrix}
@@ -302,7 +302,7 @@ All gates so far are single-qubit gates, to achieve full universality it turns o
 Inherently there is nothing special about bits and binary logic, same goes for qubits.  A qudit is the general name for a higher dimensional qubit, often with dimension $d$, the special case of $d = 3 
 $ is called a \textit{qutrit}, $d = 4$ a \textit{ququart} and so on. A bigger computational basis could even prove to be better in some sense. The information content per unit is higher, $N$ qubits can be reduced down to $\dfrac{N}{\log_2(d)}$ qudits\cite{info_qudit}, with quickly diminishing returns. The qutrit has a reduction factor of $\sim 0.64$, the ququart $0.5$, with less returns the higher the dimension. Due to more information per unit, less operations are required to build quantum gates, minimizing the loss of accuracy from operations. The toffoli gate can be constructed with only BLANK gates using qutrits, which need BLANK gates with qubits \note{reference and lookup actual numbers}. The drawback is the increased complexity in the schemes for physical implementation which could come with increased errors. There are already many promising results using qudits\cite{qutrit1}\cite{qudit2}\cite{qudit3}, and many more are discussed in \cite{qudit}. The question is if the benefits of qudits can outweigh the extra cost.
 
-In the following section let, let the dimension $d$ be any integer such that $d > 2$, some generalized qudits gates will be defined and discussed, the definitions used are the same used in \cite{qudit}.
+In the following section let, let the dimension $d$ be any integer such that $d \leq 3$, some generalized qudits gates will be defined and discussed, the definitions used are the same used in \cite{qudit}.
 The effect of {\tt NOT} is ambiguous for when the number of basis states are more than 2. So instead of viewing it as NOT, it can be thought of as a permutation of the states $\ket{0},\ket{1}$. The higher dimensional correspondence of $X$ is defined as
 \begin{equation}
 X_d = \begin{pmatrix}
@@ -369,48 +369,29 @@ To see how the effect of adibaticy impacts the time evolution let's introduce a 
 For an arbitrary state $\ket{\psi(T)}$ after one period $T$, the Schrödinger equation (\ref{eq:schro}) has a solution on the form 
 \begin{equation}
 \label{eq:gen_sol}
-\ket{\psi(T)} = U(T,0)\ket{\psi}
+\ket{\psi(T)} = U(T,0)\ket{\psi(0)}
 \end{equation}
-where 
+where the general time evolution operator in a periodic system is 
 \begin{equation}
-\theta_n(t) = -\int_0^t E_n(t')dt'
+\label{eq:unitary}
+U(T,0) = \sum_{n,m = 1}^N\left(\mathbf{T}e^{i\int_0^T \left(\mathbf{A}(t) - \mathbf{H}(t)\right) dt}\right)_{nm}\ket{n(0)}\bra{m(0)}
 \end{equation}
-for some coefficients $c(t)$ with $E_n(t)$ being the instantaneous eigenvalues of $H(t)$ at time $t$. Substituting (\ref{eq:gen_sol}) into the Schrödinger Equation (\ref{eq:schro}), then by taking the inner product with $\bra{m(t)}$ and rearranging the result is a differential equation for the coefficients 
-\begin{equation}
-\dot{c}_m(t) = -\sum_{n}c_n(t) e^{i(\theta_n(t) - \theta_m(t))}\bra{m(t)}\pdv{}{t}\ket{n(t)}
-\end{equation}
-we note that $\bra{m(t)}\pdv{}{t}H(t)\ket{n(t)} = [E_n(t) - E_m(t)]\bra{m(t)}\pdv{}{t}\ket{n(t)}$,
-then the equation for the coefficients can be rewritten as
-\begin{equation}
-\label{eq:non-ad}
-\dot{c}_m(t) = -c_m(t) \bra{m(t)}\pdv{}{t}\ket{m(t)} - \sum_{n}c_n(t)e^{i(\theta_n(t) - \theta_m(t))}\frac{\bra{m(t)}\dot{H}(t)\ket{n(t)} }{E_n - E_m},\, n \neq m
-\end{equation} 
-in the adiabatic approximation\cite{adiabatensatz}, the second term can be taken to be zero since $H$ changes slowly and therefor $\dot{H}$ is small with respect to the first term. 
-Then $c_n(t) = c_n(0)e^{i\gamma_n(t)}$ where $\gamma_n(t) = \int_0^t \bra{n(t')}\pdv{}{t'}\ket{n(t')} dt'$.
-The general solution to a state would then be $\ket{\psi(t)} = \sum_{n}c_n(0)e^{i\gamma_n}e^{i\theta_n}\ket{n(0)}$, the time evolution operator in this case would be $\mathcal{U}(t,0) = \sum_{n}c_n(0)e^{i\gamma_n}e^{i\theta_n}$. In the adiabatic case a unitary can be constructed by controlling $\theta$ and $\gamma$.
+where $\mathbf{A}_{nm}(t) = i\bra{n(t)}\pdv{}{t}\ket{m(t)}$ and
+$\mathbf{H}_{nm}(t) = \bra{n(t)}\mathbf{H}(t)\ket{m(t)}$, being hermitian $N\times N$ matrices, thus $U$ is unitary.
+The dynamical time evolution arises from $\mathbf{H}(t)$ while the geometric evolution arises from the non-abelian geometric phase $\mathbf{A}(t)$. In the adiabatic case\cite{adiabatensatz} there will be no mixing of basis states and the qubit state can be encoded in the eigenstates and then be adiabatically transported around a loop in the parameter space. This has the effect of a acting on the state with a holonomy corresponding to a quantum gate\cite{HQC}. \note{expand on this}
 
-In the non-adiabatic, Non-adiabatic Holonomic Quantum Computation (NHQC), case some other means to control $\mathcal{U}$ must be engineered, since (\ref{eq:non-ad}) leads to state mixing and other unpleasantnesses. By removing the dependence on the dynamics of the system, the expressions takes on a much simpler form. 
-Let the average energy of any to states be zero\cite{NHQC}, time dependence suppressed for clarity.
+Due to the long runtimes associated with adiabatic evolution the state is prone to errors and decoherence from outside factors\cite{NHQC}. As a consequence, in the non-adiabatic case (NHQC), it would be possible to construct faster and more robust gates. Since the states are mixing some other way to control $\mathcal{U}$ must be engineered. By removing the dependence on the dynamics of the system, the period time and energies of the system plays no role in the time evolution, explicitly 
 \begin{equation}
-\bra{m}H\ket{n} = 0,\,\forall m,n
+\bra{n(t)}H(t)\ket{m(t)} = 0,\,\forall m,n, t\in[0,T]
 \end{equation} 
-taking the time derivative gives 
+this means all terms in the dynamical phase in (\ref{eq:unitary}) are zero.
+This is possible given that there exist a two-pulse non commuting loop, $C = C_1 \cup C_2$\cite{NHQC,sLoop}, 
+then the unitary will be reduced to 
 \begin{equation}
-\label{eq:non-ad-int}
-\bra{m}\dot{H}\ket{n} + \bra{\dot{m}}H\ket{n} + \bra{m}H\ket{\dot{n}} = 0
+U(T,0) = \sum_{n,m = 1}^{N} U_{nm}\ket{n(0)}\bra{m(0)}
 \end{equation}
-It turns out that all terms will be equal to 0, to see this 
-take the inner product with $\bra{m}$ for the Schrödinger equation for the state $\ket{n}$
-\begin{equation}
-i\bra{m}\ket{\dot{n}} = \bra{m}H\ket{n} = 0
-\end{equation}
-the same holds if we swap $m,n$, thus the two last terms in (\ref{eq:non-ad-int}) are equal to 0, then we have that $\bra{m}\dot{H}\ket{n} = 0$. By using this construction the second term in (\ref{eq:non-ad}) turns to 0 and the states do not mix with time. Another consequence is that the $\theta_n(t)= 0$. The evolution turns out to be 
-\begin{equation}
-\ket{\psi(t)} = \sum_{n}e^{i\gamma_n(t)}c_n(0)\ket{n(0)}
-\end{equation}
-making it only depend on the initial conditions and the geometrical phase.
-Thus a unitary can be created by tracing the loop $C$ and one can obtain $U(T,0) = U(C) = \sum_{m,n}^N U_{mn}(C)\ket{m(0)}\bra{n(0)}$.
-By parametrization of basis states and the loop can be chosen in such a way that $U$ correspond to a quantum gate.
+and can be used to perform any arbitrary quantum gate on the computational space.
+
 
 \subsubsection{Dark states, Bright states and Dark paths}
 For a given Hamiltonian $H$ it will have eigenvalues for different energies and corresponding eigenkets to those eigenvalues. For a state $\ket{d}$ such that 
@@ -427,6 +408,6 @@ The dynamics of a system is closely related to the Hamiltonian of the system. Th
 \begin{equation}
 \bra{D_n(t)}H(t)\ket{D_m(t)} = 0, \, \forall t\in[0,T].
 \end{equation}
-thus all elements of the dynamical phase will be zero. It is obvious that the dark state in itself is a dark path.
+thus all elements of the dynamical phase will be zero. It is obvious that the dark state in itself is a dark path. By explicitly finding a dark path the parameters in the Hamiltonian can be reverse engineered from the Schrödinger equation, enabling more complex Hamiltonians that can fulfill the NHQC criteria.
 
-In \cite{darkpath} they construct and experimentally implement a qubit in an $^{171}Yb^{+}$ ion, using a dark path and an auxiliary state to improve fidelity. They conclude that arbitrary NHQC gates can be constructed with better robustness. 
+In \cite{darkpath} they construct and experimentally implement a qubit in an $^{171}Yb^{+}$ ion, using a dark path and an auxiliary state to improve fidelity. They conclude that arbitrary NHQC gates can be constructed with better robustness. We will build upon the scheme presented and create an explicit qutrit example, then speculate how it can be generalized to higher dimensions.

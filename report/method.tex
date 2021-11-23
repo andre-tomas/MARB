@@ -84,7 +84,7 @@ The following two states satisfy the dark path condition and can be parametrized
 \ket{D_2(t)} &= \cos u\cos v e^{-i\phi_2}\ket{b_2} - i\sin u \ket{e_2} - \cos u\sin v \ket{a}
 \end{aligned}
 \end{equation}
-it can easily be verified that $\bra{D_i(t)}H_d\ket{D_j(t)} = 0, i,j = 1,2$. The angles can be chosen with the constraint that the boundary condition $\ket{D_i(0)}\bra{D_i(0)} = \ket{D_i(T)}\bra{D_i(T)}, i = 1,2$. This can be achieved by choosing $u(0) = u(T) = v(0) = v(T) = 0$. A valid choice is $u(t) = \frac{\pi}{2}\sin^2\frac{\pi t}{T}$ and $v(t) = \eta\left[1 - \cos u(t)\right]$, as for the 2D case. Unless mentioned otherwise $\eta = 4.0$. Each dark path starts in the respective bright state and travels along a curve and then returns to the bright state. The choice 
+it can easily be verified that $\bra{D_i(t)}H_d\ket{D_j(t)} = 0, i,j = 1,2$. The angles can be chosen with the constraint that the boundary condition $\ket{D_i(0)}\bra{D_i(0)} = \ket{D_i(T)}\bra{D_i(T)}, i = 1,2$. This can be achieved by choosing $u(0) = u(T) = v(0) = v(T) = 0$. A valid choice is $u(t) = \frac{\pi}{2}\sin^2\frac{\pi t}{T}$ and $v(t) = \eta\left[1 - \cos u(t)\right]$, as for the qubit case\cite{darkpath}. $\eta$ represents the coupling strength to the auxiliary state $\ket{a}$ and the system reverts into a di-tri-pod(?) structure. Unless mentioned otherwise $\eta = 4.0$, this is the optimal choice for the qubit and shall use it as well\cite{darkpath}. Each dark path starts in the respective bright state and travels along a curve and then returns to the bright state. The choice 
 
 Using the Schrödinger equation one can relate the dark path to the Hamiltonian,
 \begin{equation}
@@ -162,7 +162,7 @@ To see the effect of the gates, the probability of finding the system in the sta
 \label{fig:pop_X}
 \includegraphics[scale=0.5]{figures/pop_plot_X011.png}
 \includegraphics[scale=0.5]{figures/pop_plot_X532.png}
-\caption{The effect of the $X_3$-gate on the initial states $\dfrac{1}{\sqrt{2}}[0,1,1]$ (left) and $\dfrac{1}{\sqrt{33}}[5,3,2]$ (right). Note that since the plot shows the probabilities, phases can not be seen in the plot.}
+\caption{The effect of the $X_3$-gate on the initial states $\dfrac{1}{\sqrt{2}}[0,1,1]$ (left) and $\dfrac{1}{\sqrt{38}}[5,3,2]$ (right). Note that since the plot shows the probabilities, phases can not be seen in the plot.}
 \end{figure}
 
 \begin{figure}[H]
@@ -354,9 +354,9 @@ with $N_1$ being a normalization factor. Then choose additional bright states on
 \\
 &\;\;\vdots
 \\
-&\ket{b_{m-1}} &=& N_{m-1} \left( c_1\ket{1} + c_2\ket{2} + \Lambda_{1}^{(m-1)}\ket{2} + \Lambda_{2}^{(m-1)}\ket{3} + \dots + \Lambda_{m-2}^{(m-1)}\ket{m-1} \right)
+&\ket{b_{m-1}} &=& N_{m-1} \left( c_1\ket{1} + c_2\ket{2} + \Lambda_{1}^{(m-1)}\ket{3} + \Lambda_{2}^{(m-1)}\ket{4} + \dots + \Lambda_{m-2}^{(m-1)}\ket{m} \right)
 \\
-&\ket{b_{m}} &=& N_m \left( c_1\ket{1} + c_2\ket{2} + \Lambda_{1}^{(m)}\ket{2} + \Lambda_{2}^{(m)}\ket{3} + \dots + \Lambda_{m-2}^{(m)}\ket{m-1} + \Lambda_{m-1}^{(m)}\ket{m} \right).
+&\ket{b_{m}} &=& N_m \left( c_1\ket{1} + c_2\ket{2} + \Lambda_{1}^{(m)}\ket{3} + \Lambda_{2}^{(m)}\ket{4} + \dots + \Lambda_{m-2}^{(m)}\ket{m} + \Lambda_{m-1}^{(m)}\ket{m+1} \right).
 \end{aligned}
 \end{equation}
 By this construction it is clear that $\ket{b_1}$ is orthogonal to all other bright states.
@@ -427,25 +427,20 @@ The full operator for one loop is then given by
 \begin{equation}
 U = U_2U_1 = \ket{d}\bra{d} + \sum_{i = 1}^{m}e^{i\gamma_i}\ket{b_i}\bra{b_i}.
 \end{equation}
-It is clear that $U$ is unitary in the subspace $\{d,b_1,b_2,\dots,b_n\}$
+It is clear that $U$ is unitary in the subspace $\{d,b_1,b_2,\dots, b_n\}$
 
 The unitary is parametrized by $3m = 3(n-1), n\geq 2$, parameters,
 \begin{equation}
 U(\varphi_1,\dots,\varphi_m,\theta_1,\dots,\theta_m,\gamma_1,\dots,\gamma_m) 
 \end{equation} 
 
-\note{The following part might not be 100\% correct, procced with caution!}
+Applying the unitary with different parameters in sequence up to $k$ times is enough to create any desirable gate $\mathcal{U} = U^k$. The unitary is controlled by $3(n-1)$ parameters while $n$ dimensional qudit has more degrees of freedom than covered with a single loop.
 
-Now to perform a quantum gate one needs to apply $U$ $k$-times, $U_{tot} = U^k$, each time with a different set of parameters. This is due to the fact that just one loop does not have enough degrees of freedom to cover the dimensions of an $n-$dimensional qudit.
+The qudit state space is equivalent to $SU(n)$, which has dimensionality $\dim(SU(n)) = n^2 -1$. To cover all degrees of freedom $k$ must satisfy $3(n-1)k geq n^2 -1$.
+which means $k \geq \frac{n+1}{3}$. Thus the number of loops needed to create any unitary scales linearly at worst since some gates can be created with fewer loops, see Table \ref{tab:dim}. 
 
-The dimensions of a $n-$dim qudit is given by $\dim(SU(n)) = n^2 -1$ and each loop only carries $3(n-1)$ degrees of freedom. So the loop needs to be repeated $k$ times such that $3(n-1)k \geq n^2 -1 \implies 3k \geq n + 1$.
-Lets call the dimension $n$ when $\frac{n^2-1}{3(n-1)} = \frac{n+1}{3}$ is an integer, a ''perfect'' dimension, since no degrees of freedom go ''to waste'' so to speak. In Table \ref{tab:dim} it seems such that $n$ is perfect when $n = 3j + 2$, for any integer $j$.
-A quick calculation shows
-\begin{equation}
-\frac{n^2 -1}{3(n-1)} = \frac{n + 1}{3} = \frac{(3j+2) + 1}{3} = \frac{3j+3}{3} = j + 1 
-\end{equation}
-and since $j$ is an integer, $j + 1$ is also always an integer.\\
-\note{OBS! The $T$ gate is only defined for prime number dimensions... \cite{qudit}}
+The case of equality $k =\frac{n+1}{3}$, when $n = 3j + 2,\, j \in \mathcal{N}$, the fewest amount of loops per dimension is achieved and could potentially be more efficient carriers of information since the same number of loops must be carried out while higher dimension has higher information capacity.
+
 \begin{table}[H]
 \centering 
 \begin{tabular}{|c|c|c|c|c|}
@@ -469,18 +464,11 @@ $n$ & $3(n-1)$ & $n^2 - 1$ & $k$ & is perfect?\\
 \label{tab:dim}
 \end{table}
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.6]{figures/perfect_dim.png}
-\end{figure}
-
-This seems to hint that for when $n$ is perfect the amount of information has greater efficiency since in higher dimensions more information can be contained but can be executed in the same number of loops as a non-perfect dim. 
-\\ 
-The quantum gate $U$ can be formulated as a linear combination of the dark state and dark paths just as in the qutrit case
+The quantum gate $\mathcal{U}$ can be formulated as a linear combination of the dark state and dark paths just as in the qutrit case,
 \begin{equation}
 \ket{\psi(t)} = f_0\ket{d} + \sum_{i = 1}^{m}f_i\ket{D_i(t)}, t \in [0,T]
 \end{equation}
-where the coefficient can be solved for by choosing an initial state $\ket{\psi(0)}$. This corresponds to one loop, by using $\ket{\psi(T)}$ as an initial state for the next loop. By iterating this method one can simulate $\mathbb{U} = U^k$ where each loop $U$ have a different set of parameters. So in theory this can be implemented and simulated for any dimensional qudit, just as for the case of the qutrit. 
+where the coefficients can be solved for by choosing an initial state $\ket{\psi(0)}$. This corresponds to one loop, by using $\ket{\psi(T)}$ as an initial state for the next loop. By iterating this method one can simulate $\mathbb{U} = U^k$ where each loop $U$ have a different set of parameters. So in theory this can be implemented and simulated for any dimensional qudit, just as for the case of the qutrit. 
 
 
 
