@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  23 NOV 2021 12:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  2 DEC 2021 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2617,38 +2617,43 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
 \arrowsize=\dimen328
-)) (./body.aux)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks56
+\AP@partial=\box99
+\AP@footins=\box100
+) (./body.aux)
 \openout1 = `body.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 53.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineT-TLF on
- input line 44.
+ input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/OT1LinuxLibertineT-TLF.fd
 File: OT1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for OT1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 44.
+(Font)              scaled to size 12.0pt on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -2658,15 +2663,15 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* h-part:(L,W,R)=(93.95122pt, 409.60544pt, 93.95122pt)
+* v-part:(T,H,B)=(93.95122pt, 657.14441pt, 93.95122pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=455.24411pt
-* \textheight=702.78308pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-38.1381pt
+* \textwidth=409.60544pt
+* \textheight=657.14441pt
+* \oddsidemargin=21.68123pt
+* \evensidemargin=21.68123pt
+* \topmargin=-15.31877pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -2688,15 +2693,15 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count326
 \scratchdimen=\dimen329
-\scratchbox=\box99
+\scratchbox=\box101
 \nofMPsegments=\count327
 \nofMParguments=\count328
-\everyMPshowfont=\toks56
+\everyMPshowfont=\toks57
 \MPscratchCnt=\count329
 \MPscratchDim=\dimen330
 \MPnumerator=\count330
 \makeMPintoPDFobject=\count331
-\everyMPtoPDFconversion=\toks57
+\everyMPtoPDFconversion=\toks58
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -2717,17 +2722,17 @@ e
 \symgns@font=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
 (Font)                  TS1/LinuxLibertineT-TLF/m/n --> TS1/LinuxLibertineT-TLF
-/bx/n on input line 44.
-Package gensymb Info: Math companion symbols declared on input line 44.
-LaTeX Info: Redefining \degree on input line 44.
-LaTeX Info: Redefining \celsius on input line 44.
+/bx/n on input line 53.
+Package gensymb Info: Math companion symbols declared on input line 53.
+LaTeX Info: Redefining \degree on input line 53.
+LaTeX Info: Redefining \celsius on input line 53.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 44.
-LaTeX Info: Redefining \ohm on input line 44.
-Package gensymb Info: Using \textohm for \ohm on input line 44.
-Package gensymb Info: Using \textmu for \micro on input line 44.
-\AtBeginShipoutBox=\box100
-Package hyperref Info: Link coloring OFF on input line 44.
+erthousand on input line 53.
+LaTeX Info: Redefining \ohm on input line 53.
+Package gensymb Info: Using \textohm for \ohm on input line 53.
+Package gensymb Info: Using \textmu for \micro on input line 53.
+\AtBeginShipoutBox=\box102
+Package hyperref Info: Link coloring OFF on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -2737,9 +2742,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count332
 )
-LaTeX Info: Redefining \ref on input line 44.
-LaTeX Info: Redefining \pageref on input line 44.
-LaTeX Info: Redefining \nameref on input line 44.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
 
 (./body.out) (./body.out)
 \@outlinefile=\write4
@@ -2752,69 +2757,81 @@ LaTeX Info: Redefining \nameref on input line 44.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
 your preamble.
- on input line 44.
+ on input line 53.
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 61.
+(Font)              scaled to size 12.0pt on input line 70.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 20.74pt on input line 61.
+(Font)              scaled to size 20.74pt on input line 70.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 62.
+(Font)              scaled to size 17.28pt on input line 71.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 63.
+(Font)              scaled to size 14.4pt on input line 72.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 70.
+(Font)              scaled to size 24.88pt on input line 79.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 70.
+(Font)              scaled to size 24.88pt on input line 79.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 78.
+(Font)              scaled to size 14.4pt on input line 87.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 14.4pt on input line 79.
-LaTeX Font Info:    Try loading font information for U+msa on input line 82.
+(Font)              scaled to size 14.4pt on input line 88.
+LaTeX Font Info:    Try loading font information for U+msa on input line 91.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 82.
+LaTeX Font Info:    Try loading font information for U+msb on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 82.
+ input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 82.
+(Font)              scaled to size 12.0pt on input line 91.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 82.
+(Font)              scaled to size 8.0pt on input line 91.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 82.
-<figures/uulogga.png, id=83, 1033.8625pt x 1027.84pt>
+(Font)              scaled to size 6.0pt on input line 91.
+<figures/uulogga.png, id=87, 1033.8625pt x 1027.84pt>
 File: figures/uulogga.png Graphic file (type png)
 <use figures/uulogga.png>
-Package pdftex.def Info: figures/uulogga.png  used on input line 107.
+Package pdftex.def Info: figures/uulogga.png  used on input line 116.
 (pdftex.def)             Requested size: 113.72522pt x 113.06274pt.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/uulogga.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figures/uulogga.png>]pdf
+TeX warning (ext4): destination with the same identifier (name{page.}) has been
+ already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.124 \newpage\null\newpage
+                            % Intentional blankpage [1]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 117.
+(Font)              scaled to size 10.95pt on input line 127.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 117.
+(Font)              scaled to size 10.95pt on input line 127.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.137 \newpage
-               [1]
+l.145 \newpage
+              \null\newpage % Intentional blankpage [2]pdfTeX warning (ext4): d
+estination with the same identifier (name{page.}) has been already used, duplic
+ate ignored
+<to be read again> 
+                   \relax 
+l.145 \newpage\null\newpage
+                            % Intentional blankpage [3]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 138.
+(Font)              scaled to size 17.28pt on input line 147.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 138.
+(Font)              scaled to size 17.28pt on input line 147.
  (./body.toc
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 4.
@@ -2826,10 +2843,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.139 \newpage
-               [2] (./intro.tex
+l.149 \newpage
+              \null\newpage % Intentional blankpage [4]pdfTeX warning (ext4): d
+estination with the same identifier (name{page.}) has been already used, duplic
+ate ignored
+<to be read again> 
+                   \relax 
+l.149 \newpage\null\newpage
+                            % Intentional blankpage [5] (./intro.tex
 LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineMonoT-TL
-F on input line 4.
+F on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/OT1LinuxLibertineMonoT-TLF.f
 d
@@ -2837,174 +2860,133 @@ File: OT1LinuxLibertineMonoT-TLF.fd 2017/03/20 (autoinst) Font definitions for
 OT1/LinuxLibertineMonoT-TLF.
 )
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineMonoT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 4.
-) (./background.tex
+(Font)              scaled to size 12.0pt on input line 5.
+) [1] (./background.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 3.
- [1]
+(Font)              scaled to size 14.4pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 31.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 31.
  [2] [3]
-Overfull \hbox (38.18668pt too wide) in paragraph at lines 112--116
+Overfull \hbox (83.82535pt too wide) in paragraph at lines 110--114
 []$\OML/cmm/m/it/12 ^^[[] [] \OT1/cmr/m/n/12 = [] [] = \OML/cmm/m/it/12  [] []
  \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12  [] [] \OT1/cmr/m/n/12 +\OML/cmm/m/it/12
  ^^L [] [] \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ^^L [] [] \OT1/cmr/m/n/12 =
  []
 
-
-Overfull \hbox (220.5681pt too wide) detected at line 149
-[][]\OMS/cmsy/m/n/12 U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[] \OT1/cmr/m/n/12 + \
-OML/cmm/m/it/12 dt[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 dt[]; t[] \OT1/cmr/m/n/
-12 + \OML/cmm/m/it/12 dt[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 U\OT1/cmr/m/n/12 (\
-OML/cmm/m/it/12 t[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 dt[]; t[]\OT1/cmr/m/n/12
- ) = (\OT1/cmr/bx/n/12 1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 i \OT1/cmr/m/n/1
-2 
- \OML/cmm/m/it/12 dt[]\OT1/cmr/m/n/12 )(\OT1/cmr/bx/n/12 1 \OMS/cmsy/m/n/12 ^^@
- \OML/cmm/m/it/12 i \OT1/cmr/m/n/12 
- \OML/cmm/m/it/12 dt[]\OT1/cmr/m/n/12 ) = \OT1/cmr/bx/n/12 1 \OMS/cmsy/m/n/12 ^
-^@ \OML/cmm/m/it/12 i \OT1/cmr/m/n/12 
- \OML/cmm/m/it/12 dt[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 i \OT1/cmr/m/n/12 
-
- \OML/cmm/m/it/12 dt[]\OT1/cmr/m/n/12 )(\OT1/cmr/bx/n/12 1 \OT1/cmr/m/n/12 + \O
-MS/cmsy/m/n/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 dt[]\OT1/cmr/m/n/12 ) \OMS/cm
-sy/m/n/12 ' \OT1/cmr/bx/n/12 1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 i \OT1/cmr
-/m/n/12 
-(\OML/cmm/m/it/12 dt[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 dt[]\OT1/cmr/m/n/12 )
- = \OMS/cmsy/m/n/12 U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t[] \OT1/cmr/m/n/12 + \O
-ML/cmm/m/it/12 dt[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 dt[]; t[]\OT1/cmr/m/n/12
- )\OML/cmm/m/it/12 :
- []
-
-[4]
-Overfull \hbox (7.08693pt too wide) in paragraph at lines 181--182
-[]\OT1/LinuxLibertineT-TLF/m/n/12 The gen-eral way to de-fine a qubit would be 
-any two di-men-sional quan-tum sys-tem ($[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 H\
-OT1/cmr/m/n/12 ) =
- []
-
-[5]
+[4] [5]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 200.
- [6] [7] [8] [9]) [10] (./method.tex
-Overfull \hbox (5.07018pt too wide) in paragraph at lines 14--16
-\OT1/LinuxLibertineT-TLF/m/n/12 then find two bright states, or-thog-o-nal to b
-oth $[]$ and each other. This ba-sis can be parametrized
+(Font)              scaled to size 12.0pt on input line 187.
+ [6] [7] [8] [9] [10] [11]) (./method.tex [12]
+Overfull \hbox (3.83308pt too wide) in paragraph at lines 14--16
+\OML/cmm/m/it/12 N[] []$\OT1/LinuxLibertineT-TLF/m/n/12 , where $\OML/cmm/m/it/
+12 N[]; N[]$ \OT1/LinuxLibertineT-TLF/m/n/12 are nor-mal-iza-tion fac-tors and
  []
 
 
-Overfull \hbox (9.4364pt too wide) in paragraph at lines 14--16
-\OML/cmm/m/it/12 e[] [] ^^R [] ' []$\OT1/LinuxLibertineT-TLF/m/n/12 , ad-di-tio
-n-ally the two bright states are $[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 N[] []$
-
- []
-
-
-Overfull \hbox (19.13556pt too wide) detected at line 73
+Overfull \hbox (55.39034pt too wide) detected at line 72
 [][][][]
- []
-
-[11] [12]
-<figures/pop_plot_X011.png, id=322, 462.528pt x 346.896pt>
-File: figures/pop_plot_X011.png Graphic file (type png)
-<use figures/pop_plot_X011.png>
-Package pdftex.def Info: figures/pop_plot_X011.png  used on input line 163.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<figures/pop_plot_X532.png, id=324, 462.528pt x 346.896pt>
-File: figures/pop_plot_X532.png Graphic file (type png)
-<use figures/pop_plot_X532.png>
-Package pdftex.def Info: figures/pop_plot_X532.png  used on input line 164.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-
-Overfull \hbox (9.28316pt too wide) in paragraph at lines 163--165
-[][] [] 
  []
 
 [13]
-<figures/pop_plot_H111.png, id=334, 462.528pt x 346.896pt>
-File: figures/pop_plot_H111.png Graphic file (type png)
-<use figures/pop_plot_H111.png>
-Package pdftex.def Info: figures/pop_plot_H111.png  used on input line 170.
+Overfull \hbox (33.25238pt too wide) in paragraph at lines 85--87
+\OT1/LinuxLibertineT-TLF/m/n/12 sen with the con-straint that the bound-ary con
+-di-tion $[] [] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 ; i \OT1/cmr/m/n/12 =
+ []
+
+[14]
+<figures/pop_plot_X011.png, id=349, 462.528pt x 346.896pt>
+File: figures/pop_plot_X011.png Graphic file (type png)
+<use figures/pop_plot_X011.png>
+Package pdftex.def Info: figures/pop_plot_X011.png  used on input line 161.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<figures/pop_plot_H100.png, id=335, 462.528pt x 346.896pt>
-File: figures/pop_plot_H100.png Graphic file (type png)
-<use figures/pop_plot_H100.png>
-Package pdftex.def Info: figures/pop_plot_H100.png  used on input line 171.
+<figures/pop_plot_X532.png, id=351, 462.528pt x 346.896pt>
+File: figures/pop_plot_X532.png Graphic file (type png)
+<use figures/pop_plot_X532.png>
+Package pdftex.def Info: figures/pop_plot_X532.png  used on input line 162.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (9.28316pt too wide) in paragraph at lines 170--172
+Overfull \hbox (54.92183pt too wide) in paragraph at lines 161--163
 [][] [] 
  []
 
+<figures/pop_plot_H111.png, id=352, 462.528pt x 346.896pt>
+File: figures/pop_plot_H111.png Graphic file (type png)
+<use figures/pop_plot_H111.png>
+Package pdftex.def Info: figures/pop_plot_H111.png  used on input line 168.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<figures/pop_plot_H100.png, id=353, 462.528pt x 346.896pt>
+File: figures/pop_plot_H100.png Graphic file (type png)
+<use figures/pop_plot_H100.png>
+Package pdftex.def Info: figures/pop_plot_H100.png  used on input line 169.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (44.61223pt too wide) detected at line 216
+Overfull \hbox (54.92183pt too wide) in paragraph at lines 168--170
+[][] [] 
+ []
+
+[15 <./figures/pop_plot_X011.png> <./figures/pop_plot_X532.png>]
+Overfull \hbox (90.2509pt too wide) detected at line 214
 [][][][]
  []
 
-[14 <./figures/pop_plot_X011.png> <./figures/pop_plot_X532.png> <./figures/pop_
-plot_H111.png> <./figures/pop_plot_H100.png>]
-<figures/Fid500.png, id=349, 462.528pt x 346.896pt>
+[16 <./figures/pop_plot_H111.png> <./figures/pop_plot_H100.png>]
+<figures/Fid500.png, id=377, 462.528pt x 346.896pt>
 File: figures/Fid500.png Graphic file (type png)
 <use figures/Fid500.png>
-Package pdftex.def Info: figures/Fid500.png  used on input line 235.
+Package pdftex.def Info: figures/Fid500.png  used on input line 234.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-Overfull \hbox (7.28275pt too wide) in paragraph at lines 235--236
-[][] 
- []
-
-[15] [16 <./figures/Fid500.png>]
-Overfull \hbox (7.76297pt too wide) in paragraph at lines 327--328
+Overfull \hbox (52.92142pt too wide) in paragraph at lines 234--235
 [][] 
  []
 
 [17]
-Overfull \hbox (13.41098pt too wide) in paragraph at lines 392--394
-[]\OT1/LinuxLibertineT-TLF/m/n/12 With this Hamil-to-nian $\OML/cmm/m/it/12 m$ 
-\OT1/LinuxLibertineT-TLF/m/n/12 dark paths can be con-structed, and must sat-is
-fy $[] \OML/cmm/m/it/12 H[] [] \OT1/cmr/m/n/12 =
+Overfull \hbox (53.40164pt too wide) in paragraph at lines 324--325
+[][] 
  []
 
-[18]) (./disc.tex [19]) [20] (./body.bbl
-Underfull \hbox (badness 2818) in paragraph at lines 15--18
-[]\OT1/LinuxLibertineT-TLF/m/n/12 Zanardi P, Rasetti M.  Holo-nomic quan-tum co
-m-pu-ta-tion.  Physics let-ters A.
+[18 <./figures/Fid500.png>] [19]
+Overfull \hbox (18.18378pt too wide) in paragraph at lines 407--408
+[]\OT1/LinuxLibertineT-TLF/m/n/12 By us-ing these states one can re-verse en-gi
+-neer the Hamil-to-nian us-ing the Schr[]odinger
  []
 
-
-Underfull \hbox (badness 2005) in paragraph at lines 25--29
-[]\OT1/LinuxLibertineT-TLF/m/n/12 Berry MV.  Quan-tal phase fac-tors ac-com-pa-
-ny-ing adi-a-batic changes.  Pro-ceed-
+[20]
+Overfull \hbox (23.21962pt too wide) in paragraph at lines 443--445
+[]\OT1/LinuxLibertineT-TLF/m/n/12 The qu-dit state space is equiv-a-lent to $\O
+ML/cmm/m/it/12 SU\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )$\OT1/Linu
+xLibertineT-TLF/m/n/12 , which has di-men-sion-al-ity $[]\OT1/cmr/m/n/12 (\OML/
+cmm/m/it/12 SU\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )) =
  []
 
+[21] [22]) (./disc.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--6
 
-Underfull \hbox (badness 3668) in paragraph at lines 36--39
-[]\OT1/LinuxLibertineT-TLF/m/n/12 Anandan J.  Non-adiabatic non-abelian ge-o-me
-t-ric phase.  Physics let-ters A.
  []
 
-
-Underfull \hbox (badness 1082) in paragraph at lines 83--87
-[]\OT1/LinuxLibertineT-TLF/m/n/12 Sakurai JJ, Napoli-tano J.  Mod-ern quan-tum 
-me-chan-ics; 2nd ed.  San Fran-cisco,
+) [23] (./body.bbl [24]
+Underfull \hbox (badness 3068) in paragraph at lines 128--132
+[]\OT1/LinuxLibertineT-TLF/m/n/12 Campbell ET, An-war H, Browne DE.  Magic-Stat
+e Dis-til-la-tion in All
  []
 
-[21]) [22]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 170.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 170.
+) [25] [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
  (./body.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 170.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 170.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
 Package rerunfilecheck Info: File `body.out' has not changed.
-(rerunfilecheck)             Checksum: D5DCC7030B059E9F139F6ABE6DF026B3;1493.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 170.
+(rerunfilecheck)             Checksum: CE2A7DB28C04F4DA792261E46EC7AA06;1516.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
  ) 
 Here is how much of TeX's memory you used:
- 42041 strings out of 492982
- 929146 string characters out of 6134896
- 1231097 words of memory out of 5000000
- 44778 multiletter control sequences out of 15000+600000
+ 42077 strings out of 492982
+ 929620 string characters out of 6134896
+ 1232097 words of memory out of 5000000
+ 44800 multiletter control sequences out of 15000+600000
  569776 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,96p,10396b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3030,11 +3012,12 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on body.pdf (25 pages, 884209 bytes).
+e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb>
+Output written on body.pdf (32 pages, 902458 bytes).
 PDF statistics:
- 516 PDF objects out of 1000 (max. 8388607)
- 450 compressed objects within 5 object streams
- 146 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 565 PDF objects out of 1000 (max. 8388607)
+ 491 compressed objects within 5 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 

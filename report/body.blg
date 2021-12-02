@@ -8,45 +8,47 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: ref.bib.bib
 Warning--empty chapter in setun
-You've used 21 entries,
+Warning--empty author and editor in darkpath
+Warning--missing publisher in darkpath
+You've used 24 entries,
             3170 wiz_defined-function locations,
-            776 strings with 7440 characters,
-and the built_in function-call counts, 30651 in all, are:
-= -- 3924
-> -- 224
+            795 strings with 7918 characters,
+and the built_in function-call counts, 35184 in all, are:
+= -- 4517
+> -- 256
 < -- 3
-+ -- 139
-- -- 56
-* -- 2382
-:= -- 3294
-add.period$ -- 83
-call.type$ -- 21
++ -- 162
+- -- 64
+* -- 2738
+:= -- 3768
+add.period$ -- 92
+call.type$ -- 24
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 22
-duplicate$ -- 2953
-empty$ -- 2882
-format.name$ -- 73
-if$ -- 7288
+cite$ -- 27
+duplicate$ -- 3426
+empty$ -- 3306
+format.name$ -- 84
+if$ -- 8369
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 212
-newline$ -- 108
-num.names$ -- 21
-pop$ -- 376
+int.to.str$ -- 24
+missing$ -- 242
+newline$ -- 121
+num.names$ -- 24
+pop$ -- 431
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 378
+skip$ -- 429
 stack$ -- 0
-substring$ -- 5271
-swap$ -- 483
+substring$ -- 6028
+swap$ -- 554
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 174
-width$ -- 23
-write$ -- 233
-(There was 1 warning)
+warning$ -- 3
+while$ -- 197
+width$ -- 26
+write$ -- 263
+(There were 3 warnings)

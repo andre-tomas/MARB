@@ -74,10 +74,9 @@ Wang Y, Hu Z, Sanders BC, Kais S.
 \newblock Frontiers in physics. 2020;8.
 
 \bibitem{darkpath}
-Ming-Zhong A, Li S, He R, Xue ZY, Cui JM, Haung YF, et~al.
-\newblock Experimental Realization of Nonadiabatic Holonomic Single-Qubit
-  Quantum Gates with Two Dark Paths in a Trapped Ion.
-\newblock Not yet published. 2021;.
+Ai MZ, Li S, He R, Xue ZY, Cui JM, Huang YF, et~al.. Experimental Realization
+  of Nonadiabatic Holonomic Single-Qubit Quantum Gates with Two Dark Paths in a
+  Trapped Ion; 2021.
 
 \bibitem{Sakurai}
 Sakurai JJ, Napolitano J.
@@ -90,16 +89,11 @@ Pavlidis A, Floratos E.
 \newblock Quantum-Fourier-transform-based quantum arithmetic with qudits.
 \newblock Physical review A. 2021;103(3).
 
-\bibitem{adiabatensatz}
-Born M, Fock V.
-\newblock Beweis des Adiabatensatzes.
-\newblock The European physical journal A, Hadrons and nuclei.
-  1928;51(3-4):165--180.
-
-\bibitem{sLoop}
-Herterich E, Sjöqvist E.
-\newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
-\newblock Physical review A. 2016;94(5).
+\bibitem{8gate}
+Howard M, Vala J.
+\newblock Qudit versions of the qubit pi/8 gate.
+\newblock Physical review A, Atomic, molecular, and optical physics.
+  2012;86(2).
 
 \bibitem{lambda}
 Shkolnikov VO, Burkard G.
@@ -107,10 +101,33 @@ Shkolnikov VO, Burkard G.
   systems.
 \newblock Physical review A. 2020;101(4).
 
+\bibitem{adiabatensatz}
+Born M, Fock V.
+\newblock Beweis des Adiabatensatzes.
+\newblock The European physical journal A, Hadrons and nuclei.
+  1928;51(3-4):165--180.
+
+\bibitem{AHQC}
+Duan L, Cirac JI, Zoller P.
+\newblock Geometric Manipulation of Trapped Ions for Quantum Computation.
+\newblock Science (American Association for the Advancement of Science).
+  2001;292(5522):1695--1697.
+
+\bibitem{sLoop}
+Herterich E, Sjöqvist E.
+\newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
+\newblock Physical review A. 2016;94(5).
+
 \bibitem{morris}
 Morris JR, Shore BW.
 \newblock Reduction of degenerate two-level excitation to independent two-state
   systems.
 \newblock Physical review A, General physics. 1983;27(2):906--912.
+
+\bibitem{magic-muller}
+Campbell ET, Anwar H, Browne DE.
+\newblock Magic-State Distillation in All Prime Dimensions Using Quantum
+  Reed-Muller Codes.
+\newblock Physical review X. 2012;2(4):041021.
 
 \end{thebibliography}

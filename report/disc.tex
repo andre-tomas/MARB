@@ -1,7 +1,13 @@
-We have shown how to explicitly create a qutrit by expanding the dark path qubit scheme\cite{darkpath} into higher dimension and how it will generalize in the qudit case and using auxiliary states to improve robustness of the gates.
-The qutrit gates have a high fidelity and robustness is improved by the inclusion of the auxiliary state $\ket{a}$
-The scaling of number of loops for the qudit gate is linear at worst. In fact, any diagonal gate only requires one loop, by setting $\varphi_1 = \dots \varphi_m = \theta_1 = \dots = \theta_m = 0$ the unitary reduces to the form 
-\begin{equation}
-U(0,\dots,0,\gamma_1,\dots,\gamma_m) = \ket{1}\bra{1} + \sum_{k = 1}^m e^{i\gamma_k}\ket{k}\bra{k}.
-\end{equation}
-Thusly any phase flip gate, such as $Z_m$ and $T_m$ can be constructed in any dimension using only one loop.
+%% Conclusions
+We have shown how to explicitly create a qutrit and acompanying single-qutrit gates by expanding the dark path qubit scheme\cite{darkpath} into a higher dimension and how it will generalize in the qudit case and using auxiliary states to improve the robustness of the gates. Universality for the qutrit can be obtained using the Hadamard and $T$-gate equivalent gates in 3 dimensions.The qutrit gates have a high fidelity and robustness is improved by the inclusion of the auxiliary state. 
+
+In the general case for the qudit we have also shown how any dimensional single-qudit diagonal unitary could be created by a single multi-pulse loop in parameter space and that non-diagonal unitaries scale linearly at worst in the number of loops and parameters required for control of each loop scale linearly.
+\\
+
+%% Outlook
+One of the greatest challenges of this project was how to chose parameters to replicate the unitary gates. Analytical construction of any diagonal unitary is solved, but there are many other gates that would be interesting to study in more detail. First, finding how different constraints impact the construction of gates and vice versa. Second, how the number of parameter space loops relate to which unitaries are reachable. This problem is very interesting since reduction of loops decreases parameters needed for control, fewer loops implies less error.
+For both those cases numerical optimization interesting problem to study, will the numerically optimized gates preform worse than analytical ones, and are there any deeper problems associated with this method.
+ 
+Another obvious concern that could be addressed is the lack of multi-qudit gates, entanglement is one of the fundamentals of QC and showing a scheme on how these could be constructed would be an obvious improvement. This could maybe achieved through some detuning or some more explicit physical implementation.
+
+Overall many aspects would be interesting to delve deeper into, and I am almost certain that improvements to this scheme would be possible.

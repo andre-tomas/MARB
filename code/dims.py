@@ -12,7 +12,7 @@ def isPrime(num):
             return False
     return True
 N_u = 2
-N = N_u + 1000
+N = N_u + 100
 par = []
 su = []
 K = []
@@ -27,13 +27,14 @@ for n in range(N_u,N):
         temp2 = 3*(n-1)
         temp3 = float(temp1)/float(temp2)
 
-        print(f"{n} | {temp2} | {temp1} | {math.ceil(temp3)}")
+        
         su.append(temp1)
         par.append(temp2)
         K.append(math.ceil(temp3))
         X.append(n)
         if temp3.is_integer():
-            print(f"{n} is perfect!")
+            #print(f"{n} is perfect!")
+            print(f"{n} | {temp2} | {temp1} | {math.ceil(temp3)}")
             perfectY.append(temp3)
             perfectX.append(n)
 print(f"Number of primes in {N_u} to {N}: {primes}")

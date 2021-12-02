@@ -1,6 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage{pmgraph}
-\usepackage[a4paper,portrait, margin=2.5cm]{geometry}
+\usepackage[a4paper,portrait, margin=1.3in]{geometry}
 \usepackage[normalem]{ulem}
 \usepackage[swedish,english]{babel}
 \usepackage{graphicx,here,times,tabularx,rotating}
@@ -29,6 +29,8 @@
 \usepackage{mathtools}
 \usepackage{array}
 \usetikzlibrary{arrows}
+\usepackage{afterpage}
+
 
 
 
@@ -39,6 +41,13 @@
 
 \newcommand{\inp}[2]{\langle #1,#2 \rangle}
 
+
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
 
 
 \begin{document}
@@ -67,7 +76,7 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries Holonomic optimal control for qudits}\\[0.4cm] % Title of your document
+{ \huge \bfseries Holonomic Optimal Control for Qudits}\\[0.4cm] % Title of your document
 \HRule \\[1.5cm]
  
 %----------------------------------------------------------------------------------------
@@ -112,10 +121,11 @@ Martin \textsc{Almquist} %% Supervisor's Name
 
 \end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+\newpage\null\newpage % Intentional blankpage
+
 
 \begin{abstract}
-    abstract
+Non-adiabatic Holonomic Quantum Computation (NHQC) is a method used to implement quantum gates with holonomies that arises from solely from non-abelian geometric phases without any dynamical evolution affecting the system. By using dark paths we show how to implement quantum gates for higher dimensional computation elements, qudits, instead of the conventional qubits. This gives higher parameter control  compared to earlier implementations. We present a scheme that generalizes and achieves single-qudit universality using controllable high fidelity gates by including an auxiliary state. Including an explicit case for the Qutrit. The scaling is linear in dimension and we show how any diagonal qudit gate can be effectively implemented in any dimension.
 \end{abstract}
 
 \bigskip
@@ -128,15 +138,16 @@ Martin \textsc{Almquist} %% Supervisor's Name
 
 \begin{otherlanguage}{swedish}
 \begin{abstract}
-    sammanfattning
-  
+Vi snurrar sen så löser sig allt.
 \end{abstract}
 \end{otherlanguage}
 
+\newpage\null\newpage % Intentional blankpage
 
-\newpage
 \tableofcontents
-\newpage
+
+\newpage\null\newpage % Intentional blankpage
+
 \pagenumbering{arabic}
 
 \section{Introduction}
@@ -148,23 +159,17 @@ Martin \textsc{Almquist} %% Supervisor's Name
 
 \input{method.tex}
 
-\section{Discussion and Conclusion}
+\section{Conclusions and Outlook}
 \input{disc.tex}
 
 
 \newpage
-%\input{calcs}
-
-\newpage
 \bibliographystyle{vancouver}
 \bibliography{ref.bib}
-
+\newpage
 
 \appendix
 
-
-
-
-
-
+\section{Code}
+\note{Kod här}
 \end{document}
