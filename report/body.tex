@@ -1,6 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage{pmgraph}
-\usepackage[a4paper,portrait, margin=1.3in]{geometry}
+\usepackage[a4paper,portrait, margin=1.25in]{geometry}
 \usepackage[normalem]{ulem}
 \usepackage[swedish,english]{babel}
 \usepackage{graphicx,here,times,tabularx,rotating}
@@ -52,7 +52,6 @@
 
 \begin{document}
 
-
 \pagenumbering{gobble}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \begin{titlepage}
@@ -68,7 +67,7 @@
 %----------------------------------------------------------------------------------------
 
 \textsc{\LARGE Uppsala University}\\[1.5cm] % Name of your university/college
-\textsc{\Large Degree Project D in Computational Science, 30c}\\[0.5cm] % Major heading such as course name
+\textsc{\Large Degree Project E in Computational Science, 30c}\\[0.5cm] % Major heading such as course name
 \textsc{\large Department of Physics and Astronomy\\ Division of Materials Theory}\\[0.5cm] % Minor heading such as course title
 
 %----------------------------------------------------------------------------------------
@@ -125,7 +124,7 @@ Martin \textsc{Almquist} %% Supervisor's Name
 
 
 \begin{abstract}
-Non-adiabatic Holonomic Quantum Computation (NHQC) is a method used to implement quantum gates with holonomies that arises from solely from non-abelian geometric phases without any dynamical evolution affecting the system. By using dark paths we show how to implement quantum gates for higher dimensional computation elements, qudits, instead of the conventional qubits. This gives higher parameter control  compared to earlier implementations. We present a scheme that generalizes and achieves single-qudit universality using controllable high fidelity gates by including an auxiliary state. Including an explicit case for the Qutrit. The scaling is linear in dimension and we show how any diagonal qudit gate can be effectively implemented in any dimension.
+Non-adiabatic Holonomic Quantum Computation (NHQC) is a method used to implement quantum gates with holonomies that arise solely from non-Abelian geometric phases. Due to high noise tolerance these phases can be used to construct resiliant quantum gates. By using dark paths we show how to implement quantum gates for higher dimensional computation elements, qudits, instead of the conventional qubits. This gives higher parameter control compared to earlier implementations. We present a scheme that generalizes and achieves single-qudit universality using controllable high fidelity gates by including an auxiliary state. An explicit example is shown for the Qutrit. The scaling is linear in dimension and we show how any diagonal qudit gate can be implemented efficiently in any dimension.
 \end{abstract}
 
 \bigskip
@@ -138,7 +137,7 @@ Non-adiabatic Holonomic Quantum Computation (NHQC) is a method used to implement
 
 \begin{otherlanguage}{swedish}
 \begin{abstract}
-Vi snurrar sen så löser sig allt.
+Kvantmekaniska periodiska system uppvisar, förutom den väletablerade dynamiska fasen i tidsutveckligen, även en geometrisk fas. Eftersom denna fas är oberoende av systemets dynamik kan den användas för att skapa fel-toleranta kvantmekaniska grindar. Detta är grunden för s.k. Icke-adiabatic Holonomiska Kvantgrindar. Genom att utnyttja vägar i parameterrummet som inte bidrar med någon dynamisk utveckling så implementerar vi hög dimensionella beräkningselement, 'qudits', istället för de mer konvetionella kvantbitarna. Detta resulterar i högre kontroll över parameterar än vissa tidigare metoder. Vi visar hur detta schema kan generaliseras till högre dimensioner och hur man kan uppnå universalitet med dessa hög-dimensionella och fel-toleranta kvantgrindar. Ett exempel ges för tre dimensioner och används som grund som sedan generaliseras. Schemat har linjär skalning i dimension och diagonala qudit-grindar kan effektivt bli implementerade i höga dimensioner.
 \end{abstract}
 \end{otherlanguage}
 
@@ -151,15 +150,18 @@ Vi snurrar sen så löser sig allt.
 \pagenumbering{arabic}
 
 \section{Introduction}
-
 \input{intro.tex}
+
+\newpage
 
 \section{Theoretical background}
 \input{background.tex}
 
+\newpage
+\section{Results}
 \input{method.tex}
-
-\section{Conclusions and Outlook}
+\newpage
+\section{Conclusions and outlook}
 \input{disc.tex}
 
 

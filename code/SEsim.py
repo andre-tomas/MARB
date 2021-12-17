@@ -13,78 +13,8 @@ ket1  = np.array([0, 0, 1, 0, 0, 0])
 ket2  = np.array([0, 0, 0, 1, 0, 0])
 ket3  = np.array([0, 0, 0, 0, 1, 0])
 keta  = np.array([0, 0, 0, 0, 0, 1])
-# Basis vectors for qubit
-Ke = np.array([1,0,0,0])
-K1 = np.array([0,1,0,0])
-K2 = np.array([0,0,1,0])
-Ka = np.array([0,0,0,1])
 
-################################
-
-def genStates2D(par):
-    theta = par[0]; phi = par[1]; gamma = par[2]
-    b = np.sin(theta/2.0)*K1-np.exp(1j*phi)*np.cos(theta/2.0)*K2
-    d = -np.cos(theta/2.0)*np.exp(-1j*phi)*K1 -np.sin(theta/2.0)*K2
-
-    return d,b
-
-def omegas2D(t,delta):
-    if t ==  0.0 or t == T:
-        O1 = 0; Oa = 0;
-    else:
-        O1 =  2*(vp(t)*cot(u(t))*np.sin(v(t)) + up(t)*np.cos(v(t)))
-        Oa =  2*(vp(t)*cot(u(t))*np.cos(v(t)) - up(t)*np.sin(v(t)))
-
-    return [O1*(1+delta),Oa*(1+delta)]
-
-
-def Ham2D(t,b,gamma,delta):
-    
-    if  t < T/2.0:
-        gamma = 0.0;
-    
-    O = omegas2D(t,delta)
-    
-    T1 = (O[0]/2)*np.exp(-1j*gamma)*np.outer(np.conj(b),Ke)
-    Ta = (O[1]/2)*np.outer(np.conj(Ka),Ke)
-
-    H = np.array(T1 + Ta)
-    H = np.array(H + np.conj(np.transpose(H)))
-    
-    return H
-
-def unitaryGate2D(d,b,gamma):
-    
-    return np.outer(d,np.conj(d)) + np.exp(1j*gamma)*np.outer(b,np.conj(b))
-
-
-def fidLoop2D(y0,par,method, deltas):
-    phi = par[1];
-    gamma = par[2]
-    d, b = genStates2D(par)
-    U = unitaryGate2D(d,b,gamma)
-        
-    print(np.round(U[1:3,1:3],4))
-    y_exact = U @ y0
-    
-    fids = []
-    for delt in deltas:
-        
-        sol1 = solve_ivp(f2D,(0,T),y0,method=method,
-                         args=(delt, b,-gamma))
-        y_num = np.array(sol1.y[:,-1]); #y_num = y_num/np.linalg.norm(y_num)
-
-
-        fids.append(Fidelity(y_exact[1:3],y_num[1:3]))
-
-    return deltas, fids
-
-def f2D(t,y,delta,b,gamma):
-
-    result =-1j*Ham2D(t,b,gamma,delta)@y
-    
-    return result
-
+###############################
 
 ###############################
 
@@ -119,30 +49,17 @@ def genStates(par):
     c3 = np.exp(1j*xi)*np.sin(theta)*np.sin(phi)
 
 
-    if np.isclose(np.abs(c3)**2,1.0) or np.isclose(np.abs(c2)**2,1.0):
-        d = c1*ket1 + c2*ket2 + c3*ket3;
-        b1 = (1.0/np.sqrt(2))*(-np.exp(-1j*chi)*ket1 + ket2)
-        b2 = (1.0/np.sqrt(3))*(ket1 + np.exp(1j*chi)*ket2 - np.exp(1j*xi)*ket3)
-        
+    if np.isclose(np.abs(c1)**2, 1.0):
+        d = ket1
+        b1 = ket2
+        b2 = -np.exp(1j*xi)*ket3
+
     else:
         N1 = 1/(np.sqrt(1-np.abs(c3)**2))
         N2 = np.abs(c3)/(np.sqrt(1-np.abs(c3)**2))
-
-        if np.isclose(np.abs(c1)**2, 1.0):
-            d = ket1
-            b1 = ket2
-            b2 = -np.exp(1j*xi)*ket3
-
-        else:
-            if np.isclose(np.abs(c3)**2,0.0):
-                d = c1*ket1 + c2*ket2 + c3*ket3;
-                b1 = (1.0/np.sqrt(2))*(-np.exp(-1j*chi)*ket1 + ket2)
-                b2 = (1.0/np.sqrt(3))*(ket1 + np.exp(1j*chi)*ket2 - np.exp(1j*xi)*ket3)
-        
-            else:
-                d = c1*ket1 + c2*ket2 + c3*ket3;
-                b1 = N1* ( -np.conj(c2)*ket1 + c1*ket2 );
-                b2 = N2*(c1*ket1 + c2*ket2 + (c3 - 1/np.conj(c3))*ket3 ); 
+        d = c1*ket1 + c2*ket2 + c3*ket3;
+        b1 = N1* ( -np.conj(c2)*ket1 + c1*ket2 );
+        b2 = N2*(c1*ket1 + c2*ket2 + (c3 - 1/np.conj(c3))*ket3 ); 
 
     return d,b1,b2 
 
@@ -177,21 +94,20 @@ def Ham(t,b1,b2,phi1,phi2,delta):
     
     return H
 
+# Schrödinger equation 
 def f(t,y,delta,b1,b2,phi1,phi2):
+    return -1j*Ham(t,b1,b2,phi1,phi2,delta)@y
 
-    result =-1j*Ham(t,b1,b2,phi1,phi2,delta)@y
-    
-    return result
 
+# Generate unitary from parameters
 def unitaryGate(d,b1,b2,gamma1, gamma2):
-    
     return np.outer(d,np.conj(d)) + np.exp(1j*gamma1)*np.outer(b1,np.conj(b1)) + np.exp(1j*gamma2)*np.outer(b2,np.conj(b2))
     
 
 def Fidelity(p,q):
     return np.abs(np.dot(np.conj(p),q))
 
-
+# Calculates the fidelities with a given initial condition for a set of deltas
 def fidLoop(y0,par,method, deltas):
     FLAG = False
     if len(par) > 6:
@@ -212,11 +128,6 @@ def fidLoop(y0,par,method, deltas):
         U = unitaryGate(d,b1,b2,-phi1,-phi2)
         
 
-        
-    #print(np.round(U,4))
-    y_exact = U @ y0
-    #print(FLAG)
-
     fids = []
     for delt in deltas:
         
@@ -227,31 +138,22 @@ def fidLoop(y0,par,method, deltas):
         if FLAG:
             sol2 = solve_ivp(f,(0,T),y_num,method=method,
                          args=(delt, b1_2,b2_2,phi1_2,phi2_2))
-        
             y_num = np.array(sol2.y[:,-1]); y_num = y_num/np.linalg.norm(y_num)
-
+            
         fids.append(Fidelity(y_exact[2:5],y_num[2:5]))
-
     return deltas, fids
 
-def averageFid(par,n,FLAG):
 
-    k = 20
-    delta = 0.015
+# Averages fidelity over many initial states
+def averageFid(par,n):
+
+    k = 20 # number of points sampled [+k*delta, -k*delta]
+    delta = 0.015 # error size
     deltas = [x*delta for x in range(-k,k+1)]
     
 
     fids = []
     for k in range(n):
-        print(k)
-        if FLAG:
-            y0 = np.array(np.random.rand(2),dtype="complex_")
-            y0 = y0/np.linalg.norm(y0)
-            y0 = np.concatenate(([0.0],y0,[0.0]),dtype="complex_")
-            x,y = fidLoop2D(y0,par,'BDF', deltas)
-            fids.append(y)
-
-        else:
             y0 = np.array(np.random.rand(3),dtype="complex_")
             y0 = y0/np.linalg.norm(y0)
             y0 = np.concatenate(([0.0,0.0],y0,[0.0]),dtype="complex_")
@@ -261,9 +163,22 @@ def averageFid(par,n,FLAG):
 
     return x, n_mean(fids)
 
+# Calculates the average fidelity sampled over n states using the parameters of par_func
+def Fidplot(n, etas,par_func):
+    par = par_func()
+    name =  par_func.__name__; name = name[0]
+    print(name)
+    
+    global eta
 
+    eta = etas[0]
+    x1,y1 = averageFid(par,n, False)
+    eta = etas[1]
+    _,y2 = averageFid(par,n, False)
 
+    return x1,y1,y2
 
+## Gate parameters
 def X_par():
     par1 = [0, 0, np.pi/4, np.pi/2, 0, np.pi]
     par2 = [0, 0, np.pi/2, np.pi/4, 0, np.pi]
@@ -279,65 +194,19 @@ def T_par():
     
 
 def H_par():
-    #par = [2.09439951e+00, 3.51170154e+00, 2.22537206e+00, 2.44565765e+00,1.85774118e-06, 2.40135293e+00, 2.50823733e-06, 8.38749813e-01, 3.67434570e-01, 3.14585361e-01, 2.31102036e+00, 1.42421265e-05]
     par = [6.41010859e-04, 6.55568952e-04, 4.75667128e-01, 7.85362474e-01,1.58054108e+00, 1.56302702e+00, 9.81289849e-03, 3.56878815e-18,1.18743379e+00, 2.15063745e+00, 9.74301696e-17, 1.56882773e+00]
     return par
 
 
 
-    
 
-def Fidplot(n, etas,par_func, FLAG):
-    par = par_func()
-    name =  par_func.__name__; name = name[0]
-    print(name)
-    
-    global eta
+etas = [0.0, 4.0] # eta values
+n = 500 # Number of sampled states
 
-    eta = etas[0]
-    x1,y1 = averageFid(par,n, False)
-    eta = etas[1]
-    _,y2 = averageFid(par,n, False)
-
-    return x1,y1,y2
-    """
-    if FLAG:
-        
-        par = [0.0, 0.0, np.pi]
-        
-        eta = etas[0]
-        x2,z1 = averageFid(par,n, FLAG)
-        eta = etas[1]
-        _,z2 = averageFid(par,n, FLAG)
-
-
-
-   
-    plt.plot(x1,y1,'*--', label=f"$\eta =$ {etas[0]}")
-    plt.plot(x1,y2,'*--', label=f"$\eta =${etas[1]}")
-    if FLAG:
-        plt.plot(x2,z1,'*--', label=f"$\eta =$ {etas[0]} - 2D")
-        plt.plot(x2,z2,'*--', label=f"$\eta =${etas[1]} - 2D")
-    
-    plt.xlabel("$\delta\Omega$")
-    plt.ylabel("Fidelity")
-    plt.title(f"Fidelity averaged over {n} states in {name}-Gate")
-    plt.legend()
-    plt.grid()
-    """
-
-
-
-
-etas = [0.0, 4.0]
-n = 500
-
-
-
-x, Ty1, Ty2 = Fidplot(n,etas,T_par,False)
-_, Xy1, Xy2 = Fidplot(n,etas,X_par,False)
-_, Hy1, Hy2 = Fidplot(n,etas,H_par,False)
-_, Zy1, Zy2 = Fidplot(n,etas,Z_par,False)
+x, Ty1, Ty2 = Fidplot(n,etas,T_par)
+_, Xy1, Xy2 = Fidplot(n,etas,X_par)
+_, Hy1, Hy2 = Fidplot(n,etas,H_par)
+_, Zy1, Zy2 = Fidplot(n,etas,Z_par)
 
 fig, axs  = plt.subplots(2,2)
 #gs = fig.add_gridspec((2,2), hspace=0)

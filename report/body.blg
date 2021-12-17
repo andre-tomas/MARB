@@ -10,45 +10,45 @@ Database file #1: ref.bib.bib
 Warning--empty chapter in setun
 Warning--empty author and editor in darkpath
 Warning--missing publisher in darkpath
-You've used 24 entries,
+You've used 25 entries,
             3170 wiz_defined-function locations,
-            795 strings with 7918 characters,
-and the built_in function-call counts, 35184 in all, are:
-= -- 4517
-> -- 256
+            802 strings with 7977 characters,
+and the built_in function-call counts, 36026 in all, are:
+= -- 4633
+> -- 264
 < -- 3
-+ -- 162
-- -- 64
-* -- 2738
-:= -- 3768
-add.period$ -- 92
-call.type$ -- 24
++ -- 167
+- -- 66
+* -- 2791
+:= -- 3857
+add.period$ -- 96
+call.type$ -- 25
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 3426
-empty$ -- 3306
-format.name$ -- 84
-if$ -- 8369
+cite$ -- 28
+duplicate$ -- 3583
+empty$ -- 3379
+format.name$ -- 87
+if$ -- 8560
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 242
-newline$ -- 121
-num.names$ -- 24
-pop$ -- 431
+int.to.str$ -- 25
+missing$ -- 252
+newline$ -- 126
+num.names$ -- 25
+pop$ -- 448
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 429
+skip$ -- 437
 stack$ -- 0
-substring$ -- 6028
-swap$ -- 554
+substring$ -- 6087
+swap$ -- 574
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 197
-width$ -- 26
-write$ -- 263
+while$ -- 203
+width$ -- 27
+write$ -- 274
 (There were 3 warnings)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  2 DEC 2021 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.23)  15 DEC 2021 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2663,15 +2663,15 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(93.95122pt, 409.60544pt, 93.95122pt)
-* v-part:(T,H,B)=(93.95122pt, 657.14441pt, 93.95122pt)
+* h-part:(L,W,R)=(90.3375pt, 416.83289pt, 90.3375pt)
+* v-part:(T,H,B)=(90.3375pt, 664.37186pt, 90.3375pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=409.60544pt
-* \textheight=657.14441pt
-* \oddsidemargin=21.68123pt
-* \evensidemargin=21.68123pt
-* \topmargin=-15.31877pt
+* \textwidth=416.83289pt
+* \textheight=664.37186pt
+* \oddsidemargin=18.0675pt
+* \evensidemargin=18.0675pt
+* \topmargin=-18.9325pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -2760,47 +2760,47 @@ your preamble.
  on input line 53.
 
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 12.0pt on input line 70.
+(Font)              scaled to size 12.0pt on input line 69.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 20.74pt on input line 70.
+(Font)              scaled to size 20.74pt on input line 69.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 17.28pt on input line 71.
+(Font)              scaled to size 17.28pt on input line 70.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/sc' will be
-(Font)              scaled to size 14.4pt on input line 72.
+(Font)              scaled to size 14.4pt on input line 71.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 79.
+(Font)              scaled to size 24.88pt on input line 78.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 24.88pt on input line 79.
+(Font)              scaled to size 24.88pt on input line 78.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 87.
+(Font)              scaled to size 14.4pt on input line 86.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 14.4pt on input line 88.
-LaTeX Font Info:    Try loading font information for U+msa on input line 91.
+(Font)              scaled to size 14.4pt on input line 87.
+LaTeX Font Info:    Try loading font information for U+msa on input line 90.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 91.
+LaTeX Font Info:    Try loading font information for U+msb on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 91.
+ input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 91.
+(Font)              scaled to size 12.0pt on input line 90.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 91.
+(Font)              scaled to size 8.0pt on input line 90.
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 91.
-<figures/uulogga.png, id=87, 1033.8625pt x 1027.84pt>
+(Font)              scaled to size 6.0pt on input line 90.
+<figures/uulogga.png, id=91, 1033.8625pt x 1027.84pt>
 File: figures/uulogga.png Graphic file (type png)
 <use figures/uulogga.png>
-Package pdftex.def Info: figures/uulogga.png  used on input line 116.
+Package pdftex.def Info: figures/uulogga.png  used on input line 115.
 (pdftex.def)             Requested size: 113.72522pt x 113.06274pt.
 
 [1
@@ -2810,28 +2810,34 @@ TeX warning (ext4): destination with the same identifier (name{page.}) has been
  already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.124 \newpage\null\newpage
+l.123 \newpage\null\newpage
                             % Intentional blankpage [1]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 127.
+(Font)              scaled to size 10.95pt on input line 126.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.95pt on input line 127.
+(Font)              scaled to size 10.95pt on input line 126.
+
+Overfull \hbox (25.86208pt too wide) in paragraph at lines 140--141
+\OT1/LinuxLibertineT-TLF/m/n/10.95 n[]agon dy-na-misk ut-veck-ling s[]a im-ple-
+men-te-rar vi h[]og di-men-sio-nel-la ber[]akningselement,
+ []
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.145 \newpage
+l.144 \newpage
               \null\newpage % Intentional blankpage [2]pdfTeX warning (ext4): d
 estination with the same identifier (name{page.}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.145 \newpage\null\newpage
+l.144 \newpage\null\newpage
                             % Intentional blankpage [3]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 147.
+(Font)              scaled to size 17.28pt on input line 146.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 147.
+(Font)              scaled to size 17.28pt on input line 146.
  (./body.toc
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 4.
@@ -2843,13 +2849,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.149 \newpage
+l.148 \newpage
               \null\newpage % Intentional blankpage [4]pdfTeX warning (ext4): d
 estination with the same identifier (name{page.}) has been already used, duplic
 ate ignored
 <to be read again> 
                    \relax 
-l.149 \newpage\null\newpage
+l.148 \newpage\null\newpage
                             % Intentional blankpage [5] (./intro.tex
 LaTeX Font Info:    Try loading font information for OT1+LinuxLibertineMonoT-TL
 F on input line 5.
@@ -2865,131 +2871,143 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineMonoT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 2.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 31.
+(Font)              scaled to size 8.0pt on input line 21.
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 31.
- [2] [3]
-Overfull \hbox (83.82535pt too wide) in paragraph at lines 110--114
-[]$\OML/cmm/m/it/12 ^^[[] [] \OT1/cmr/m/n/12 = [] [] = \OML/cmm/m/it/12  [] []
- \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12  [] [] \OT1/cmr/m/n/12 +\OML/cmm/m/it/12
- ^^L [] [] \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ^^L [] [] \OT1/cmr/m/n/12 =
- []
-
-[4] [5]
+(Font)              scaled to size 6.0pt on input line 21.
+ [2] [3] [4] [5] [6] [7]
+<figures/Andgates.png, id=255, 424.58624pt x 330.23375pt>
+File: figures/Andgates.png Graphic file (type png)
+<use figures/Andgates.png>
+Package pdftex.def Info: figures/Andgates.png  used on input line 224.
+(pdftex.def)             Requested size: 212.2926pt x 165.11646pt.
+<figures/Qcircuit.png, id=257, 638.385pt x 650.43pt>
+File: figures/Qcircuit.png Graphic file (type png)
+<use figures/Qcircuit.png>
+Package pdftex.def Info: figures/Qcircuit.png  used on input line 225.
+(pdftex.def)             Requested size: 127.67473pt x 130.0837pt.
+ [8 <./figures/Andgates.png> <./figures/Qcircuit.png>]
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 12.0pt on input line 187.
- [6] [7] [8] [9] [10] [11]) (./method.tex [12]
-Overfull \hbox (3.83308pt too wide) in paragraph at lines 14--16
-\OML/cmm/m/it/12 N[] []$\OT1/LinuxLibertineT-TLF/m/n/12 , where $\OML/cmm/m/it/
-12 N[]; N[]$ \OT1/LinuxLibertineT-TLF/m/n/12 are nor-mal-iza-tion fac-tors and
+(Font)              scaled to size 12.0pt on input line 247.
+ [9] [10] [11] [12] [13]
+Overfull \hbox (6.7896pt too wide) in paragraph at lines 454--460
+\OT1/LinuxLibertineT-TLF/m/n/12 strengths this Hamil-to-nian can be used to cre
+-ate a set of uni-ver-sal gates; $\OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = \OML/c
+mm/m/it/12 e[] \OT1/cmr/m/n/12 =
+ []
+
+) [14] (./method.tex
+Overfull \hbox (51.07341pt too wide) in paragraph at lines 14--16
+[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 N[] []$ \OT1/LinuxLibertineT-TLF/m/n/12 a
+nd $[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 N[] []$\OT1/LinuxLibertineT-TLF/m/n/1
+2 ,
  []
 
 
-Overfull \hbox (55.39034pt too wide) detected at line 72
+Overfull \hbox (48.16289pt too wide) detected at line 71
 [][][][]
  []
 
-[13]
-Overfull \hbox (33.25238pt too wide) in paragraph at lines 85--87
-\OT1/LinuxLibertineT-TLF/m/n/12 sen with the con-straint that the bound-ary con
--di-tion $[] [] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 ; i \OT1/cmr/m/n/12 =
- []
+[15] [16]
 
-[14]
-<figures/pop_plot_X011.png, id=349, 462.528pt x 346.896pt>
+LaTeX Warning: Reference `59' on page 17 undefined on input line 151.
+
+<figures/pop_plot_X011.png, id=385, 462.528pt x 346.896pt>
 File: figures/pop_plot_X011.png Graphic file (type png)
 <use figures/pop_plot_X011.png>
-Package pdftex.def Info: figures/pop_plot_X011.png  used on input line 161.
+Package pdftex.def Info: figures/pop_plot_X011.png  used on input line 158.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<figures/pop_plot_X532.png, id=351, 462.528pt x 346.896pt>
+<figures/pop_plot_X532.png, id=386, 462.528pt x 346.896pt>
 File: figures/pop_plot_X532.png Graphic file (type png)
 <use figures/pop_plot_X532.png>
-Package pdftex.def Info: figures/pop_plot_X532.png  used on input line 162.
+Package pdftex.def Info: figures/pop_plot_X532.png  used on input line 159.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (54.92183pt too wide) in paragraph at lines 161--163
+Overfull \hbox (47.69438pt too wide) in paragraph at lines 158--160
 [][] [] 
- []
-
-<figures/pop_plot_H111.png, id=352, 462.528pt x 346.896pt>
-File: figures/pop_plot_H111.png Graphic file (type png)
-<use figures/pop_plot_H111.png>
-Package pdftex.def Info: figures/pop_plot_H111.png  used on input line 168.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<figures/pop_plot_H100.png, id=353, 462.528pt x 346.896pt>
-File: figures/pop_plot_H100.png Graphic file (type png)
-<use figures/pop_plot_H100.png>
-Package pdftex.def Info: figures/pop_plot_H100.png  used on input line 169.
-(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-
-Overfull \hbox (54.92183pt too wide) in paragraph at lines 168--170
-[][] [] 
- []
-
-[15 <./figures/pop_plot_X011.png> <./figures/pop_plot_X532.png>]
-Overfull \hbox (90.2509pt too wide) detected at line 214
-[][][][]
- []
-
-[16 <./figures/pop_plot_H111.png> <./figures/pop_plot_H100.png>]
-<figures/Fid500.png, id=377, 462.528pt x 346.896pt>
-File: figures/Fid500.png Graphic file (type png)
-<use figures/Fid500.png>
-Package pdftex.def Info: figures/Fid500.png  used on input line 234.
-(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
-
-Overfull \hbox (52.92142pt too wide) in paragraph at lines 234--235
-[][] 
  []
 
 [17]
-Overfull \hbox (53.40164pt too wide) in paragraph at lines 324--325
+<figures/pop_plot_H111.png, id=397, 462.528pt x 346.896pt>
+File: figures/pop_plot_H111.png Graphic file (type png)
+<use figures/pop_plot_H111.png>
+Package pdftex.def Info: figures/pop_plot_H111.png  used on input line 165.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<figures/pop_plot_H100.png, id=398, 462.528pt x 346.896pt>
+File: figures/pop_plot_H100.png Graphic file (type png)
+<use figures/pop_plot_H100.png>
+Package pdftex.def Info: figures/pop_plot_H100.png  used on input line 166.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+
+Overfull \hbox (47.69438pt too wide) in paragraph at lines 165--167
+[][] [] 
+ []
+
+[18 <./figures/pop_plot_X011.png> <./figures/pop_plot_X532.png> <./figures/pop_
+plot_H111.png> <./figures/pop_plot_H100.png>] [19]
+<figures/Fid500.png, id=422, 462.528pt x 346.896pt>
+File: figures/Fid500.png Graphic file (type png)
+<use figures/Fid500.png>
+Package pdftex.def Info: figures/Fid500.png  used on input line 232.
+(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
+
+Overfull \hbox (45.69397pt too wide) in paragraph at lines 232--233
 [][] 
  []
 
-[18 <./figures/Fid500.png>] [19]
-Overfull \hbox (18.18378pt too wide) in paragraph at lines 407--408
+[20 <./figures/Fid500.png>]
+Overfull \hbox (39.061pt too wide) in paragraph at lines 323--324
+ [] 
+ []
+
+[21] [22]
+Overfull \hbox (10.95633pt too wide) in paragraph at lines 405--406
 []\OT1/LinuxLibertineT-TLF/m/n/12 By us-ing these states one can re-verse en-gi
 -neer the Hamil-to-nian us-ing the Schr[]odinger
  []
 
-[20]
-Overfull \hbox (23.21962pt too wide) in paragraph at lines 443--445
+
+Overfull \hbox (7.30305pt too wide) in paragraph at lines 435--437
+\OT1/LinuxLibertineT-TLF/m/n/12 It is clear that $\OML/cmm/m/it/12 U$ \OT1/Linu
+xLibertineT-TLF/m/n/12 is uni-tary in the sub-space $\OMS/cmsy/m/n/12 f\OML/cmm
+/m/it/12 d; b[]; b[]; [] ; b[]\OMS/cmsy/m/n/12 g\OML/cmm/m/it/12 :$ \OT1/LinuxL
+ibertineT-TLF/m/n/12 The uni-tary is parametrized
+ []
+
+
+Overfull \hbox (15.99217pt too wide) in paragraph at lines 442--444
 []\OT1/LinuxLibertineT-TLF/m/n/12 The qu-dit state space is equiv-a-lent to $\O
 ML/cmm/m/it/12 SU\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )$\OT1/Linu
 xLibertineT-TLF/m/n/12 , which has di-men-sion-al-ity $[]\OT1/cmr/m/n/12 (\OML/
 cmm/m/it/12 SU\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )) =
  []
 
-[21] [22]) (./disc.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
+[23] [24]) [25] (./disc.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
-) [23] (./body.bbl [24]
-Underfull \hbox (badness 3068) in paragraph at lines 128--132
-[]\OT1/LinuxLibertineT-TLF/m/n/12 Campbell ET, An-war H, Browne DE.  Magic-Stat
-e Dis-til-la-tion in All
- []
-
-) [25] [26]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 175.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 175.
+) [26] (./body.bbl [27]) [28] [29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
  (./body.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 175.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 175.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 Package rerunfilecheck Info: File `body.out' has not changed.
-(rerunfilecheck)             Checksum: CE2A7DB28C04F4DA792261E46EC7AA06;1516.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 175.
+(rerunfilecheck)             Checksum: E561983304C9701D619F9C8CD74024BD;1605.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
- 42077 strings out of 492982
- 929620 string characters out of 6134896
- 1232097 words of memory out of 5000000
- 44800 multiletter control sequences out of 15000+600000
- 569776 words of font info for 90 fonts, out of 8000000 for 9000
+ 42118 strings out of 492982
+ 930243 string characters out of 6134896
+ 1232095 words of memory out of 5000000
+ 44816 multiletter control sequences out of 15000+600000
+ 570101 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,14n,96p,10396b,685s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,15n,96p,10396b,735s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_3dk467.enc}{/us
 r/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/shar
 e/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_kijugd.enc}{/usr/share/texl
@@ -3000,24 +3018,23 @@ st/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb>
-Output written on body.pdf (32 pages, 902458 bytes).
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on body.pdf (35 pages, 952358 bytes).
 PDF statistics:
- 565 PDF objects out of 1000 (max. 8388607)
- 491 compressed objects within 5 object streams
- 157 named destinations out of 1000 (max. 500000)
- 203 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 613 PDF objects out of 1000 (max. 8388607)
+ 532 compressed objects within 6 object streams
+ 179 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 

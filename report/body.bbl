@@ -4,74 +4,74 @@
 Shor PW.
 \newblock Algorithms for quantum computation: discrete logarithms and
   factoring.
-\newblock IEEE Comput Soc Press. 1994;p. 124--134.
+\newblock IEEE Comput Soc Press. 1994;p. 124.
 
 \bibitem{Grover}
 Grover LK.
 \newblock Quantum Mechanics Helps in Searching for a Needle in a Haystack.
-\newblock Physical review letters. 1997;79(2):325--328.
+\newblock Physical Review Letters. 1997;79(2):325.
 
 \bibitem{HQC}
 Zanardi P, Rasetti M.
 \newblock Holonomic quantum computation.
-\newblock Physics letters A. 1999;264(2):94--99.
+\newblock Physics Letters A. 1999;264(2):94.
 
 \bibitem{NHQC}
 Sjöqvist E, Tong DM, Mauritz~Andersson L, Hessmo B, Johansson M, Singh K.
 \newblock Non-adiabatic holonomic quantum computation.
-\newblock New journal of physics. 2012;14(10):103035.
+\newblock New Journal of Physics. 2012;14(10):103035.
 
 \bibitem{berry}
 Berry MV.
 \newblock Quantal phase factors accompanying adiabatic changes.
 \newblock Proceedings of the Royal Society of London Series A, Mathematical and
-  physical sciences. 1984;392(1802):45--57.
+  Physical Sciences. 1984;392(1802):45.
 
 \bibitem{anandan1}
 Aharonov Y, Anandan J.
 \newblock Phase change during a cyclic quantum evolution.
-\newblock Physical review letters. 1987;58(16):1593--1596.
+\newblock Physical Review Letters. 1987;58(16):1593.
 
 \bibitem{anandan2}
 Anandan J.
 \newblock Non-adiabatic non-abelian geometric phase.
-\newblock Physics letters A. 1988;133(4):171--175.
+\newblock Physics Letters A. 1988;133(4):171.
 
 \bibitem{zee}
 Wilczek F, Zee A.
 \newblock Appearance of gauge structure in simple dynamical systems.
-\newblock Physical review letters. 1984;52(24):2111--2114.
+\newblock Physical Review Letters. 1984;52(24):2111.
 
 \bibitem{tricalc}
 Glusker M, Hogan DM, Vass P.
 \newblock The ternary calculating machine of Thomas Fowler.
-\newblock IEEE annals of the history of computing. 2005;27(3):4--22.
+\newblock IEEE Annals of the History of Computing. 2005;27(3):4--22.
 
 \bibitem{setun}
 Brusentsov NP, Ramil~Alvarez J.
 \newblock In: Ternary Computers: The Setun and the Setun 70. vol. 357. Berlin,
-  Heidelberg: Springer Berlin Heidelberg; 2011. p. 74--80.
+  Heidelberg: Springer Berlin Heidelberg; 2011. p.~74.
 
 \bibitem{qutrit1}
 Li B, Yu ZH, Fei SM.
 \newblock Geometry of quantum computation with qutrits.
-\newblock Scientific reports. 2013;3(1):2594--2594.
+\newblock Scientific Reports. 2013;3(1):2594.
 
 \bibitem{qudit2}
 Lu H, Hu Z, Alshaykh MS, Moore AJ, Wang Y, Imany P, et~al.
 \newblock Quantum Phase Estimation with Time‐Frequency Qudits in a Single
   Photon.
-\newblock Advanced quantum technologies (Online). 2020;3(2):1900074--n/a.
+\newblock Advanced quantum technologies (Online). 2020;3(2):1900074.
 
 \bibitem{qudit3}
 Luo M, Wang X.
 \newblock Universal quantum computation with qudits.
-\newblock Science China Physics, mechanics \& astronomy. 2014;57(9):1712--1717.
+\newblock Science China Physics, Mechanics \& Astronomy. 2014;57(9):1712.
 
 \bibitem{qudit}
 Wang Y, Hu Z, Sanders BC, Kais S.
 \newblock Qudits and High-Dimensional Quantum Computing.
-\newblock Frontiers in physics. 2020;8.
+\newblock Frontiers in Physics. 2020;8.
 
 \bibitem{darkpath}
 Ai MZ, Li S, He R, Xue ZY, Cui JM, Huang YF, et~al.. Experimental Realization
@@ -87,31 +87,31 @@ Sakurai JJ, Napolitano J.
 \bibitem{info_qudit}
 Pavlidis A, Floratos E.
 \newblock Quantum-Fourier-transform-based quantum arithmetic with qudits.
-\newblock Physical review A. 2021;103(3).
+\newblock Physical Review A. 2021;103(3).
 
 \bibitem{8gate}
 Howard M, Vala J.
-\newblock Qudit versions of the qubit pi/8 gate.
-\newblock Physical review A, Atomic, molecular, and optical physics.
+\newblock Qudit versions of the qubit gate.
+\newblock Physical Review A, Atomic, Molecular, and Optical Physics.
   2012;86(2).
 
 \bibitem{lambda}
 Shkolnikov VO, Burkard G.
 \newblock Effective Hamiltonian theory of the geometric evolution of quantum
   systems.
-\newblock Physical review A. 2020;101(4).
+\newblock Physical Review A. 2020;101(4).
 
 \bibitem{adiabatensatz}
 Born M, Fock V.
 \newblock Beweis des Adiabatensatzes.
-\newblock The European physical journal A, Hadrons and nuclei.
-  1928;51(3-4):165--180.
+\newblock The European Physical Journal A, Hadrons and Nuclei.
+  1928;51(3-4):165.
 
 \bibitem{AHQC}
 Duan L, Cirac JI, Zoller P.
 \newblock Geometric Manipulation of Trapped Ions for Quantum Computation.
 \newblock Science (American Association for the Advancement of Science).
-  2001;292(5522):1695--1697.
+  2001;292(5522):1695.
 
 \bibitem{sLoop}
 Herterich E, Sjöqvist E.
@@ -122,12 +122,17 @@ Herterich E, Sjöqvist E.
 Morris JR, Shore BW.
 \newblock Reduction of degenerate two-level excitation to independent two-state
   systems.
-\newblock Physical review A, General physics. 1983;27(2):906--912.
+\newblock Physical Review A, General physics. 1983;27(2):906.
+
+\bibitem{BDF}
+Shampine LF, Reichelt MW.
+\newblock The MATLAB ODE Suite.
+\newblock SIAM journal on scientific computing. 1997;18(1):1--22.
 
 \bibitem{magic-muller}
 Campbell ET, Anwar H, Browne DE.
 \newblock Magic-State Distillation in All Prime Dimensions Using Quantum
   Reed-Muller Codes.
-\newblock Physical review X. 2012;2(4):041021.
+\newblock Physical Review X. 2012;2(4):041021.
 
 \end{thebibliography}
