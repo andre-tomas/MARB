@@ -45,7 +45,7 @@ Wilczek F, Zee A.
 \bibitem{tricalc}
 Glusker M, Hogan DM, Vass P.
 \newblock The ternary calculating machine of Thomas Fowler.
-\newblock IEEE Annals of the History of Computing. 2005;27(3):4--22.
+\newblock IEEE Annals of the History of Computing. 2005;27(3):4.
 
 \bibitem{setun}
 Brusentsov NP, Ramil~Alvarez J.
@@ -61,7 +61,7 @@ Li B, Yu ZH, Fei SM.
 Lu H, Hu Z, Alshaykh MS, Moore AJ, Wang Y, Imany P, et~al.
 \newblock Quantum Phase Estimation with Time‐Frequency Qudits in a Single
   Photon.
-\newblock Advanced quantum technologies (Online). 2020;3(2):1900074.
+\newblock Advanced quantum technologies. 2020;3(2):1900074.
 
 \bibitem{qudit3}
 Luo M, Wang X.
@@ -71,7 +71,7 @@ Luo M, Wang X.
 \bibitem{qudit}
 Wang Y, Hu Z, Sanders BC, Kais S.
 \newblock Qudits and High-Dimensional Quantum Computing.
-\newblock Frontiers in Physics. 2020;8.
+\newblock Frontiers in Physics. 2020;8:589504.
 
 \bibitem{darkpath}
 Ai MZ, Li S, He R, Xue ZY, Cui JM, Huang YF, et~al.. Experimental Realization
@@ -116,7 +116,7 @@ Duan L, Cirac JI, Zoller P.
 \bibitem{sLoop}
 Herterich E, Sjöqvist E.
 \newblock Single-loop multiple-pulse nonadiabatic holonomic quantum gates.
-\newblock Physical review A. 2016;94(5).
+\newblock Physical review A. 2016;94(5):052310.
 
 \bibitem{morris}
 Morris JR, Shore BW.

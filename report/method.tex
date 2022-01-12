@@ -1,18 +1,28 @@
 \subsection{The qutrit}
 \subsubsection{Construction of the system}
-In \cite{darkpath} a qubit is implemented by modifying the lambda system, adding an additional level, and an auxiliary state, effectively turning it into a tripod. 
-The generalization to implement a qutrit is not trivial but it is clear that one extra ground state is required to make the computational basis larger. Another thing that is needed is to limit the number of dark states to one. The number of dark states is the difference between the number of excited states and the number of ground states \cite{lambda} (here the auxiliary state is \textbf{not} counted as a ground state). Therefore another excited state must be added as well. How these states are coupled is the hard part. We will see that the system given by the Hamiltonian
+In \cite{darkpath} a qubit is implemented by modifying the lambda system, adding an auxiliary state, effectively turning it into a tripod. The generalization to implement a qutrit is not trivial but it is clear that one extra ground state is required to make the computational basis larger. Another thing that is needed is to limit the number of dark states to one. The number of dark states is the difference between the number of excited states and the number of ground states \cite{lambda} (here the auxiliary state is \textbf{not} counted as a ground state). Therefore another excited state must be added as well. How these states are coupled is the hard part. We will see that the system given by the Hamiltonian
 \begin{equation}
 \label{eq:Ham}
 H = \sum_{j = 1}^2 \sum_{i =j}^{3} \omega_{ij}\ket{i}\bra{e_j}  + \frac{\Omega_{a}(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
 \end{equation}
 which is shown in Figure \ref{fig:Ham}, will work.  It consists of two excited states, $\ket{e_1}, \ket{e_2}$, an auxiliary state $\ket{a}$ and the ground states $\ket{1}, \ket{2}, \ket{3}$ which 
-makes up the computational basis of the qutrit. By changing the basis of the Hamiltonian, it can be rewritten as 
+make up the computational basis of the qutrit. By changing the basis of the Hamiltonian, it can be rewritten as 
 \begin{equation}
 \label{eq:Hamd}
 H_d = \sum_{j = 1}^2 \frac{\Omega_j(t)}{2}e^{-i\phi_j}\ket{b_j}\bra{e_j}  + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
 \end{equation} 
-by a Morris-Shore transformation \cite{morris}. This new basis is the dark-bright basis. To find this basis find a dark state to the original  Hamiltonian, an eigenstate with eigenvalue $0$, $H\ket{d} = 0$, then find two bright states, orthogonal to both $\ket{d}$ and each other. This basis can be parametrized with 4 angles, $\theta, \varphi, \chi, \xi$, the dark state is on the form $\ket{d} = \cos\theta\ket{1} + e^{i\chi}\sin\theta\cos\varphi\ket{2} + e^{i\xi}\sin\theta\sin\varphi\ket{3}$, additionally the two bright states are $\ket{b_1} = N_1 \left(-e^{-i\chi}\sin\theta\cos\varphi\ket{1} + \cos\theta\ket{2}\right)$ and $\ket{b_2} = N_2 \left(\cos\theta\ket{1} +  e^{i\chi}\sin\theta\cos\varphi\ket{2} + \Lambda \ket{3}\right ) $, where $N_1, N_2$ are normalization factors and $\Lambda$ can be chosen such that $\bra{d}\ket{b_2} = 0$.
+by a Morris-Shore transformation \cite{morris}. This new basis is the dark-bright basis. To find this basis find a dark state to the original  Hamiltonian, an eigenstate with eigenvalue $0$, $H\ket{d} = 0$, then find two bright states, orthogonal to both $\ket{d}$ and each other. This basis can be parametrized with 4 angles, $\theta, \varphi, \chi, \xi$, the dark state is on the form 
+\begin{equation}
+\ket{d} = \cos\theta\ket{1} + e^{i\chi}\sin\theta\cos\varphi\ket{2} + e^{i\xi}\sin\theta\sin\varphi\ket{3},
+\end{equation}
+additionally the two bright states are 
+\begin{equation}
+\ket{b_1} = N_1 \left(-e^{-i\chi}\sin\theta\cos\varphi\ket{1} + \cos\theta\ket{2}\right)
+\end{equation} 
+and
+\begin{equation}
+\ket{b_2} = N_2 \left(\cos\theta\ket{1} +  e^{i\chi}\sin\theta\cos\varphi\ket{2} + \Lambda \ket{3}\right),
+\end{equation} where $N_1, N_2$ are normalization factors and $\Lambda$ is chosen such that $\bra{d}\ket{b_2} = 0$.
 
 \begin{figure}[H]
     \begin{tikzpicture}[
@@ -66,12 +76,12 @@ Explicitly the states in the dark-bright basis are given by
 \\
 \ket{b_1} &= \frac{1}{\sqrt{1-\sin^2\theta\sin^2\varphi}} \left(-e^{-i\chi}\sin\theta\cos\varphi\ket{1} + \cos\theta\ket{2} \right)
 \\
-\ket{b_2} &= \frac{1}{\sqrt{1-\sin^2\theta\sin^2\varphi}} \left(\frac{1}{2}\sin 2\theta\sin\varphi\ket{1} + \dfrac{e^{i\chi}}{2}\sin^2\theta\sin 2\varphi\ket{2} + e^{i\xi}(\sin^2\theta\sin^2\varphi - 1)\ket{3}\right)
+\ket{b_2} &= \frac{1}{\sqrt{1-\sin^2\theta\sin^2\varphi}} \bigg(\frac{1}{2}\sin 2\theta\sin\varphi\ket{1} + \dfrac{e^{i\chi}}{2}\sin^2\theta\sin 2\varphi\ket{2} \\&+ e^{i\xi}(\sin^2\theta\sin^2\varphi - 1)\ket{3}\bigg)
 \end{aligned}
 \end{equation}
 The parameters $\omega_{ij}$ in the original basis can be determined by replacing the states in $H_d$ by their form in the $\{\ket{1},\ket{2},\ket{3}\}$ basis.
 
-Now lets introduce two dark paths, $\ket{D_1(t)},\ket{D_2(t)}$. Along These paths the average energy is always zero $\bra{D_i(t)}H_d\ket{D_i(t)} = 0,\,i = 1,2$. Thus no dynamical phase is accumulated during the time evolution and therefore it follows the conditions required for NHQC.
+Now let us introduce two dark paths, $\ket{D_1(t)},\ket{D_2(t)}$. Along these paths the average energy is always zero $\bra{D_i(t)}H_d\ket{D_i(t)} = 0,\,i = 1,2$. Thus no dynamical phase is accumulated during the time evolution and therefore it follows the conditions required for NHQC.
 
 The following two states satisfy the dark path condition and can be parametrized by two angles $u(t), v(t)$.
 \begin{equation}
@@ -82,7 +92,7 @@ The following two states satisfy the dark path condition and can be parametrized
 \ket{D_2(t)} &= \cos u\cos v e^{-i\phi_2}\ket{b_2} - i\sin u \ket{e_2} - \cos u\sin v \ket{a}
 \end{aligned}
 \end{equation}
-it can easily be verified that $\bra{D_i(t)}H_d\ket{D_j(t)} = 0, i,j = 1,2$. The angles can be chosen with the constraint $\ket{D_i(0)}\bra{D_i(0)} = \ket{D_i(T)}\bra{D_i(T)}, i = 1,2$. This can be achieved by choosing $u(0) = u(T) = v(0) = v(T) = 0$. A valid choice is $u(t) = \frac{\pi}{2}\sin^2\frac{\pi t}{T}$ and $v(t) = \eta\left[1 - \cos u(t)\right]$, as for the qubit case \cite{darkpath}. $\eta$ represents the coupling strength to the auxiliary state $\ket{a}$ and the system reverts into a bi-tri-pod structure. Unless mentioned otherwise $\eta = 4.0$. This is the optimal choice for the qubit and shall be used here as well \cite{darkpath}. Each dark path starts in the respective bright state and travels along a curve and then returns to the bright state. Using the Schrödinger equation one can relate the dark path to the Hamiltonian,
+it can easily be verified that $\bra{D_i(t)}H_d\ket{D_j(t)} = 0, i,j = 1,2$. The angles can be chosen with the constraint $\ket{D_i(0)}\bra{D_i(0)} = \ket{D_i(T)}\bra{D_i(T)}$, $i = 1,2$. This can be achieved by choosing $u(0) = u(T) = v(0) = v(T) = 0$. A valid choice is $u(t) = \frac{\pi}{2}\sin^2\frac{\pi t}{T}$ and $v(t) = \eta\left[1 - \cos u(t)\right]$, as for the qubit case \cite{darkpath}. $\eta$ represents the coupling strength to the auxiliary state $\ket{a}$ and the system reverts into a tri-pod structure with two excited states. Unless mentioned otherwise $\eta = 4.0$. Which is the optimal choice for the qubit and shall be used here as well \cite{darkpath}. Each dark path starts in the respective bright state and travels along a curve and then returns to the bright state. Using the Schrödinger equation one can relate the dark path to the Hamiltonian,
 \begin{equation}
 i\pdv{}{t}\ket{D_i(t)} = H_d\ket{D_i(t)},
 \end{equation}
@@ -97,7 +107,7 @@ and thusly one can reverse engineer the time dependent parameters $\Omega_i(t)$ 
 \Omega_a(t) &= 2\left(\dot{v}\cot u\cos v - \dot{u}\sin v \right).
 \end{aligned}
 \end{equation}
-To construct a quantum gate, we make use of the method of multi-pulse single-loops \cite{sLoop}, the relevant part of the time evolution operator is
+To construct a quantum gate, we make use of the method of multi-pulse single-loops \cite{sLoop}, for which the part of the time evolution operator that acts on the computational space is
 \begin{equation}
 \begin{aligned}&
 U_1 = \ket{d}\bra{d} -i\ket{e_1}\bra{b_1} -i\ket{e_2}\bra{b_2},\; \phi_1 = \phi_2 = 0
@@ -110,16 +120,15 @@ so the operator for one full loop is
 \label{eq:trit-gate-1-loop}
 U = U_2U_1 = \ket{d}\bra{d} + e^{i\gamma_1}\ket{b_1}\bra{b_1} + e^{i\gamma_2}\ket{b_2}\bra{b_2}.
 \end{equation}
-This transformation can be parametrized by $6$ real parameters,$\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2$, however it is not enough to construct all gates. For example $X_3$ requires 2 loops. This is since one loop does not cover all degrees of freedom. The reason for this is elaborated on later in the Generalization section. The full gate is given by repeating $U$ with another set of parameters. Thus full gate $\mathbb{U}$ is given by 
+This transformation can be parametrized by $6$ real parameters,$\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2$, however it is not enough to construct all gates. For example $X_3$ requires 2 loops. This is since one loop does not cover all degrees of freedom. The reason for this is elaborated on later in the Generalization section. The full gate is given by repeating $U$ with another set of parameters:
 \begin{equation}
 \label{eq:trit-gate-2-loop}
 \mathbb{U} = U(\chi',\xi',\theta',\varphi',\gamma_1',\gamma_2') U(\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2)
 \end{equation}
-Now the problem is only a matter of finding all parameters to replicate the desired gate. This is a non-trivial problem since it includes solving a system of 9 non-linear algebraic equations containing 12 variables for a gate requiring two loops. Some gates that only require a single loop can with some work be found analytically but the problem quickly becomes complex.
+Now the problem is only a matter of finding all parameters to replicate the desired gate. This is a non-trivial problem since it includes solving a system of 9 non-linear algebraic equations containing 12 variables for a gate requiring two loops. Some gates that only require a single loop can with some work be found analytically, but the problem quickly becomes complex.
 
 \subsubsection{Implementation}
-The implementation is quite straightforward. For a given set of parameters, say that we want to see how the initial state $\ket{\psi(0)}$ evolves with time.
-Let $\ket{\psi(0)} = (a,b,c)^T$ in the computational basis $\{\ket{1},\ket{2},\ket{3}\}$. Then the following equation can be formulated, for some coefficients $f_i$,
+Implementation of the qutrit for simulation purposes can give valuable insights of the system. By starting from an initial state and expressing it in terms of the dark paths, the evolution of the state is given by evolving the explicit expressions of the dark paths. Let $\ket{\psi(0)} = (a,b,c)^T$ be the initial state in the computational basis $\{\ket{1},\ket{2},\ket{3}\}$. Then the following equation can be formulated, for some coefficients $f_i$,
 \begin{equation}
 \begin{pmatrix}
 a\\
@@ -128,7 +137,7 @@ c
 \end{pmatrix}
 = f_0 \ket{d} + f_1\ket{b_1} + f_2\ket{b_2}
 \end{equation}
-since at time $t = 0$ the dark paths are in the corresponding bright state.
+since at time $t = 0$ the dark paths starts at the corresponding bright state.
 Now expand the dark state and bright state in terms of the original basis. Doing this one can obtain the relation
 \begin{equation}
 \begin{pmatrix}
@@ -140,7 +149,7 @@ c_1 & -N_1 c_2 & N_2 c_1
 \\
 c_2 & N_1 c_1 & N_2 c_2
 \\
-c3 & 0 & N_2 \Lambda
+c_3 & 0 & N_2 \Lambda
 \end{pmatrix}^{-1}\begin{pmatrix}
 a\\
 b\\
@@ -148,7 +157,7 @@ c
 \end{pmatrix}
 \end{equation}
 So by choosing an initial state, the coefficients can be obtained.
-Then the system can be solved for any time $t \in T$ using Equation \ref{59}
+Then the system can be solved for any time $t \in T$ using
 \begin{equation}
 \label{eq:expl-time}
 \ket{\psi(t)} = f_0\ket{d} + f_1\ket{D_1(t)} + f_2\ket{D_2(t)}, t \in [0,T].
@@ -210,9 +219,9 @@ H_3 &= U(6.41\cdot 10^{-4}, 6.56\cdot 10^{-4}, 0.48, 0.79, 1.58, 1.56)\\ \times 
 \end{pmatrix}.
 \end{aligned}
 \end{equation}
-Note that the choice of parameters is not unique and there are multiple ways to create the same unitary. These gates are enough to achieve single-qutrit universality as discussed in Section Theoretical Background. To achieve full universality an additional two-qutrit gate is needed. A common choice for qubits is the ${\tt CNOT}$ gate \cite{qudit}.
+Note that the choice of parameters is not unique and there are multiple ways to create the same unitary. These gates are enough to achieve single-qutrit universality as discussed in the Theoretical Background. To achieve full universality an additional two-qutrit gate is needed. A common choice for qubits is the ${\tt CNOT}$ gate \cite{qudit}.
 
-The parameters for any given gate can be specified by solving the non-linear system of equations obtained from by setting the matrix representation of the gate equal to Equation \ref{eq:trit-gate-1-loop} or \ref{eq:trit-gate-2-loop}. It can be found that some gates such as the $X_3$-gate can not be replicated by only one loop but will require at least 2 loops. The physical effect of this is that during the first cycle a pair states are swapped, and during the second cycle another pair is swapped. This can be seen in Figure \ref{fig:pop_X}. For the diagonal gates the analytical solution can be easily found by fixing $\theta = \varphi = \chi = \xi = 0$. The basis states reduce to $\ket{d} = \ket{1}, \ket{b_1} = \ket{2}, \ket{b_2} = -\ket{3}$. Then all diagonal unitaries can be specified by $\gamma_1$ and $\gamma_2$ up to a phase factor,
+The parameters for any given gate can be specified by solving the non-linear system of equations obtained by setting the matrix representation of the gate equal to Equation \ref{eq:trit-gate-1-loop} or \ref{eq:trit-gate-2-loop}. It can be found that some gates such as the $X_3$-gate cannot be replicated by only one loop but will require at least 2 loops. The physical effect of this is that during the first cycle a pair of states are swapped, and during the second cycle another pair is swapped. This can be seen in Figure \ref{fig:pop_X}. For the diagonal gates the analytical solution can be easily found by fixing $\theta = \varphi = \chi = \xi = 0$. The basis states reduce to $\ket{d} = \ket{1}, \ket{b_1} = \ket{2}, \ket{b_2} = -\ket{3}$. Then all diagonal unitaries can be specified by $\gamma_1$ and $\gamma_2$ up to a phase factor,
 \begin{equation}
 U(0,0,0,0,\gamma_1,\gamma_2) = \begin{pmatrix}
 1&0&0
@@ -226,7 +235,7 @@ U(0,0,0,0,\gamma_1,\gamma_2) = \begin{pmatrix}
 Analytical solutions are not always easy to find. The $H_3$-gate gives rise to a system of equations that is non-trivial to solve. 
 In that case an approximative gate $\tilde{U}$ can be found by numerical optimization of the expression $\text{min}||U-\tilde{U}||_F$, where $||\cdot||_F$ is the Frobenius matrix norm given by $||A||_F = \sqrt{\text{Tr}\left[A^\dagger A \right]}$. Since $\tilde{U} \approx U$ the approximated gate will have an effect close to that of the exact gate.
 
-To assess the robustness of the gate the fidelity metric, $F$, is used, the metric measures how close two quantum states are to each other. Here we are only considering pure states, then the fidelity is: $F(\ket{\psi},\ket{\varphi}) = |\bra{\psi}\ket{\varphi}|$. The fidelity is averaged by sampling initial states and letting them evolve with time by numerically solving the Schrödinger Equation using the SciPy implementation of backwards differentiation \cite{BDF}. Then introducing small shifts, $\Omega \mapsto \Omega(1 + \delta)$, for all $\Omega_i$ pulses in Equation \ref{eq:Hamd} and then comparing to the exact solution obtained by multiplying the gate with the initial state. The calculated fidelities are shown in Figure \ref{fig:fidelity}. We see that the coupling with the auxiliary state is more resilient to errors in the parameters than the original NHQC scheme. This is very similar to the results in 2 dimensions from \cite{darkpath}, which suggests an improvement of robustness even in higher dimensions.
+To assess the robustness of the gate the fidelity metric, $F$, is used, the metric measures how close two quantum states are to each other. Here we are only considering pure states, then the fidelity is: $F(\ket{\psi},\ket{\varphi}) = |\bra{\psi}\ket{\varphi}|$. The fidelity is averaged by sampling initial states and letting them evolve with time by numerically solving the Schrödinger Equation using the SciPy implementation of backwards differentiation \cite{BDF}. Then introducing small shifts, $\Omega \mapsto \Omega(1 + \delta)$, for all $\Omega_i$ pulses in Equation \ref{eq:Hamd} and then comparing to the exact solution obtained by multiplying the gate with the initial state. The calculated fidelities are shown in Figure \ref{fig:fidelity}. In the figures it can be seen that the coupling with the auxiliary state is more resilient to errors in the parameters than the original NHQC scheme. This is very similar to the results in 2 dimensions from \cite{darkpath}, which suggests an improvement of robustness even in higher dimensions.
 
 \begin{figure}[H]
 \includegraphics[scale=1]{figures/Fid500.png}
@@ -237,7 +246,7 @@ To assess the robustness of the gate the fidelity metric, $F$, is used, the metr
 
 \newpage
 \subsection{Generalization}
-To generalize the scheme for qudits with arbitrary dimension $n$, the idea from the qutrit case can be extended, $n$ ground states, $m = n - 1$ excited states and 1 auxiliary state. The dimension of the Hilbert space is  $n + m + 1 = n + 1 -1 = 2n$. Once again the couplings are not trivial and will be somewhat intricate, but the couplings given by the Hamiltonian in Equation \ref{eq:HamN}, will do the trick:
+In the generalization $n$ will be used instead of the more common $d$ to refer to the dimension of a qudit. This is to avoid confusions with the dark states. To generalize the scheme for qudits with arbitrary dimension, $n$, the idea from the qutrit case can be extended: $n$ ground states, $m = n - 1$ excited states and 1 auxiliary state. The dimension of the Hilbert space is  $n + m + 1 = 2n + 1 -1 = 2n$. Once again the couplings are not trivial and will be somewhat intricate, but the couplings given by the Hamiltonian in Equation \ref{eq:HamN}, will do the trick:
 
 \begin{equation}
 H = \sum_{j = 1}^m \sum_{i = j}^n \omega_{ij} \ket{i}\bra{e_j} + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_m} +\;\text{h.c}.
@@ -353,80 +362,78 @@ with $N_1$ being a normalization factor. Then choose additional bright states on
 &\ket{b_{m}} &=& N_m \left( c_1\ket{1} + c_2\ket{2} + c_3\ket{3}  + \dots + c_m\ket{m} + \Lambda_{m+1}\ket{m+1} \right).
 \end{aligned}
 \end{equation}
-By construction,  $\ket{b_1}$ is orthogonal to the dark state and all other bright states. For $k \geq 2$, $\ket{b_k}$ is $(k+1)$-dimensional, so it consists of $k+1$ basis-kets, where the coefficient in front of the last ket, $\Lambda_{k+1}$, is chosen such that $\ket{b_k}$ is orthogonal the dark state, $\ket{d}$. This will in turn make $\ket{b_k}$ orthonormal to any $\ket{b_{>k}}$ as they have the same states and coefficients as $\ket{d}$ for all the states involved in the inner product $\bra{b_{>k}}\ket{b_k} = \bra{d}\ket{b_k}$. Therefore, by choosing $\Lambda_k$ such that these inner products are zero, the construction will results in orthonormal states,  $\bra{b_i}\ket{b_j} = \delta_{ij}$. Explicitly for state $\ket{b_{k}}$,$k \geq 2$, the coefficient $\Lambda_{k+1}$ will be given by 
+By construction,  $\ket{b_1}$ is orthogonal to the dark state and all other bright states. For $k \geq 2$, $\ket{b_k}$ is $(k+1)$-dimensional, so it consists of $k+1$ basis-kets, where the coefficient, $\Lambda_{k+1}$ in front of the last ket is chosen such that $\ket{b_k}$ is orthogonal the dark state, $\ket{d}$. This will in turn make $\ket{b_k}$ orthonormal to any $\ket{b_{>k}}$ as they have the same states and coefficients as $\ket{d}$ for all the states involved in the inner product $\bra{b_{>k}}\ket{b_k} = \bra{d}\ket{b_k}$. Therefore, by choosing $\Lambda_k$ such that these inner products are zero, the construction will results in orthonormal states,  $\bra{b_i}\ket{b_j} = \delta_{ij}$. Explicitly for state $\ket{b_{k}}$,$k \geq 2$, the coefficient $\Lambda_{k+1}$ will be given by 
 \begin{equation}
 \Lambda_{k+1} = -\dfrac{1}{c_{k+1}^{*}}\sum_{l = 1}^{k}|c_l|^2
 \end{equation}
 and the normalization $N_{k}$ is given by 
 \begin{equation}
-N_k =  \left( \sum_{l = 1}^k|c_l|^2  + \left|\Lambda_{k+1}\right|^2 \right)^{-1/2} = \left( \sum_{l = 1}^k|c_l|^2  + \left|-\frac{1}{c_{k+1}^{*}}\sum_{l = 1}^{k} |c_l|^2 \right|^2 \right)^{-1/2}
+N_k =  \left( \sum_{l = 1}^k|c_l|^2  + \left|\Lambda_{k+1}\right|^2 \right)^{-1/2} = \left( \sum_{l = 1}^k|c_l|^2  + \left|-\frac{1}{c_{k+1}^{*}}\sum_{l = 1}^{k} |c_l|^2 \right|^2 \right)^{-1/2}.
 \end{equation}
-
 
 The coefficients $c_i$ can be parametrized by the euclidean components of the radius of the unit-$n$-sphere with an added phase factor.
 
 \begin{equation}
 \begin{aligned}
-c_1 &= \cos(\varphi_1)
+c_1 &= \cos(\varphi_1),
 \\ 
-c_2 &= e^{i\theta_1}\sin(\varphi_1)\cos(\varphi_2)
+c_2 &= e^{i\theta_1}\sin(\varphi_1)\cos(\varphi_2),
 \\ 
-c_3 &= e^{i\theta_2}\sin(\varphi_1)\sin(\varphi_2)\cos(\varphi_3)
+c_3 &= e^{i\theta_2}\sin(\varphi_1)\sin(\varphi_2)\cos(\varphi_3),
 \\
 &\hspace{2mm}\vdots
 \\
-c_{n-1} &= e^{i\theta_{n-1}}\sin(\varphi_1)\dots\sin(\varphi_{n-2})\cos(\varphi_{n-1})
+c_{n-1} &= e^{i\theta_{n-1}}\sin(\varphi_1)\dots\sin(\varphi_{n-2})\cos(\varphi_{n-1}),
 \\
-c_{n} &= e^{i\theta_{n}}\sin(\varphi_1)\dots\sin(\varphi_{n-2})\sin(\varphi_{n-1})
+c_{n} &= e^{i\theta_{n}}\sin(\varphi_1)\dots\sin(\varphi_{n-2})\sin(\varphi_{n-1}).
 \end{aligned}
 \end{equation}
 
-$c_1$ does not need a phase factor since the overall phase of a state is non-measurable and can be chosen such that the first phase factor will cancel out. 
+\noindent$c_1$ does not need a phase factor since the overall phase of a state is non-measurable and can be chosen such that the first phase factor will cancel out. 
 
 In the dark-bright basis, the Hamiltonian can be written as
 \begin{equation}
-H_d = \sum_{i = 1}^m \frac{\Omega_i(t)}{2}e^{-i\phi_i}\ket{b_i}\bra{e_i} + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_m} +\;\text{h.c}
+H_d = \sum_{i = 1}^m \frac{\Omega_i(t)}{2}e^{-i\phi_i}\ket{b_i}\bra{e_i} + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_m} +\;\text{h.c}.
 \label{eq:HamdN}
 \end{equation}
 with $\Omega_i$ being real-valued time dependent parameters and the $\phi_i$ time independent phase factors. The explicit transformation $H \mapsto H_d$ is not that important but could be obtained by expanding the bright state kets into the standard basis from (\ref{eq:birght_states})
 
-With this Hamiltonian $m$ independent dark paths can be constructed, and must satisfy $\bra{D_i(t)}H_d\ket{D_i(t)} = 0, i = 1,2,\dots,m$ and $\bra{D_i(t)}\ket{D_j(t)} = \delta_{ij}$.\\
-The dark paths can be parametrized by two functions $u(t),v(t)$ that satisfy the conditions $u(0) = v(0) = u(T) = v(T) = 0$ and  will have the form
+With this Hamiltonian $m$ independent dark paths can be constructed, and must satisfy $\bra{D_i(t)}H_d\ket{D_i(t)} = 0, i = 1,2,\dots,m$ and $\bra{D_i(t)}\ket{D_j(t)} = \delta_{ij}$. The dark paths can be parametrized by two functions $u(t),v(t)$ that satisfy the conditions $u(0) = v(0) = u(T) = v(T) = 0$ and  will have the form
 \begin{equation}
 \begin{aligned}
-\ket{D_i(t)} &= \cos u e^{-i\phi_i}\ket{b_i} + i\sin u \ket{e_i},\, i = 1,2,\dots,m-1
+\ket{D_i(t)} &= \cos u e^{-i\phi_i}\ket{b_i} + i\sin u \ket{e_i},\, i = 1,2,\dots,m-1,
 \\
-\ket{D_m(t)} &= \cos u \cos v e^{-i\phi_n}\ket{b_m} - i\sin u \ket{e_m} - \cos u \sin v \ket{a}
+\ket{D_m(t)} &= \cos u \cos v e^{-i\phi_n}\ket{b_m} - i\sin u \ket{e_m} - \cos u \sin v \ket{a}.
 \end{aligned}
 \end{equation}
 The dark paths start in the bright state and travel along a curve where the expectation value of the energy is constantly $0$ and can thus be used non-adiabatically.
 
 By using these states one can reverse engineer the Hamiltonian using the Schrödinger equation to determine $\Omega_i$ and $\Omega_a$ since 
 \begin{equation}
-i\pdv{}{t}\ket{D_i(t)} = H_d\ket{D_i(t)},\; i = 1,2,\dots,m
+i\pdv{}{t}\ket{D_i(t)} = H_d\ket{D_i(t)},\; i = 1,2,\dots,m,
 \end{equation}
 a calculation yields
 \begin{equation}
 \begin{aligned}
-\Omega_1(t) &= -2\dot{u}
+\Omega_1(t) &= -2\dot{u},
 \\ 
-\Omega_2(t) &= -2\dot{u}
+\Omega_2(t) &= -2\dot{u},
 \\
 &\hspace{2mm}\vdots
 \\
-\Omega_{m-1}(t) &= -2\dot{u}
+\Omega_{m-1}(t) &= -2\dot{u},
 \\
-\Omega_m(t) &= 2\left(\dot{v}\cot u\sin v + \dot{u}\cos v \right)
+\Omega_m(t) &= 2\left(\dot{v}\cot u\sin v + \dot{u}\cos v \right),
 \\
-\Omega_a(t) &= 2\left(\dot{v}\cot u\cos v - \dot{u}\sin v \right)
+\Omega_a(t) &= 2\left(\dot{v}\cot u\cos v - \dot{u}\sin v \right).
 \end{aligned}
 \end{equation}
 The time evolution is split into $k$ loops, each loop with two pulses, $0 \longrightarrow T/2$ and $T/2 \longrightarrow T$. The relevant part of the time evolution operator for one loop is  
 \begin{equation}
-U_1(T/2,0) = \ket{d}\bra{d} -i\sum_{i = 1}^m \ket{e_i}\bra{b_i},\, \phi_i = 0, i = 1,2,\dots,n
+U_1(T/2,0) = \ket{d}\bra{d} -i\sum_{i = 1}^m \ket{e_i}\bra{b_i},\, \phi_i = 0, i = 1,2,\dots,n,
 \end{equation} and 
 \begin{equation}
-U_2(T,T/2) = \ket{d}\bra{d} + i\sum_{i = 1}^m e^{i\gamma_i}\ket{b_i}\bra{e_i},\, \phi_i = 0, i = 1,2,\dots,n
+U_2(T,T/2) = \ket{d}\bra{d} + i\sum_{i = 1}^m e^{i\gamma_i}\ket{b_i}\bra{e_i},\, \phi_i = 0, i = 1,2,\dots,n.
 \end{equation}
 The full operator for one loop is then given by 
 \begin{equation}
@@ -438,8 +445,7 @@ U(\varphi_1,\dots,\varphi_m,\theta_1,\dots,\theta_m,\gamma_1,\dots,\gamma_m).
 \end{equation} 
 Applying the unitary with different parameters in sequence up to $k$ times is enough to create any desirable gate $\mathbb{U} = U^k$. The unitary is controlled by $3(n-1)$ parameters while $n$ dimensional qudit has more degrees of freedom than covered with a single loop.
 
-The qudit state space of dimension $n$ is equivalent to that of the special unitary group, $SU(n)$, which has dimensionality $\dim(SU(n)) = n^2 -1$. To cover all degrees of freedom $k$ must satisfy $3(n-1)k \geq n^2 -1$.
-which means $k \geq \frac{n+1}{3}$. Thus the number of loops needed to create any unitary scales linearly at worst since some gates can be created with fewer loops, see Table \ref{tab:dim}. 
+The qudit state space of dimension $n$ is equivalent to that of the special unitary group, $SU(n)$, which has dimensionality $\dim(SU(n)) = n^2 -1$. To cover all degrees of freedom, $k$ must satisfy $3(n-1)k \geq n^2 -1$, which require $k \geq \frac{n+1}{3}$. Thus the number of loops needed to create any unitary scales linearly at worst since some gates can be created with fewer loops, see Table \ref{tab:dim}. 
 
 In the case of equality $k =\frac{n+1}{3}$, when $n = 3j + 2,\, j \in \mathbb{N}$, the fewest amount of loops per dimension is achieved and could potentially be more efficient carriers of information since the same number of loops must be carried out while higher dimension has higher information capacity.
 
@@ -466,7 +472,7 @@ $n$ & $3(n-1)$ & $n^2 - 1$ & $k$ &  '='\\
 \label{tab:dim}
 \end{table}
 
-The scaling of the qudit gate is linear at worst both in the number of loops and the number of parameters needed for control. In fact, any diagonal gate only requires one loop, by setting $\varphi_1 = \dots \varphi_m = \theta_1 = \dots = \theta_m = 0$ the unitary reduces to the form
+The scaling of the qudit gate is linear at worst both in the number of loops and the number of parameters needed for control. In fact, any diagonal gate only requires one loop, by setting $\varphi_1 = \dots = \varphi_m = \theta_1 = \dots = \theta_m = 0$ the unitary reduces to the form
 \begin{equation}
 \label{eq:diagate}
 U(0,\dots,0,\gamma_1,\dots,\gamma_m) = \ket{1}\bra{1} + \sum_{k = 2}^n e^{i\gamma_k}\ket{k}\bra{k}.
@@ -481,15 +487,15 @@ For the state $\ket{b_k}$, $k \geq 3$, fixing $c_1 = 1$ and letting all other st
 & = -\ket{k+1}
 \end{aligned}
 \end{equation}
-Therefor $\ket{d} = \ket{1}, \ket{b_1} = \ket{2}, \ket{b_2} = -\ket{3}, \ket{b_3} = -\ket{4}, \dots, \ket{b_m} = -\ket{m+1}$, and thus the unitary will take the form (\ref{eq:diagate}) so any diagonal unitary can be created up to any unimportant phase.
+Therefore $\ket{d} = \ket{1}, \ket{b_1} = \ket{2}, \ket{b_2} = -\ket{3}, \ket{b_3} = -\ket{4}, \dots, \ket{b_m} = -\ket{m+1}$, and thus the unitary will take the form (\ref{eq:diagate}) so any diagonal unitary can be created up to any unimportant phase.
 
-Thusly, any phase flip gate, such as $Z_n$, can be constructed in any dimension using only one loop. The gates essential for single-quidit universality are $\{T_n, H_n\}$, where one of the gates can be obtained by a single loop. Thus the Hadamard gate will be the most costly part of the scheme as it requires at most $k = \frac{n+1}{3}$ loops in $n$ dimensions. Since the $T_n$ gate only is defined for prime $n$ the dimensions of greatest interest will be the prime dimensions where $3(n-1)k = n^2 -1$. These seems to be the most information carrying with the fewest number of loops where universality could be implemented. The first few of these perfect-prime dimensions are $n = 5,11,17,23,\dots$. It has already been shown that fault tolerant QC is implementable in odd prime dimensions \cite{magic-muller}, so a high fidelity controllable scheme in these dimensions would be desirable.
+Thus, any phase flip gate, such as $Z_n$, can be constructed in any dimension using only one loop. The gates essential for single-qudit universality are $\{T_n, H_n\}$, where one of the gates can be obtained by a single loop. Thus, the Hadamard gate will be the most costly part of the scheme as it requires at most $k = \frac{n+1}{3}$ loops in $n$ dimensions. Since the $T_n$ gate only is defined for prime $n$ the dimensions of greatest interest will be the prime dimensions where $3(n-1)k = n^2 -1$. These seems to be the most information carrying with the fewest number of loops where universality could be implemented. The first few of these perfect-prime dimensions are $n = 5,11,17,23,\dots$. It has already been shown that fault tolerant QC is implementable in odd prime dimensions \cite{magic-muller}, so a high fidelity controllable scheme in these dimensions would be desirable.
 
 
 
 The quantum gate $\mathbb{U}$ can be formulated as a linear combination of the dark state and dark paths just as in the qutrit case,
 \begin{equation}
-\ket{\psi(t)} = f_0\ket{d} + \sum_{i = 1}^{m}f_i\ket{D_i(t)}, t \in [0,T]
+\ket{\psi(t)} = f_0\ket{d} + \sum_{i = 1}^{m}f_i\ket{D_i(t)}, t \in [0,T],
 \end{equation}
 where the coefficients can be solved for by choosing an initial state $\ket{\psi(0)}$. This corresponds to one loop, by using $\ket{\psi(T)}$ as an initial state for the next loop. By iterating this method one can simulate $\mathbb{U} = U^k$ where each loop $U$ has a different set of parameters. In theory this can be implemented and simulated for any dimensional qudit, just as for the case of the qutrit. 
 

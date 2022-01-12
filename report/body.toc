@@ -22,3 +22,5 @@
 \contentsline {section}{\numberline {4}Conclusions and outlook}{26}{section.4}
 \contentsline {section}{References}{27}{section*.2}
 \contentsline {section}{\numberline {A}Code}{29}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Script A - Simulate Dark path and Unitary}{29}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Script B - Robustness test}{32}{subsection.A.2}

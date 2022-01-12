@@ -12,27 +12,27 @@ Warning--empty author and editor in darkpath
 Warning--missing publisher in darkpath
 You've used 25 entries,
             3170 wiz_defined-function locations,
-            802 strings with 7977 characters,
-and the built_in function-call counts, 36026 in all, are:
-= -- 4633
+            803 strings with 7976 characters,
+and the built_in function-call counts, 36034 in all, are:
+= -- 4623
 > -- 264
 < -- 3
 + -- 167
 - -- 66
-* -- 2791
-:= -- 3857
+* -- 2795
+:= -- 3859
 add.period$ -- 96
 call.type$ -- 25
 change.case$ -- 2
 chr.to.int$ -- 0
 cite$ -- 28
-duplicate$ -- 3583
-empty$ -- 3379
+duplicate$ -- 3571
+empty$ -- 3385
 format.name$ -- 87
-if$ -- 8560
+if$ -- 8557
 int.to.chr$ -- 0
 int.to.str$ -- 25
-missing$ -- 252
+missing$ -- 254
 newline$ -- 126
 num.names$ -- 25
 pop$ -- 448
@@ -41,14 +41,14 @@ purify$ -- 0
 quote$ -- 0
 skip$ -- 437
 stack$ -- 0
-substring$ -- 6087
-swap$ -- 574
+substring$ -- 6096
+swap$ -- 582
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 203
+while$ -- 205
 width$ -- 27
 write$ -- 274
 (There were 3 warnings)

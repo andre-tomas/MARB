@@ -1,0 +1,42 @@
+\begin{figure}[H]
+    \begin{tikzpicture}[
+      scale=0.5,
+      level/.style={thick},
+      virtual/.style={thick,densely dashed},
+      trans/.style={thin,<->,shorten >=2pt,shorten <=2pt,>=stealth},
+      arrow/.style={thick,->,shorten >=2pt,shorten <=2pt,>=stealth},
+      classical/.style={thin,double,<->,shorten >=4pt,shorten <=4pt,>=stealth}]
+      
+    % Excited
+    \draw[level] (5cm,0em) -- (6cm,0em) node[midway,above] {$\ket{e_1}$};    
+    \draw[level] (7cm,0em) -- (8cm,0em) node[midway,above] {$\ket{e_2}$};
+	% Ground states
+    \draw[level] (4cm,-11em) -- (5cm,-11em) node[midway,below] {$\ket{1}$};
+    \draw[level] (6cm,-11em) -- (7cm,-11em) node[midway,below] {$\ket{2}$};
+    \draw[level] (8cm,-11em) -- (9cm,-11em) node[midway,below] {$\ket{3}$};
+    \draw[level] (10.5cm,-11em) -- (11.5cm,-11em) node[midway,below] {$\ket{a}$};
+    % e_1
+    % Draw the transitions.
+    \draw[trans] (5.5cm,-0.5em) -- (4.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (5.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (5.5cm,-0.5em) -- (8.5cm,-10.5em) node[midway,left] {};
+   	% e_2
+    \draw[trans] (7.5cm,-0.5em) -- (6.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (7.5cm,-0.5em) -- (8.5cm,-10.5em) node[midway,left] {};
+    \draw[trans] (7.5cm,-0.5em) -- (11cm,-10.5em) node[midway,left] {};
+    
+    \draw[arrow] (12cm,-5em) -- (15cm,-5em) node[] {}; 
+    
+    % Excited
+    \draw[level] (17cm,0em) -- (18cm,0em) node[midway,above] {$\ket{e_1}$};    
+    \draw[level] (19cm,0em) -- (20cm,0em) node[midway,above] {$\ket{e_2}$};
+    \draw[level] (17cm,-11em) -- (18cm,-11em) node[midway,below] {$\ket{b_1}$};
+    \draw[level] (19cm,-11em) -- (20cm,-11em) node[midway,below] {$\ket{b_2}$};
+    \draw[level] (22cm,-11em) -- (23cm,-11em) node[midway,below] {$\ket{a}$};
+    \draw[level] (24cm,-11em) -- (25cm,-11em) node[midway,below] {$\ket{d}$};
+    
+  	\draw[trans] (17.5cm,-0.5em) -- (17.5cm,-10.5em) node[midway,left] {};
+	\draw[trans] (19.5cm,-0.5em) -- (19.5cm,-10.5em) node[midway,left] {};
+	\draw[trans] (19.5cm,-0.5em) -- (22.5cm,-10.5em) node[midway,left] {};
+    \end{tikzpicture}    
+\end{figure}
