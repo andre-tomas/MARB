@@ -17,6 +17,7 @@
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{mathtools}
+\usepackage{comment}
 
 
 \usepackage{tikz}
@@ -25,7 +26,8 @@
 
 \title[Holonomic Optimal Control for Qudits]{Holonomic Optimal Control for Qudits}
 % Efficient (Scheme for) Non-adiabatic Holonomic Single-Qudit Gates with/using Dark Paths
-\author{ Tomas André}	
+\author{ Tomas André} \\ {\scriptsize \textit{Supervisor: Erik Sjöqvist \\ Subject reader: Martin Almquist}}
+\
 \institute{ Uppsala University }
 
 \date{\today}
@@ -38,7 +40,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction and Basics}
+\section{Introduction}
 \begin{frame}{Outline}
 \tableofcontents
 \end{frame}
@@ -51,15 +53,16 @@ sectionstyle=show/shaded,
 subsectionstyle=show/shaded, 
 ] 
 \end{frame}
+%
+%\begin{frame}[c]{Motivation}
+%''Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical, and by golly it's a wonderful problem, because it doesn't look so easy.'' 
+%\\- Richard Feynman
+%\end{frame}
 
-\begin{frame}[c]{Motivation}
-''Nature isn't classical, dammit, and if you want to make a simulation of nature, you'd better make it quantum mechanical, and by golly it's a wonderful problem, because it doesn't look so easy.'' 
-\\- Richard Feynman
-\end{frame}
+\begin{comment}
+
 
 \begin{frame}{History (1/2)}
-
-
 \begin{itemize}
 \item[1980] Paul Benioff proposes a quantum mechanical model of the turing machine. 
 \footnote{{\scriptsize Benioff, Paul (1980). Journal of Statistical Physics.22(5):563.}}
@@ -72,8 +75,6 @@ subsectionstyle=show/shaded,
 
 \item[1994] Peter Shor publishes a quantum algorithm used for finding the prime-factors of an integer.
 \footnote{\scriptsize Shor, Peter (1994). IEEE Comput Soc Press:p.124} (This is big!) 
-
-
 \end{itemize}
 \end{frame}
 
@@ -93,53 +94,38 @@ subsectionstyle=show/shaded,
 
 \end{itemize}
 \end{frame}
+\end{comment}
+
 
 \begin{frame}{Quantum Computing (QC)}
-
-
-\begin{block}{QC is a broad field}
-
+\begin{block}{What is Quantum Computation?}
 \begin{itemize}
-\item Algorithm design (math/computer science)
-\item Quantum mechanics (physics)
-\item building/implementation (engineering)
-\end{itemize}
+\item Using quantum systems to perform computations instead of classical systems
+\item Taking advantage of quantum mechanical effects for computational purposes
+    
+\item Utilizes \textbf{qubits} instead of bits
+\begin{equation}
+   \ket{\psi} = \alpha\ket{0} + \beta\ket{1} \Dot{=} \begin{pmatrix}
+   \alpha\\ \beta 
+   \end{pmatrix},\, |\alpha|^2 + |\beta|^2 = 1,\, \alpha,\beta\in\mathbb{C}
+\end{equation}
 
+\end{itemize}
 \end{block}
 
-
-\begin{block}{What is quantum computation?}
-
+\begin{block}{Higher dimensional computational elements}
 \begin{itemize}
-\item Algorithm design (math/data science)
-\item Quantum mechanics (physics)
-\item Building/implementation (engineering) 
-\end{itemize}
-% USE BLACKBOARD 
-\item Takes advantage of entanglement, superposition and interference
-% These effect can be used to create algorithms not allowed by classical computation
-\item Utilizes qubits instead of bits
-% explain qubits as direction on a sphere
-\item Quantum gates acts on quantum states
-% gates as unitary transformations, single and multi gates
-% Analogue to classical gates, some examples
+    \item bit $0,1 \;\mapsto$ qubit 
+    \item trit $0,1,2 \;\mapsto$ qutrit   
+    \item dit  $0,1,\dots, d \;\mapsto$ qudit
 \end{itemize}
 \end{block}
+    
 \end{frame}
 
 
-\section{Computation from Geometry}
-\begin{frame}{}
-\tableofcontents[ 
-currentsubsection, 
-hideothersubsections, 
-sectionstyle=show/shaded, 
-subsectionstyle=show/shaded, 
-]
 
-% WHAT IS COMPUTATION? 
-\end{frame}
-
+\begin{comment}
 \begin{frame}{What is computation?}
 
 \begin{figure}
@@ -157,19 +143,10 @@ subsectionstyle=show/shaded,
 
 \end{frame}
 
-
-\begin{frame}{Computation from Geometry}
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.25]{geom.png}
-\captionsetup{labelformat=empty}
-\caption{{\tiny Image credit: Lloyd, Seth (june 2001)."Computation From Geometry". Science vol. 292}}
-\end{center}
-\end{figure}
+\end{comment}
 
 
-\end{frame}
+
 
 
 
@@ -184,26 +161,49 @@ subsectionstyle=show/shaded,
 ] 
 \end{frame}
 
-
-\begin{frame}{Holonomies (1/2)}
-
-The change of a quantum state is called time-evolution, during one period of time $T$ it is written $U(T,0)$.
-
-The Berry phase is an early example a 1D Holonomy in Quantum mechanics.\footnote{\scriptsize Berry, Michael. Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences. vol. 392 (June 1983).}
-\begin{equation}
-\ket{\psi(t)} \xrightarrow{\text{time passes}} \ket{\psi(t+T)} = e^{i(\theta + \gamma)}\ket{\psi(t)}
-\end{equation}
-in this case
-\begin{equation}
-U(0,T) = e^{i(\theta + \gamma)}
-\end{equation}
-
-$\theta$ - dynamical phase, arises from the Hamiltonian of the system.\\
-$\gamma$ - 'berry phase', or geometric phase arises from the geometry of the 'landscape'.
+\begin{frame}{Computation from Geometry}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.25]{geom.png}
+\captionsetup{labelformat=empty}
+\caption{{\tiny Image credit: Lloyd, Seth (june 2001)."Computation From Geometry". Science vol. 292}}
+\end{center}
+\end{figure}
 \end{frame}
 
+% FUCK THIS SLIDE
+%\begin{frame}{Holonomies (1/2)}
+%
+%The change of a quantum state is called time-evolution, during one period of time $T$ it is written $U(T,0)$.
+%
+%The Berry phase is an early example a 1D Holonomy in Quantum mechanics.\footnote{\scriptsize Berry, Michael. Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences. vol. 392 (June 1983).}
+%\begin{equation}
+%\ket{\psi(t)} \xrightarrow{\text{time passes}} \ket{\psi(t+T)} = e^{i(\theta + \gamma)}\ket{\psi(t)}
+%\end{equation}
+%in this case
+%\begin{equation}
+%U(0,T) = e^{i(\theta + \gamma)}
+%\end{equation}
+%
+%$\theta$ - dynamical phase, arises from the Hamiltonian of the system.\\
+%$\gamma$ - 'berry phase', or geometric phase arises from the geometry of the 'landscape'.
+%\end{frame}
+
+
+\begin{frame}{Holonomies (1/2)}
+\begin{figure}
+\begin{center}
+\includegraphics[scale=6]{presentation/Connection-on-sphere.png}
+\captionsetup{labelformat=empty}
+\caption{{\tiny Image credit: Fjung at en.wikipedia: https://commons.wikimedia.org/w/index.php?curid=5126050}}
+\end{center}
+\end{figure}
+
+\end{frame}
+
+
 \begin{frame}{Holonomies (2/2)}
-More generally the holonomy can be higher dimensional and non-abelian (matrix)
+More generally a holonomy can be higher dimensional and non-abelian (matrix)
 \begin{equation}
 U(T,0) = \mathcal{T}\exp\left(i\int_{0}^{T} \underbrace{\mathbf{A}(t)}_{\text{Geometric}} - \underbrace{\mathbf{H}(t)}_{\text{Dynamic}}\,dt\right)
 \end{equation}
@@ -213,7 +213,6 @@ In the non-adiabatic case one wishes to remove dynamical phase contribution, the
 \begin{equation}
 U(T,0) = \mathcal{T}\exp\left(i\int_{0}^{T}\mathbf{A}(t)\,dt\right) = \mathcal{P}\exp\left(i\oint_{C}\mathbf{A}(s)\,ds\right) = U(C)
 \end{equation}
-
 \end{frame}
 
 
@@ -238,41 +237,6 @@ subsectionstyle=show/shaded,
 ] 
 \end{frame}
 
-\begin{frame}{The qutrit}
-\begin{block}{Higher dimensional computational elements?}
-bit: $0$ or $1$ \hspace{4cm} qubit: $\frac{1}{\sqrt{2}}(\alpha\ket{0} + \beta\ket{1})$
-\\
-trit: $0$,$1$, or $2$ \hspace{3.5cm} qutrit: $\frac{1}{\sqrt{3}}(\alpha\ket{0} + \beta\ket{1} + \gamma\ket{2})$
-\\
-$$\mathbf{\vdots} $$
-dit $0$,$1$,$\dots$,or $d$ \hspace{3cm} qudit: $\frac{1}{\sqrt{d}}(\alpha\ket{0} + \ket{1} + \dots + \Omega\ket{d})$
-
-\end{block}
-
-\end{frame}
-
-
-\begin{frame}{The qutrit}
-\begin{block}{Higher dimensional computational elements?}
-bit: $0$ or $1$ \hspace{4cm} qubit: $\frac{1}{\sqrt{2}}(\alpha\ket{0} + \beta\ket{1})$
-\\
-trit: $0$,$1$, or $2$ \hspace{3.5cm} qutrit: $\frac{1}{\sqrt{3}}(\alpha\ket{0} + \beta\ket{1} + \gamma\ket{2})$
-\\
-$$\mathbf{\vdots} $$
-dit $0$,$1$,$\dots$,or $d$ \hspace{3cm} qudit: $\frac{1}{\sqrt{d}}(\alpha\ket{0} + \beta\ket{1} + \dots + \Omega\ket{d})$
-\end{block}
-
-\begin{block}{\textbf{Pros} and \textbf{Cons}}
-\begin{itemize}
-\item more information per unit
-\item operations require fewer gates 
-\item harder to control
-\end{itemize}
-
-\end{block}
-
-\end{frame}
-
 \begin{frame}{Designing the system}
 
 The idea is the extension of a qubit implemented in a $^{171}$Yb$^{+}$ ion\footnote{\scriptsize MZ. Ai, S. Li, R. He, ZY. Xue, JM. Cui, YF. Haung, CF. Li, GC. Guo Experimental Realization of Nonadiabatic Holonomic
@@ -289,13 +253,10 @@ This project is limited to the quantum mechanical models.
 
 \input{qutrit.tex}
 
-\begin{block}{Hamiltonians}
+\begin{block}{Hamiltonian}
 
 \begin{equation}
-H = \sum_{j = 1}^2 \sum_{i =j}^{3} \omega_{ij}\ket{i}\bra{e_j}  + \frac{\Omega_{a}(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c} 
-\end{equation}
-\begin{equation}
- H_d = \sum_{j = 1}^2 \frac{\Omega_j(t)}{2}e^{-i\phi_j}\ket{b_j}\bra{e_j}  + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
+ H = \sum_{j = 1}^2 \frac{\Omega_j(t)}{2}e^{-i\phi_j}\ket{b_j}\bra{e_j}  + \frac{\Omega_a(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
 \end{equation}
 
 \end{block}
@@ -307,7 +268,7 @@ H = \sum_{j = 1}^2 \sum_{i =j}^{3} \omega_{ij}\ket{i}\bra{e_j}  + \frac{\Omega_{
 \begin{block}
 
 
-The computational basis new computational basis $\{\ket{1},\ket{2},\ket{3}\} \rightarrow \{\ket{d},\ket{b_1},\ket{b_2}\}$ 
+ $\{\ket{1},\ket{2},\ket{3}\} \rightarrow \{\ket{d},\ket{b_1},\ket{b_2}\}$ 
 parametrized by angles $\theta,\varphi,\chi,\xi$.
 
 
@@ -328,10 +289,13 @@ parametrized by angles $\theta,\varphi,\chi,\xi$.
 \end{block}
 \end{frame}
 
-
 \begin{frame}{Constructing the Quantum gates}
-\begin{block}{Dark paths}
 
+\begin{block}{Dark paths}\footnotesize
+A state $\ket{D(t)}$ such that 
+\begin{equation}
+    \bra{D(t)}H(t)\ket{D(t)} = 0 \forall t\in [0,T]
+\end{equation}
 \begin{equation}
 \begin{aligned}
 \ket{D_1(t)} &= \cos u e^{-i\phi_1}\ket{b_1} + i\sin u \ket{e_1}
@@ -341,42 +305,23 @@ parametrized by angles $\theta,\varphi,\chi,\xi$.
 \end{equation}
 such that $u(0) = u(T) = v(0) = v(T) = 0$
 
-\begin{equation}
-\ket{\psi(t)} = f_0\ket{d} + f_1\ket{D_1(t)} + f_2\ket{D_2(t)}, t \in [0,T].
-\end{equation}
+\end{block} 
+
+\begin{block}{Reverse-engineering}
+Using the Schördinger eq. $i\pdv{}{t}\ket{D} = H\ket{D}$
+\\
+to determine pulses $\Omega_1, \Omega_2, \Omega_a$
 
 \end{block}
+
+
+
 \end{frame}
 
 
-
 \begin{frame}{Constructing the Quantum gates}
 
-\begin{block}{Dark paths}
-
-\begin{equation}
-\begin{aligned}
-\ket{D_1(t)} &= \cos u e^{-i\phi_1}\ket{b_1} + i\sin u \ket{e_1}
-\\
-\ket{D_2(t)} &= \cos u\cos v e^{-i\phi_2}\ket{b_2} - i\sin u \ket{e_2} - \cos u\sin v \ket{a}
-\end{aligned}
-\end{equation}
-such that $u(0) = u(T) = v(0) = v(T) = 0$
-\begin{equation}
-\ket{\psi(t)} = f_0\ket{d} + f_1\ket{D_1(t)} + f_2\ket{D_2(t)}, t \in [0,T].
-\end{equation}
-
-\end{block}
-
 \begin{block}{The effect as a unitary}
-
-\begin{equation}
-\begin{aligned}&
-U_1 = \ket{d}\bra{d} -i\ket{e_1}\bra{b_1} -i\ket{e_2}\bra{b_2},\; \phi_1 = \phi_2 = 0
-\\&
-U_2 = \ket{d}\bra{d} +ie^{i\gamma_1}\ket{b_1}\bra{e_1} +ie^{i\gamma_2}\ket{b_2}\bra{e_2},\; \phi_1 = -\gamma_1,\; \phi_2 = -\gamma_2
-\end{aligned}
-\end{equation}
 
 \begin{equation}
 U(\theta,\varphi,\chi,\xi,\gamma_1,\gamma_2) = U_2U_1 = \ket{d}\bra{d} + e^{i\gamma_1}\ket{b_1}\bra{b_1} + e^{i\gamma_2}\ket{b_2}\bra{b_2}.
@@ -384,44 +329,29 @@ U(\theta,\varphi,\chi,\xi,\gamma_1,\gamma_2) = U_2U_1 = \ket{d}\bra{d} + e^{i\ga
 
 \end{block}
 
-\end{frame}
+\begin{block}
 
 
-\begin{frame}
-so for example
-\begin{equation}\small
+\textbf{Example:} choose parameters such that $U(\theta,\varphi,\chi,\xi,\gamma_1,\gamma_2) = X$
+\begin{equation}
 \begin{pmatrix}
-1\\
-0\\
-0
-\end{pmatrix}
-= f_0 \ket{d} + f_1\ket{D_1(0)} + f_2\ket{D_2(0)} \xrightarrow{0\rightarrow T} \begin{pmatrix}
 0\\
 1\\
 0
 \end{pmatrix}
-= f_0 \ket{d} + f_1\ket{D_1(T)} + f_2\ket{D_2(T)}
-\end{equation}
-or equivalent 
-\begin{equation}\small
-\begin{pmatrix}
-1\\
+\rightarrow X\begin{pmatrix}
 0\\
-0
-\end{pmatrix}
-\rightarrow U\begin{pmatrix}
 1\\
-0\\
 0
 \end{pmatrix}
 = 
 \begin{pmatrix}
-0\\
 1\\
+0\\
 0
 \end{pmatrix}
 \end{equation}
-
+\end{block}
 \end{frame}
 
 
@@ -453,12 +383,6 @@ subsectionstyle=show/shaded,
 \end{center}
 \end{frame}
 
-\begin{frame}{State probability}
-% H-gate
-\begin{center}
-\includegraphics[scale=0.7]{pop_plot_H111.png}
-\end{center}
-\end{frame}
 
 \begin{frame}{State probability}
 % H-gate
@@ -467,12 +391,20 @@ subsectionstyle=show/shaded,
 \end{center}
 \end{frame}
 
+
+\begin{frame}{State probability}
+% H-gate
+\begin{center}
+\includegraphics[scale=0.7]{pop_plot_H111.png}
+\end{center}
+\end{frame}
+
 \begin{frame}{Gate fidelity}
 
 \begin{block}{Fidelity measure}
 The fidelity, $F$ is a measure of how close two quantum states are 
 \begin{equation}
-F(\ket{\psi},\ket{\varphi}) = |\bra{\psi}\ket{\varphi}|,\;\; F(\ket{\psi},\ket{\varphi}) \iff \ket{\psi} = \ket{\varphi}
+F(\ket{\psi},\ket{\varphi}) = |\bra{\psi}\ket{\varphi}|,\;\; F(\ket{\psi},\ket{\varphi}) = 1 \iff \ket{\psi} = \ket{\varphi}
 \end{equation}
 
 \end{block}
@@ -482,13 +414,19 @@ F(\ket{\psi},\ket{\varphi}) = |\bra{\psi}\ket{\varphi}|,\;\; F(\ket{\psi},\ket{\
 \begin{enumerate}
 \item randomly selected an initial state $\ket{\psi_0}$
 \item apply the unitary to get an analytical solution: $U\ket{\psi_0} = \ket{\psi_{f}}$
-\item numerically integrate $\ket{\psi_{0}$ (solving Schrödinger eq.) with perturbed parameters to obtain $\ket{\psi_{f}'$.
-\item calculate $F(\ket{\psi_{f},\ket{\psi_{f}')$
+\item numerically integrate $\ket{\psi_{0}}$ (solving Schrödinger eq.) with perturbed parameters to obtain $\tilde{\ket{\psi_{f}}}$. ($\Omega \mapsto (1+\delta)\Omega$)
+\item calculate $F(\ket{\psi_{f}},\tilde{\ket{\psi_{f}}})$
 \item repeat for different initial states and error sizes 
 \end{enumerate}
 
 \end{block}
 
+\end{frame}
+
+\begin{frame}{Gate Fidelity}
+    \begin{center}
+        \includegraphics[scale = 0.7]{presentation/Fid500.png}
+    \end{center}
 \end{frame}
 
 \subsection{Generalization}
@@ -505,55 +443,63 @@ subsectionstyle=show/shaded,
 
 \end{frame}
 
+% Maybe just draw some shit
+%\begin{frame}{Generalization}
+%\begin{block}{Dark-Bright basis}
+%
+%\begin{equation}
+%\ket{d} = c_1\ket{1} + c_2\ket{2} + c_3\ket{3} \dots + c_{n}\ket{n},\, |c_1|^2 + |c_2|^2 + \dots + %|c_{n}|^2 = 1.
+%\end{equation}
+%\\
+%\begin{equation}
+%\ket{b_1} = N_1\left(-c_2^{*}\ket{1} + c_1^{*}\ket{2}\right)
+%\end{equation}
+%\\
+%\begin{equation}
+%\label{eq:birght_states}
+%\begin{aligned}
+%&\ket{b_2} &=& N_2 \left(c_1\ket{1} + c_2\ket{2} + \Lambda_3\ket{3}  \right)
+%\\
+%&\ket{b_3} &=&  N_3 \left(c_1\ket{1} + c_2\ket{2} + c_3\ket{3} + \Lambda_{4}\ket{4} \right)
+%\\
+%&\;\;\vdots
+%\\
+%&\ket{b_{m-1}} &=& N_{m-1} \left( c_1\ket{1} + c_2\ket{2} + c_3\ket{3}  + \dots + c_{m-1}\ket{m-1}+ %\Lambda_m\ket{m} \right)
+%\\
+%&\ket{b_{m}} &=& N_m \left( c_1\ket{1} + c_2\ket{2} + c_3\ket{3}  + \dots + c_m\ket{m} + %\Lambda_{m+1}\ket{m+1} \right).
+%\end{aligned}
+%\end{equation}
+%
+%\end{block}
+%
+%\end{frame}
 
-\begin{frame}{Generalization}
 
-\begin{equation}
-\ket{d} = c_1\ket{1} + c_2\ket{2} + c_3\ket{3} \dots + c_{n}\ket{n},\, |c_1|^2 + |c_2|^2 + \dots + |c_{n}|^2 = 1.
-\end{equation}
-\\
-\begin{equation}
-\ket{b_1} = N_1\left(-c_2^{*}\ket{1} + c_1^{*}\ket{2}\right)
-\end{equation}
-\\
-\begin{equation}
-\label{eq:birght_states}
-\begin{aligned}
-&\ket{b_2} &=& N_2 \left(c_1\ket{1} + c_2\ket{2} + \Lambda_3\ket{3}  \right)
-\\
-&\ket{b_3} &=&  N_3 \left(c_1\ket{1} + c_2\ket{2} + c_3\ket{3} + \Lambda_{4}\ket{4} \right)
-\\
-&\;\;\vdots
-\\
-&\ket{b_{m-1}} &=& N_{m-1} \left( c_1\ket{1} + c_2\ket{2} + c_3\ket{3}  + \dots + c_{m-1}\ket{m-1}+ \Lambda_m\ket{m} \right)
-\\
-&\ket{b_{m}} &=& N_m \left( c_1\ket{1} + c_2\ket{2} + c_3\ket{3}  + \dots + c_m\ket{m} + \Lambda_{m+1}\ket{m+1} \right).
-\end{aligned}
-\end{equation}
+%\begin{frame}{Generalization}
+%\begin{block}{Dark paths}
+%$m$ dark paths on the form
+%\begin{equation}
+%\begin{aligned}
+%\ket{D_1(t)} &= \cos u e^{-i\phi_1}\ket{b_1} + i\sin u \ket{e_1}
+%\\
+%\ket{D_2(t)} &= \cos u e^{-i\phi_2}\ket{b_2} + i\sin u \ket{e_2}
+%\\
+%& \vdots
+%\\
+%\ket{D_{m-1}(t)} &= \cos u e^{-i\phi_{m-1}}\ket{b_{m-1}} + i\sin u \ket{e_{m-1}}
+%\\
+%\ket{D_m(t)} &= \cos u \cos v e^{-i\phi_n}\ket{b_m} - i\sin u \ket{e_m} - \cos u \sin v %\ket{a}.
+%\end{aligned}
+%\end{equation}
+%\end{block}
 
-\end{frame}
-
-
-\begin{frame}{Generalization}
-$m$ dark paths on the form
-\begin{equation}
-\begin{aligned}
-\ket{D_1(t)} &= \cos u e^{-i\phi_1}\ket{b_1} + i\sin u \ket{e_1}
-\\
-\ket{D_2(t)} &= \cos u e^{-i\phi_2}\ket{b_2} + i\sin u \ket{e_2}
-\\
-& \vdots
-\\
-\ket{D_{m-1}(t)} &= \cos u e^{-i\phi_{m-1}}\ket{b_{m-1}} + i\sin u \ket{e_{m-1}}
-\\
-\ket{D_m(t)} &= \cos u \cos v e^{-i\phi_n}\ket{b_m} - i\sin u \ket{e_m} - \cos u \sin v \ket{a}.
-\end{aligned}
-\end{equation}
-Following these dark paths has the same effect as acting with the unitary:
-\begin{equation}
-U = \ketbra{d}{d} + \sum_{i = 1}^{m} e^{i\gamma_i} \ketbra{b_i}{b_i}
-\end{equation}
-\end{frame}
+%\begin{block}{Unitary}
+%Following these dark paths has the same effect as acting with the unitary:
+%\begin{equation}
+%U = \ketbra{d}{d} + \sum_{i = 1}^{m} e^{i\gamma_i} \ketbra{b_i}{b_i}
+%\end{equation}
+%\end{block}
+%\end{frame}
 
 
 \section{Conclusions}
@@ -568,20 +514,22 @@ subsectionstyle=show/shaded,
 \end{frame}
 
 \begin{frame}{Conclusions and outlook}
-Conclusions
+\begin{block}{Conclusions}
 \begin{itemize}
+\item we have tricked quantum mechanics to do matrix multiplication for us
 \item constructing universal single-qudit gates of arbitrary dimension
-\item diagonal gates can be efficiently constructed in any dimension
 \item inclusion of a auxiliary state improves gate fidelity in higher dimension
 \end{itemize}
 
-Outlook
+\end{block}
+\begin{block}{Outlook}
 \begin{itemize}
 \item multi-qudit gates
 \item physical realization
 \item simulation of higher dimensions
 \end{itemize}
 
+\end{block}
 
 
 \end{frame}
