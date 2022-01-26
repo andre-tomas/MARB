@@ -1,0 +1,252 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{pmgraph}
+\usepackage[a4paper,portrait, margin=1.25in]{geometry}
+\usepackage[normalem]{ulem}
+\usepackage[swedish,english]{babel}
+\usepackage{graphicx,here,times,tabularx,rotating}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[bottom]{footmisc}
+\usepackage{physics}
+\usepackage{bbm}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[nottoc]{tocbibind}
+\usepackage[toc,page]{appendix}
+\usepackage{lipsum}
+\usepackage{framed,xcolor}
+\usepackage{libertine}
+\usepackage{algorithm2e}
+\usepackage{bm}% bold math
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{color} 
+\usepackage{listings} 
+\usepackage{setspace} 
+\usetikzlibrary{arrows}
+\usepackage{afterpage}
+
+
+
+
+
+
+
+
+\definecolor{darkred}{rgb}{0.6,0.0,0.0}
+\definecolor{darkgreen}{rgb}{0,0.50,0}
+\definecolor{lightblue}{rgb}{0.0,0.42,0.91}
+\definecolor{orange}{rgb}{0.99,0.48,0.13}
+\definecolor{grass}{rgb}{0.18,0.80,0.18}
+\definecolor{pink}{rgb}{0.97,0.15,0.45}
+
+
+
+
+
+
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+\newcommand{\note}[1]{{\color{red}\textbf{#1} } }
+
+
+\newcommand{\inp}[2]{\langle #1,#2 \rangle}
+
+
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+
+\begin{document}
+
+\pagenumbering{gobble}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+\begin{titlepage}
+
+
+\center % Center everything on the page
+ 
+ 
+ 
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Uppsala University}\\[1.5cm] % Name of your university/college
+\textsc{\Large Degree Project E in Computational Science, 30c}\\[0.5cm] % Major heading such as course name
+\textsc{\large Department of Physics and Astronomy\\ Division of Materials Theory}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Holonomic Optimal Control for Qudits}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Tomas \textsc{André} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+Erik \textsc{Sjöqvist} \\
+\emph{Subject reader:} \\
+Martin \textsc{Almquist} %% Supervisor's Name
+\end{flushright}
+\end{minipage}\\[2cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[scale = 0.11]{figures/uulogga.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\null\newpage % Intentional blankpage
+
+
+\begin{abstract}
+Non-adiabatic Holonomic Quantum Computation (NHQC) is a method used to implement quantum gates with holonomies that arise solely from non-Abelian geometric phases. Due to high noise tolerance these phases can be used to construct resiliant quantum gates. By using dark paths we show how to implement quantum gates for higher dimensional computation elements, qudits, instead of the conventional qubits. This gives higher parameter control compared to earlier implementations. We present a scheme that generalizes and achieves single-qudit universality using controllable high fidelity gates by including an auxiliary state. An explicit example is shown for the Qutrit. The scaling is linear in dimension and we show how any diagonal qudit gate can be implemented efficiently in any dimension.
+\end{abstract}
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\bigskip
+
+\begin{otherlanguage}{swedish}
+\begin{abstract}
+Kvantmekaniska periodiska system uppvisar, förutom den väletablerade dynamiska fasen i tidsutveckligen, även en geometrisk fas. Eftersom denna fas är oberoende av systemets dynamik kan den användas för att skapa fel-toleranta kvantmekaniska grindar. Detta är grunden för s.k. Icke-adiabatic Holonomiska Kvantgrindar. Genom att utnyttja vägar i parameterrummet som inte bidrar med någon dynamisk utveckling så implementerar vi hög dimensionella beräkningselement, 'qudits', istället för de mer konvetionella kvantbitarna. Detta resulterar i högre kontroll över parameterar än vissa tidigare metoder. Vi visar hur detta schema kan generaliseras till högre dimensioner och hur man kan uppnå universalitet med dessa hög-dimensionella och fel-toleranta kvantgrindar. Ett exempel ges för tre dimensioner och används som grund som sedan generaliseras. Schemat har linjär skalning i dimension och diagonala qudit-grindar kan effektivt bli implementerade i höga dimensioner.
+\end{abstract}
+\end{otherlanguage}
+
+\newpage\null\newpage % Intentional blankpage
+
+\tableofcontents
+
+\newpage\null\newpage % Intentional blankpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+\input{intro.tex}
+
+\newpage
+
+\section{Background}
+\input{background.tex}
+
+\newpage
+\section{Results}
+\input{method.tex}
+\newpage
+\section{Conclusions and outlook}
+\input{disc.tex}
+
+\newpage
+\section*{My own bibliography}
+\input{biblio.tex}
+
+\newpage
+\bibliographystyle{vancouver}
+\bibliography{ref.bib}
+\newpage
+
+\appendix
+
+\lstset{
+  aboveskip=1em,
+  breaklines=true,
+  abovecaptionskip=-6pt,
+  captionpos=b,
+  escapeinside={\%*}{*)},
+  frame=single,
+  numbers=left,
+  numbersep=15pt,
+  numberstyle=\tiny,
+}
+% 0. Basic Color Theme
+\lstdefinestyle{colored}{ %
+  basicstyle=\ttfamily,
+  backgroundcolor=\color{white},
+  commentstyle=\color{green}\itshape,
+  keywordstyle=\color{blue}\bfseries\itshape,
+  stringstyle=\color{red},
+}
+% 1. General Python Keywords List
+\lstdefinelanguage{PythonPlus}[]{Python}{
+  morekeywords=[1]{,as,assert,nonlocal,with,yield,self,True,False,None,} % Python builtin
+  morekeywords=[2]{,__init__,__add__,__mul__,__div__,__sub__,__call__,__getitem__,__setitem__,__eq__,__ne__,__nonzero__,__rmul__,__radd__,__repr__,__str__,__get__,__truediv__,__pow__,__name__,__future__,__all__,}, % magic methods
+  morekeywords=[3]{,object,type,isinstance,copy,deepcopy,zip,enumerate,reversed,list,set,len,dict,tuple,range,xrange,append,execfile,real,imag,reduce,str,repr,}, % common functions
+  morekeywords=[4]{,Exception,NameError,IndexError,SyntaxError,TypeError,ValueError,OverflowError,ZeroDivisionError,}, % errors
+  morekeywords=[5]{,ode,fsolve,sqrt,exp,sin,cos,arctan,arctan2,arccos,pi, array,norm,solve,dot,arange,isscalar,max,sum,flatten,shape,reshape,find,any,all,abs,plot,linspace,legend,quad,polyval,polyfit,hstack,concatenate,vstack,column_stack,empty,zeros,ones,rand,vander,grid,pcolor,eig,eigs,eigvals,svd,qr,tan,det,logspace,roll,min,mean,cumsum,cumprod,diff,vectorize,lstsq,cla,eye,xlabel,ylabel,squeeze,}, % numpy / math
+}
+% 2. New Language based on Python
+\lstdefinelanguage{PyBrIM}[]{PythonPlus}{
+  emph={d,E,a,Fc28,Fy,Fu,D,des,supplier,Material,Rectangle,PyElmt},
+}
+% 3. Extended theme
+\lstdefinestyle{colorEX}{
+  basicstyle=\ttfamily,
+  backgroundcolor=\color{white},
+  commentstyle=\color{darkgreen}\slshape,
+  keywordstyle=\color{blue}\bfseries\itshape,
+  keywordstyle=[2]\color{blue}\bfseries,
+  keywordstyle=[3]\color{grass},
+  keywordstyle=[4]\color{red},
+  keywordstyle=[5]\color{orange},
+  stringstyle=\color{darkred},
+  emphstyle=\color{pink}\underbar,
+}
+
+
+\section{Code}
+\subsection{Script A - Simulate Dark path and Unitary}
+\footnotesize
+\lstinputlisting[language=PythonPlus,style=colorEX]{sim.py}
+
+\subsection{Script B - Robustness test}
+\footnotesize
+\lstinputlisting[language=PythonPlus,style=colorEX]{SEsim.py}
+
+\end{document}
