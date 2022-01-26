@@ -162,7 +162,7 @@ To find the time evolution operator for any time $t$, we could successively repe
 \begin{equation}
 \lim_{N \rightarrow \infty} \left(\mathbf{1} - i\,H\frac{(t-t_0)}{N} \right)^N = \exp\left(- i\,H(t-t_0) \right)
 \end{equation}
-For simplicity let us assume that $t_0 = 0$, then the time evolution operator for a finite time for a time independent Hamiltonian could be written as $U(t,0) = e^{-i\,H\,t}$. If the Hamiltonian has time dependence but it commutes with itself at different times, then an integral can be introduced in the exponential, $U(t,0) = e^{-i\,\int_0^t \,H(t')\, dt'}$, if the Hamiltonian does not commute at different times it becomes a bit more involved and will not be covered here. But the formal solution can be written as $U(t,0) = \mathcal{T}e^{-i\,\int_0^t \,H(t')\, dt'}$, where $\mathcal{T}$ is time-ordering. This is referred to as the dynamical phase and is the most common type of time evolution. In addition to the dynamic phase there exist a geometric phase associated with some quantum systems and was first studied in periodic systems \cite{berry}. This is discussed further in Section Geometric quantum computation.
+For simplicity let us assume that $t_0 = 0$, then the time evolution operator for a finite time for a time independent Hamiltonian could be written as $U(t,0) = e^{-i\,H\,t}$. If the Hamiltonian has time dependence but it commutes with itself at different times, then an integral can be introduced in the exponential, $U(t,0) = e^{-i\,\int_0^t \,H(t')\, dt'}$, if the Hamiltonian does not commute at different times it becomes a bit more involved and will not be covered here. But the formal solution can be written as $U(t,0) = \mathcal{T}e^{-i\,\int_0^t \,H(t')\, dt'}$, where $\mathcal{T}$ is time-ordering. This is referred to as the dynamical phase and is the most common type of time evolution. In addition to the dynamic phase there exist a geometric phase associated with some quantum systems and was first studied in periodic systems \cite{berry}. This is discussed further in Section 2.2.6.
 
 To conclude, finding the time evolution operator corresponds to finding the solution to the Schrödinger Equation, which governs the time evolution of quantum systems.
 
@@ -185,15 +185,15 @@ the tensor product is often omitted and one would write $\ket{\psi_1} \otimes \k
 So $n$ qubits is often written as $\ket{x}^{\otimes n},\, x \in \{0,1\}$ which is spanned by kets on the form $\ket{x_0x_1x_2...x_n},\, x_i \in \{0,1\}$, representing all possible bit strings of length $n$. However, this project will limited to single qubit(qudit) systems.
 
 \subsubsection{From classical logic gates to quantum gates}
-A model used in classical computation is the circuit model, which consists of wires and logic gates. The wires carry the bit information, 0, 1, and the gates apply different operations. A common gate is the ${\tt NOT}$-gate which flips the content of the bit ${\tt NOT}(0) = 1$ and ${\tt NOT}(1) = 0$. Some other common logic gates are shown in Table \ref{tab:gates}. 
+A model used in classical computation is the circuit model, which consists of wires and logic gates. The wires carry the bit information, 0, 1, and the gates apply different operations. A common gate is the ${\tt NOT}$-gate which flips the content of the bit ${\tt NOT}(0) = 1$ and ${\tt NOT}(1) = 0$. Some other common logic gates are shown in Table \ref{tab:gates}, further, in Figure \ref{fig:circ} is an example of a classical circuit converted into an equivalent quantum circuit.  
 
 \begin{table}[h]
     \centering
     \begin{tabular}{|c|c|c|c|c|}
     \hline
-    \multicolumn{2}{|c|}{Input} & ${\tt AND}$ & ${\tt NAND}$ & ${\tt OR}$\\
+    \multicolumn{2}{|c|}{Input} & ${\tt AND}$ & ${\tt XOR}$ & ${\tt OR}$\\
     \hline
-    1 & 0 & 0& 1& 0\\
+    1 & 0 & 0& 0& 0\\
     0 & 1 & 0& 1& 1\\
     1 & 0 & 0& 1& 1\\
     1 & 1 & 1& 0& 1\\
@@ -209,7 +209,7 @@ To make logic gates suitable for quantum computation the classical logic gate ha
 \item Reversibility,
 \item Conservation of probability,
 \end{enumerate}
-it will turn out that these properties have more or less the same consequence. The first property is not achieved by the classical gates. For example, given the output of the ${\tt AND}$-gate it is impossible to know the state of the bits that went into the gate. An output of 1 only conveys that the inputs were equal, but not it were 0,0 or 1,1. Adding another output that simply is one of the inputs can make the gate reversible, if you get a \textbf{0} as output, and know that the first input was \textbf{0}, then the second input must be a \textbf{1}. This extends to all inputs and outputs. In the quantum mechanical context, a quantum logic gate is a quantum operator acting on the state of the qubit. $A\ket{\psi} = \ket{\psi'}$, so the equivalence of the classical reversibility would be the existence of an inverse operator $A^{-1}$ such that the operation could be reversed $A^{-1}\ket{\psi'} = A^{-1}A\ket{\psi} = \mathbf{1}\ket{\psi} = \ket{\psi}$
+it will turn out that these properties have more or less the same consequence. The first property is not achieved by the classical gates. For example, given the output of the ${\tt XOR}$-gate  it is impossible to know the state of the bits that went into the gate. An output of 1 only conveys that one of the inputs were 1, but not which one. Adding another output that simply is one of the inputs can make the gate reversible. In the quantum mechanical context, a quantum logic gate is a quantum operator acting on the state of the qubit. $A\ket{\psi} = \ket{\psi'}$, so the equivalence of the classical reversibility would be the existence of an inverse operator $A^{-1}$ such that the operation could be reversed $A^{-1}\ket{\psi'} = A^{-1}A\ket{\psi} = \mathbf{1}\ket{\psi} = \ket{\psi}$
 
 Conservation of probability does not in itself have any classical analogue due to it being a quantum property. More concretely it means conservation of the inner product. Given the states $U\ket{\psi} = \ket{\psi'}$ and $U\ket{\varphi} = \ket{\varphi'}$, then the inner product of $\ket{\psi}$ and $\ket{\varphi}$ is the same as for $\ket{\psi'}$ and $\ket{\varphi'}$. Thus one can compute
 \begin{equation}
@@ -217,6 +217,7 @@ Conservation of probability does not in itself have any classical analogue due t
 \end{equation}
 and see that this only holds if $U^\dagger U = UU^\dagger = \mathbf{1}$, which happens to be the condition for $U$ to be an unitary operator. From the unitarity it is possible to also see that $U^\dagger = U^{-1}$. The reversibility is also a consequence of the operators being unitary.
 \begin{figure}[H]
+\label{fig:circ}
 \begin{center}
 \includegraphics[scale=0.5]{figures/Andgates.png}
 \includegraphics[scale=0.2]{figures/Qcircuit.png}
@@ -224,7 +225,7 @@ and see that this only holds if $U^\dagger U = UU^\dagger = \mathbf{1}$, which h
 \end{center}
 \end{figure}
 
-There are many ways to achieve the creation and implementation of quantum gates. Some of them will be discussed in more detail in the Section Geometric Quantum Computation. Let us see in general how a quantum gate could be implemented. To apply a quantum gate to the qubit means to operate on a quantum state with a unitary operator. The time evolution operator discussed priorly is unitary by definition, and it acts on states according to the Schrödinger equation. The time evolution operator seems like a good candidate to be used to implement quantum gates since they share many common properties.
+There are many ways to achieve the creation and implementation of quantum gates. Some of them will be discussed in more detail in Section 2.2.6. Let us see in general how a quantum gate could be implemented. To apply a quantum gate to the qubit means to operate on a quantum state with a unitary operator. The time evolution operator discussed priorly is unitary by definition, and it acts on states according to the Schrödinger equation. The time evolution operator seems like a good candidate to be used to implement quantum gates since they share many common properties.
 
 
 \subsubsection{Some important gates and universal computation}
@@ -474,4 +475,22 @@ U(T,0) = \sum_{n,m = 1}^{N} U_{nm}\ket{n(0)}\bra{m(0)}
 and can be used to perform any arbitrary quantum gate on the computational space.
 
 The idea of NHQC can be extended by instead of explicitly constructing a Hamiltonian with non-dynamical interaction, one can construct explicit dark paths through parameter space that satisfy the NHQC criteria. In \cite{darkpath} a qubit scheme is constructed and experimentally implemented in a trapped $^{171}Yb^{+}$ ion, using a dark path. They conclude that arbitrary NHQC gates can be constructed with better robustness. We will build upon the scheme presented and create an explicit qutrit example, then speculate how it can be generalized to higher dimensions.
+
+\subsection{Research Questions}
+
+Holonomic quantum compuatation is an instresting research area due to the potential of high resilience to errors arising from constructing gates from global holonomies. Furthermore non-adiabatic implementations are desirable since shorter run times can decrease decoherance during the time evolution of systems and thus make even sturdies gates. There has already been several holonomic implementations of qubits, both adiabatic and non-adiabatic \cite{HQC, NHQC} but here we aim at implementing higher dimensional qudits in a non-adiabatic holonomic setting. 
+
+\begin{itemize}
+\item \textbf{Research question 1: How does the NHQC qubit implementation using dark path generalize to higher computational elements?} We are insterested to see how the implementation of the qubit in \cite{darkpath} could be generalized for qudits. This is achieved by finding a way to extend the quantum system in such a way that a qudit can be encoded. 
+
+\item \textbf{Researcg question 2: Is gate robustness still high for qudits?} The upside of NHQC is the high error resilience in the quantum gates. We want to study if similar behavior is present in higher dimensions. We also test ways to improve robustness by the inclusion of an auxiliary state.
+
+
+
+\end{itemize}
+
+
+
+
+
 

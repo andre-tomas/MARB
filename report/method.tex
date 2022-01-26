@@ -1,6 +1,6 @@
 \subsection{The qutrit}
 \subsubsection{Construction of the system}
-In \cite{darkpath} a qubit is implemented by modifying the lambda system, adding an auxiliary state, effectively turning it into a tripod. The generalization to implement a qutrit is not trivial but it is clear that one extra ground state is required to make the computational basis larger. Another thing that is needed is to limit the number of dark states to one. The number of dark states is the difference between the number of excited states and the number of ground states \cite{lambda} (here the auxiliary state is \textbf{not} counted as a ground state). Therefore another excited state must be added as well. How these states are coupled is the hard part. We will see that the system given by the Hamiltonian
+In \cite{darkpath} a qubit is implemented by modifying the lambda system \cite{lambda}, adding an auxiliary state, effectively turning it into a tripod. The generalization to implement a qutrit is not trivial but it is clear that one extra ground state is required to make the computational basis larger. Another thing that is needed is to limit the number of dark states to one. The number of dark states is the difference between the number of excited states and the number of ground states \cite{lambda} (here the auxiliary state is \textbf{not} counted as a ground state). Therefore another excited state must be added as well. How these states are coupled is the hard part. We will see that the system given by the Hamiltonian
 \begin{equation}
 \label{eq:Ham}
 H = \sum_{j = 1}^2 \sum_{i =j}^{3} \omega_{ij}\ket{i}\bra{e_j}  + \frac{\Omega_{a}(t)}{2}\ket{a}\bra{e_2}  +\,\text{h.c}
@@ -120,7 +120,7 @@ so the operator for one full loop is
 \label{eq:trit-gate-1-loop}
 U = U_2U_1 = \ket{d}\bra{d} + e^{i\gamma_1}\ket{b_1}\bra{b_1} + e^{i\gamma_2}\ket{b_2}\bra{b_2}.
 \end{equation}
-This transformation can be parametrized by $6$ real parameters,$\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2$, however it is not enough to construct all gates. For example $X_3$ requires 2 loops. This is since one loop does not cover all degrees of freedom. The reason for this is elaborated on later in the Generalization section. The full gate is given by repeating $U$ with another set of parameters:
+This transformation can be parametrized by $6$ real parameters,$\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2$, however it is not enough to construct all gates. For example $X_3$ requires 2 loops. This is since one loop does not cover all degrees of freedom. The reason for this is elaborated on later in Section 3.2. The full gate is given by repeating $U$ with another set of parameters:
 \begin{equation}
 \label{eq:trit-gate-2-loop}
 \mathbb{U} = U(\chi',\xi',\theta',\varphi',\gamma_1',\gamma_2') U(\chi,\xi,\theta,\varphi,\gamma_1,\gamma_2)
@@ -162,7 +162,7 @@ Then the system can be solved for any time $t \in T$ using
 \label{eq:expl-time}
 \ket{\psi(t)} = f_0\ket{d} + f_1\ket{D_1(t)} + f_2\ket{D_2(t)}, t \in [0,T].
 \end{equation}
-To see the effect of the gates, the probability of finding the system in the standard computational basis states can be plotted against time to see how the gate transform the state from initial to final state, shown in Figure \ref{fig:pop_X} and \ref{fig:pop_H} for the $X_3$ and $H_3$ gates respectively . 
+To see the effect of the gates, the probability of finding the system in the standard computational basis states can be plotted against time to see how the gate transform the state from initial to final state, shown in Figure \ref{fig:pop_X} and \ref{fig:pop_H} for the $X_3$ and $H_3$ gates respectively. This is simply done in any computational software by sampling Eq. \ref{eq:expl-time} over the time interval. All plots and calculations in this project is done using python 3.8.8.  
 \begin{figure}[H]
 \includegraphics[scale=0.5]{figures/pop_plot_X011.png}
 \includegraphics[scale=0.5]{figures/pop_plot_X532.png}
@@ -179,7 +179,7 @@ To see the effect of the gates, the probability of finding the system in the sta
 
 
 \subsubsection{Important gates, universality and parameter selection}
-By specifying the parameters of $U$ the qutrit gates from the Background section can be constructed. A selection of important gates are obtained by the following;
+By specifying the parameters of $U$ the qutrit gates from Section 2 can be constructed. A selection of important gates are obtained by the following;
 \begin{equation}
 \begin{aligned}
 X_3 &= U(0,0,\dfrac{\pi}{4},\dfrac{\pi}{2},0,\pi)\times U(0,0,\dfrac{\pi}{2},\dfrac{\pi}{4},0,\pi) 
